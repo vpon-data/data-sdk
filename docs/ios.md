@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "iOS - DMP SDK"
+title: "iOS"
 lead: ""
 description: ""
 keywords: "dmp"

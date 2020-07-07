@@ -1,6 +1,6 @@
 ---
 layout: default
-title:          "Android - DMP"
+title:          "android"
 lead:           ""
 description:    ""
 keywords:       "dmp"
