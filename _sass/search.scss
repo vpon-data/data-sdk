@@ -254,7 +254,7 @@
   z-index: 1;
   width: 0;
   height: 0;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.3);
   opacity: 0;
   transition: opacity ease $transition-duration, width 0s $transition-duration,
     height 0s $transition-duration;
@@ -281,7 +281,7 @@
   }
 
   .search-input {
-    background-color: $search-background-color;
+    background-color: $search-background-color !important;
 
     @include mq(md) {
       padding-left: #{$sp-4 * 1.25 + $sp-5};
