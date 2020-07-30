@@ -7,6 +7,8 @@
   display: flex;
   flex-wrap: wrap;
   background-color: $sidebar-color;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, .1);
+
 
   @include mq(md) {
     flex-wrap: nowrap;
@@ -52,13 +54,15 @@
 .main-header {
   z-index: 0;
   display: none;
-  background-color: $sidebar-color;
+  // background-color: $sidebar-color;
+  background-color: rgba(255, 255, 255, 0);
 
   @include mq(md) {
     display: flex;
     justify-content: space-between;
     height: $header-height;
-    background-color: $body-background-color;
+    // background-color: $body-background-color;
+    background-color: rgba(255, 255, 255, 0);
     border-bottom: $border $border-color;
   }
 
@@ -123,6 +127,19 @@
   @include mq(md) {
     padding-top: $sp-2;
     padding-bottom: $sp-2;
+  }
+
+  .logo{
+    height: 30px;
+    margin: auto;
+    margin-right: 0;
+  }
+
+  .title{
+    font-size: 20px;
+    margin: auto;
+    margin-left:8px;
+    color: #7d7d7d;
   }
 }
 
