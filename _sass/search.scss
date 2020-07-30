@@ -48,7 +48,8 @@
   padding-bottom: $sp-2;
   padding-left: #{$gutter-spacing-sm + $sp-5};
   font-size: 16px;
-  background-color: $search-background-color;
+  // background-color: $search-background-color;
+  background-color: rgba(255, 255, 255, 0);
   border-top: 0;
   border-right: 0;
   border-bottom: 0;
@@ -60,7 +61,8 @@
     padding-bottom: $gutter-spacing-sm;
     padding-left: #{$gutter-spacing + $sp-5};
     font-size: 14px;
-    background-color: $body-background-color;
+    // background-color: $body-background-color;
+    background-color: rgba(255, 255, 255, 0);
     transition: padding-left linear #{$transition-duration / 2};
   }
 
@@ -319,5 +321,6 @@
     @include mq(md) {
       padding-top: 0;
     }
+    background-color: rgba(255, 255, 255, 0);
   }
 }
