@@ -1,10 +1,10 @@
 ---
 layout: default
-title:          "android"
+title:          "SDK-Android"
 lead:           ""
 description:    ""
 keywords:       "dmp"
-permalink:       /zh-tw/android/dmp/
+permalink:       /android
 lang:           "zh-tw"
 ---
 

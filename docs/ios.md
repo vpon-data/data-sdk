@@ -1,10 +1,10 @@
 ---
 layout: default
-title: "iOS"
+title: "SDK-iOS"
 lead: ""
 description: ""
 keywords: "dmp"
-permalink: /zh-tw/ios/dmp/
+permalink: /ios
 lang: "zh-tw"
 ---
 
