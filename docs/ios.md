@@ -3,7 +3,7 @@ layout: default
 title: "SDK-iOS"
 lead: ""
 description: ""
-keywords: "dmp"
+keywords: "datasdk"
 permalink: /ios
 lang: "zh-tw"
 ---
