@@ -8,7 +8,7 @@ permalink:       /permission
 lang:           "en"
 ---
 
-**Permission**
+# Permission
 
 Vpon Data SDK requires very limited permissions from App users. Based on the collected data type, all we need are geolocation and network permissions. 
 
