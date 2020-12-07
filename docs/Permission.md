@@ -12,7 +12,7 @@ lang:           "en"
 
 Vpon Data SDK requires very limited permissions from App users. Based on the collected data type, all we need are geolocation and network permissions. 
 
-![](/docs/images/Permission.png)
+![](/docs/images/permission.png)
 
 The details are shown as follows:
 
@@ -30,7 +30,7 @@ The details are shown as follows:
 * geolocation:
   * Need Location Authority
   * Add LocationUsageDescription: 
-    +NSLocationAlwaysAndWhenInUseUsageDescription,
+    +NSLocationAlwaysAndWhenInUseUsageDescription
     +NSLocationUsageDescription
     +NSLocationWhenInUseUsageDescription
 * network:
@@ -39,4 +39,3 @@ The details are shown as follows:
     +NSLocationUsageDescription
     +NSLocationWhenInUseUsageDescription
   * Enable "Access WiFi Information" in ProjectSetting on iOS 12 and later versions"
-
