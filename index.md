@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Vpon DMP SDK
+title: Vpon  SDK
 nav_order: 99
 ---
 
