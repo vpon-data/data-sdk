@@ -9,6 +9,7 @@ lang:           "zh-tw"
 ---
 
 **Introduction**
+
 Vpon Data Software Development Kit(Data SDK) is a light data collection toolkit to help you understand your App user's behaviors and insights.
 
 With Data SDK integration into your App, your users' data with the authorization will send to Vpon. You can see your user's insights and explore more business opportunities via dashboards and other services. 
