@@ -3,7 +3,7 @@ layout: default
 title:          "Data SDK"
 lead:           ""
 description:    ""
-keywords:       "dmp"
+keywords:       "datasdk"
 permalink:      /
 lang:           "zh-tw"
 ---
