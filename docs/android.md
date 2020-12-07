@@ -3,7 +3,7 @@ layout: default
 title:          "SDK-Android"
 lead:           ""
 description:    ""
-keywords:       "dmp"
+keywords:       "datasdk"
 permalink:       /android
 lang:           "zh-tw"
 ---
