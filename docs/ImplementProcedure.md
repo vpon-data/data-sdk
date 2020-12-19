@@ -16,4 +16,4 @@ lang:           "en"
 3. Submit your App to Marketplaces (Apple Store or Google Play) and notify Vpon Contact when your App is available on marketplaces
 4. Start to collect and explore your App users’ data
 
-Vpon Contact: datasdk.support@vpon.com
+Vpon Contact: <a href="mailto: datasdk.support@vpon.com">datasdk.support@vpon.com</a>
