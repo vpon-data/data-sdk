@@ -12,4 +12,4 @@ lang:           "en"
 ---
 
 Please refer to Privacy Policy of Vpon Official Website.
-https://www.vpon.com/en/privacy-policy/
+[https://www.vpon.com/en/privacy-policy](https://www.vpon.com/en/privacy-policy)
