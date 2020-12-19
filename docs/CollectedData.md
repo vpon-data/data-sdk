@@ -10,7 +10,7 @@ lang:           "en"
 
 # Collected Data
 ---
-Data SDK collects 5 types of behavioral data, Permission, Device, Geolocation, Wi-Fi, and App related information, automatically. Besides, there are still some other optional data types you can collect if your App fits the requirements. Please contact datasdk.support@vpon.com for further supports.
+Data SDK collects 5 types of behavioral data, Permission, Device, Geolocation, Wi-Fi, and App related information, automatically. Besides, there are still some other optional data types you can collect if your App fits the requirements. Please contact <a href="mailto: datasdk.support@vpon.com">datasdk.support@vpon.com</a> for further supports.
 
 
 | Data Category | Data Field          | Description and Permission                                                     | Application                                                                                                                                                          |
