@@ -16,7 +16,7 @@
 title: Vpon - Data SDK 
 description: Data SDK
 baseurl: "/" # the subpath of your site, e.g. /blog
-url: "http://vpon-data.github.io/data-sdk/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://vpon-data.github.io/data-sdk" # the base hostname & protocol for your site, e.g. http://example.com
 
 permalink: pretty
 exclude: ["node_modules/", "*.gemspec", "*.gem", "Gemfile", "Gemfile.lock", "package.json", "package-lock.json",  "script/", "LICENSE.txt", "lib/", "bin/", "README.md", "Rakefile"]
