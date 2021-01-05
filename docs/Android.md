@@ -153,8 +153,7 @@ public void onClick(View v) {
 
 # Sample Code
 ---
-如果您想看到完整的串接實例，請參考我們的 [Sample Code](https://github.com/vpon-sdk/Vpon-Android-Analytics)
-
+如果您想看到完整的串接實例，請參考我們的 <a href="https://github.com/vpon-sdk/Vpon-Android-Analytics" target="_blank">Sample Code</a>
 
 # Download
 ---

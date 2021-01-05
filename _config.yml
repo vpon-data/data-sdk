@@ -70,10 +70,10 @@ nav_sort: case_insensitive # default, equivalent to nil
 # appears at the bottom of every page's main content
 
 # Back to top link
-back_to_top: true
-back_to_top_text: "Back to top"
+# back_to_top: true
+# back_to_top_text: "Back to top"
 
-footer_content: "Copyright &copy; 2020 Vpon Data team.</a>"
+footer_content: "Copyright &copy; Vpon Data team.</a>"
 
 # Footer last edited timestamp
 last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
@@ -93,8 +93,8 @@ color_scheme: vpon
 
 # Google Analytics Tracking (optional)
 # e.g, UA-1234567-89
-ga_tracking: UA-2709176-xx
-ga_tracking_anonymize_ip: true # Use GDPR compliant Google Analytics settings (true/nil by default)
+# ga_tracking: UA-2709176-xx
+# ga_tracking_anonymize_ip: true # Use GDPR compliant Google Analytics settings (true/nil by default)
 
 plugins:
   - jekyll-seo-tag
