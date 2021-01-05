@@ -168,4 +168,4 @@ public void onClick(View v) {
 關於 VDA SDK 的更新記錄，請參考 [VDA SDK Change Log]({{ site.baseurl }}/zh-tw/android/dmp/changelog)
 
 
-[1]: {{site.dnldurl}}/vpon-data-sdk-v200-release.aar
+[1]: {{site.dnldurl}}/assets/download/vpon-data-sdk-v200-release.aar

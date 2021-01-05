@@ -130,4 +130,4 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 關於 VDA SDK 的更新記錄，請參考 [VDA SDK Change Log]({{ site.baseurl }}/zh-tw/ios/dmp/changelog)
 
 
-[1]: {{site.dnldurl}}/i-vda-20201225-9fd4af0-v2.0.0.tar.gz
+[1]: {{site.dnldurl}}/assets/download/i-vda-20201225-9fd4af0-v2.0.0.tar.gz
