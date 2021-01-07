@@ -5,19 +5,22 @@ lead:           ""
 description:    ""
 keywords:       "datasdk"
 permalink:       /android
-lang:           "zh-tw"
+lang:           "en"
 ---
 
-# 串接準備
+# Prerequisites
 ---
-VDA SDK 目前最低支援以下版本的作業系統，在開始串接 Vpon SDK 前，請確保您的 App 符合以下條件：
+VDA SDK support:
 
-* Android：`Android 5.0 以上`
+* Android：`Android 5.0 or later`
 
-### 匯入 VDA SDK
-請先[下載 VDA SDK][1]，並將 SDK 加到您的 Android Studio 專案中。
+Before you start to integrate Vpon SDK, make sure your app is compatible.
 
-再到 App 層級下的 build.gradle，將 dependencies 的部份修改如下：
+
+### Import SDK
+You can [download VDA SDK here][1] and import the SDK file into your Android Studio project.
+
+Open build.gradle in App-level, modify dependencies as below:
 
 ```xml
 dependencies {
@@ -32,9 +35,9 @@ dependencies {
 ```
 
 ### Permission
-請在您的 `AndroidManifest.xml` 中加入所需的 Permissions。
+Please add the Permissions below in your `AndroidManifest.xml`
 
-以下為必須加入的 Permissions：
+(Required) Please add below premissions for DMP SDK:
 
 ```xml
 <!-- Required permissions -->
@@ -44,7 +47,7 @@ dependencies {
 <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
 ```
 
-請依據資料收集及分析的目標，選擇性加入以下 Permissions：
+(Optional) Please add below permissions for additional data collection and analysis:
 
 ```xml
 <!-- Optional permissions -->
@@ -54,9 +57,9 @@ dependencies {
 ```
 
 
-# 開始串接 VDA SDK
+# Start To Implement VDA SDK
 ---
-請參考以下說明，完成 Vpom DMP SDK 串接。
+Please follow the steps below to integrate VDA SDK in your application.
 
 ### Import VDA SDK
 
@@ -64,7 +67,7 @@ dependencies {
 import com.vpon.sdk.VpdataAnalytics;
 ```
 
-### 宣告 VpadnAnalytics 物件，並指定 License Key 與 Custom Id
+### Declare VpadnAnalytics and Indicate A License Key and Custom ID
 
 ```java
 public class MainActivity extends Activity {
@@ -107,42 +110,43 @@ public class MainActivity extends Activity {
 
 ```
 
-> **Note**：在 App 發佈前，請務必將 vpdataAnalytics.setDebugMode(true); 改為 `false`
+> **Note**：Set vpdataAnalytics.setDebugMode(true); as `false` before you launch the App.
 
 
-### 回傳資料
-VDA SDK 提供以下回傳資料的方法：
 
+### Send Message
+VDA SDK provide below method to send messages as below:
 
 #### tracker.sendEvent()
-根據使用者行為觸發回傳資料的事件，請參考以下範例，建立物件儲存商品名稱 ("name", 您要回傳的參數) 等資料，在 onClick() 事件後觸發：
+tracker.sendEvent() can be used when a specific event be triggered. Please refer to the sample code below to send a message when onClick() event be triggered:
 
 ```java
 public void onClick(View v) {
 	JSONObject payloadJsonObj = new JSONObject();
 	try {
 		payloadJsonObj.put("id", "payloadJsonObj");
-		payloadJsonObj.put("name", "V領布蕾絲拼接針織外套");
+		payloadJsonObj.put("name", "Coat");
 		payloadJsonObj.put("price", 100);
-		payloadJsonObj.put("color", "牛藍");
+		payloadJsonObj.put("color", "Blue");
 		payloadJsonObj.put("size", "XL");
-		payloadJsonObj.put("tags", "OrangeBear,上衣類,針織衫,人造絲纖維");
+		payloadJsonObj.put("tags", "OrangeBear,fiber");
 		payloadJsonObj.put("currency", "NTD");
 		} catch (JSONException e) {
 		e.printStackTrace();
 	        }
 	tracker.sendEvent("item_view", payloadJsonObj);
+        }
 }
 ```
 
-此外，tracker.sendEvent() 也可以回傳 App 使用者當下的頁面。您可以先建立一個物件，儲存使用者當下以及前一個頁面，請參考以下範例：
+Besides, you can also save the message about the page that user view currently in an object and use tracker.sendEvent() to send the message:
 
 ```java
 public void onClick(View v) {
 	JSONObject payloadJsonObj = new JSONObject();
 	try {
-		payloadJsonObj.put("pervious", "前一頁面網址");
-		payloadJsonObj.put("current", "當前頁面網址");
+		payloadJsonObj.put("pervious", "URL of Last Page");
+		payloadJsonObj.put("current", "URL of Current Page");
 	} catch (JSONException e) {
 		e.printStackTrace();
 	}
@@ -152,8 +156,7 @@ public void onClick(View v) {
 
 
 # Sample Code
----
-如果您想看到完整的串接實例，請參考我們的 <a href="https://github.com/vpon-sdk/Vpon-Android-Analytics" target="_blank">Sample Code</a>
+Please refer to our [Sample Code](https://github.com/vpon-sdk/Vpon-Android-Analytics) for a complete integration sample.
 
 # Download
 ---
@@ -162,5 +165,8 @@ public void onClick(View v) {
 |:-------:|
 |[Download][1]|
 
+# Change Log
+---
+For VDA SDK change Log, please refer to [VDA SDK Change Log]({{ site.baseurl }}/android/dmp/changelog)
 
 [1]: assets/download/vpon-data-sdk-v200-release.aar

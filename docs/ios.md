@@ -5,24 +5,25 @@ lead: ""
 description: ""
 keywords: "datasdk"
 permalink: /ios
-lang: "zh-tw"
+lang: "en"
 ---
 
-# 串接準備
+# Prerequisites
+--- 
+
+## System requirement
+Deployment target 10.0 above.
+
+## Import SDK
+[Download VDA SDK here][1] and add the .framework file into your Project.
+
+# Start To Implement VDA SDK
 ---
-
-## 系統版本需求
-Deployment target 10.0 以上
-
-## 匯入 VDA SDK 
-請先[下載 VDA SDK][1]，將 .framework 檔放入您的 Project 中。
-
-# 開始串接 VDA SDK
----
+Please follow the steps below to integrate VDA SDK in your application.
 
 ## Import VDA SDK
 
-請在每個要加入 Vpon Analytics 的頁面中 import VpadnAnalytics.h
+Please import VpadnAnalytics.h in every page that will integrate with Vpon Analytics.
 
 ```objc
 #import "VpadnAnalytics.h";
@@ -30,7 +31,7 @@ Deployment target 10.0 以上
 
 ## VDA SDK Initialization
 
-請參考以下指示初始化 VDA SDK
+Please follow the tips below to initialize VDA SDK in the AppDelegae.h
 
 ### Objective-c
 
@@ -60,12 +61,13 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ```
 
 
-# 回傳資料
-VDA SDK 提供以下回傳資料的方法：
+# Send Message
+---
+VDA SDK provide below method to send messages:
 
 
 ## send()
-當您需要向 Vpon 發送事件時，使用 send()，並可以透過 extraData 來傳送 payload 給 Vpon：
+Call send() and add payload with extraData if necessary when you trying to send data to Vpon.
 
 
 ### Objective-c
@@ -114,9 +116,9 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
+
 # Sample Code
----
-如果您想看到完整的串接實例，請參考我們的 <a href="https://github.com/vpon-sdk/Vpon-iOS-Analytics" target="_blank">Sample Code</a>
+Please refer to our [Sample Code](https://github.com/vpon-sdk/Vpon-iOS-Analytics) for a complete integration sample.
 
 # Download
 ---
@@ -124,5 +126,9 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 |VDA 2.0.0|
 |:-------:|
 |[Download][1]|
+
+# Change Log
+---
+For VDA SDK change Log, please refer to [VDA SDK Change Log]({{ site.baseurl }}/ios/dmp/changelog)
 
 [1]: assets/download/i-vda-20201225-9fd4af0-v2.0.0.tar.gz
