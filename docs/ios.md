@@ -127,8 +127,5 @@ Please refer to our [Sample Code](https://github.com/vpon-sdk/Vpon-iOS-Analytics
 |:-------:|
 |[Download][1]|
 
-# Change Log
----
-For VDA SDK change Log, please refer to [VDA SDK Change Log]({{ site.baseurl }}/ios/dmp/changelog)
 
 [1]: assets/download/i-vda-20201225-9fd4af0-v2.0.0.tar.gz

@@ -165,8 +165,5 @@ Please refer to our [Sample Code](https://github.com/vpon-sdk/Vpon-Android-Analy
 |:-------:|
 |[Download][1]|
 
-# Change Log
----
-For VDA SDK change Log, please refer to [VDA SDK Change Log]({{ site.baseurl }}/android/dmp/changelog)
 
 [1]: assets/download/vpon-data-sdk-v200-release.aar
