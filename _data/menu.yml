@@ -1,13 +1,11 @@
 menu:
-  - title: '' 
-    subfolderitems:
-      - page: Overview
-        url: /
-      - page: Data Privacy
-        url: /data_privacy
-      - page: Implement Procedure
-        url: /implement_procedure
-  - title: Implementation Guide
+  - page: 'Overview' 
+    url: /
+  - page: Data Privacy
+    url: /data_privacy
+  - page: Implement Procedure
+    url: /implement_procedure
+  - page: Implementation Guide
     subfolderitems:
       - page: iOS SDK
         url: /ios
