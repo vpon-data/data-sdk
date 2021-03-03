@@ -56,7 +56,7 @@ Please add the Permissions below in your `AndroidManifest.xml`
 <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 ```
 
-### Import Data SDK
+## Import Data SDK
 
 ```java
 import com.vpon.sdk.VpdataAnalytics;
@@ -104,7 +104,7 @@ public class MainActivity extends Activity {
 
 
 
-### Send Data
+## Send Data
 Data SDK provides methods to send data in different scenarios:
 
 #### tracker.sendEvent()
@@ -146,7 +146,7 @@ public void onClick(View v) {
 ```
 
 
-# Debug Mode
+## Debug Mode
 When you initilize Data SDK, you can enable debug mode with vpdataAnalytics.setDebugMode(true).
 
 
@@ -162,10 +162,10 @@ vpdataAnalytics.initialize(this, licenseKey, customerId);
 ```
 > **Note**：Set vpdataAnalytics.setDebugMode(false) before the App is launched.
 
-# Sample Code
+## Sample Code
 Please refer to our [Sample Code](https://github.com/vpon-sdk/Vpon-Android-Analytics) for a complete integration sample.
 
-# Download
+## Download
 
 |Data SDK 2.0.0|
 |:-------:|
