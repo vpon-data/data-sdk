@@ -15,7 +15,7 @@ Data SDK support version:
 * Android：`Android 5.0 or later`
 
 
-### Import SDK
+### Prepare for SDK import
 You can [download Data SDK here][1] and import the file into your Android Studio project.
 
 Open build.gradle in App-level, modify dependencies as below:
