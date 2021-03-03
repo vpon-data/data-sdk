@@ -8,7 +8,9 @@ permalink:       /android
 lang:           "en"
 ---
 
-# Prerequisites
+# Android SDK
+
+### Prerequisites
 ---
 Data SDK support version:
 
