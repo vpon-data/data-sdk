@@ -103,8 +103,10 @@ tracker.send(builder)
 
 # Debug Mode
 ---
-When you initilize Data SDK, you can enable debug mode with config setDebugMode:Yes/config.setDebugMode(true). 
+When you initilize Data SDK, you can enable debug mode with setDebugMode:Yes / setDebugMode(true). 
 
+
+### Objective-C
 
 ```objc
 #import <VponDataAnalytics/VponDataAnalytics.h>
