@@ -1,0 +1,19 @@
+menu:
+  - title: 'Data SDK' 
+    subfolderitems:
+      - page: Introduction
+        url: /
+      - page: Privacy
+        url: /privacy
+      - page: Implement Procedure
+        url: /implement_procedure
+  - title: Implementation Guide
+    subfolderitems:
+      - page: iOS SDK
+        url: /ios
+      - page: Android SDK
+        url: /android
+      - page: Permission
+        url: /permission
+      - page: Debug Interface
+        url: /debug_interface
