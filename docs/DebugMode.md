@@ -1,18 +1,18 @@
 ---
 layout: default
-title:          "Debug Interface"
+title:          "Debug Mode"
 lead:           ""
 description:    ""
 keywords:       "datasdk"
-permalink:       /debug_interface
+permalink:       /debug_mode
 lang:           "en"
 ---
 
-# Debug Interface
+# Debug Mode
 ---
-Debug Interface provides a check mechanism to help App publishers understand the integration status. When Vpon Data SDK is integrated with SDK debug_mode enabled, App publishers can see the checking messages on the developer console.
+Debug Mode provides a check mechanism to help App publishers understand the integration status. When Vpon Data SDK is integrated with SDK debug_mode enabled, App publishers can see the checking messages on the developer console.
 
-Debug Interface checks SDK integration in 3-steps: ***SDK Initialization***, ***SDK Info Collection***, and ***Endpoint Connection***.
+Debug Mode checks SDK integration in 3-steps: ***SDK Initialization***, ***SDK Info Collection***, and ***Endpoint Connection***.
 
 When start running App, ***SDK Initialization*** step will check SDK initialization status and display the device basic information in the developer console shown as follows.
 ```
@@ -51,6 +51,6 @@ These error messages indicate that License key is invalid, which remind App publ
 ```
 These above error messages indicate that the device is not connected to network or the network is not stable. 
 
-If some errors keep unsolved, App publishers can collect all the messages with [VponData] header in developer console, and then send the messages to Vpon Contact: <a href="mailto: datasdk.support@vpon.com">datasdk.support@vpon.com</a> for further supports.
+If some errors keep unsolved, App publishers can collect all the messages that start with [VponData] in developer console, and then send the messages to Vpon Contact: <a href="mailto: datasdk.support@vpon.com">datasdk.support@vpon.com</a> for further supports.
 
 ***Reminder: If everything goes well, App publishers have to disable debug_mode manually before submitting App to marketplaces.***
