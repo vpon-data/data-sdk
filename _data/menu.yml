@@ -3,8 +3,8 @@ menu:
     subfolderitems:
       - page: Introduction
         url: /
-      - page: Privacy
-        url: /privacy
+      - page: Data Privacy
+        url: /data_privacy
       - page: Implement Procedure
         url: /implement_procedure
   - title: Implementation Guide

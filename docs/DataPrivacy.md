@@ -1,11 +1,12 @@
 ---
 layout: default
-title:          "Data Privacy"
+title:          Data Privacy
 lead:           ""
 description:    ""
 keywords:       "datasdk"
 permalink:       /data_privacy
 lang:           "en"
+nav_order: 2
 ---
 
 # Data Privacy
