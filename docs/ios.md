@@ -11,8 +11,10 @@ lang: "en"
 # Prerequisites
 --- 
 
-## System requirement
-Deployment target 10.0 above.
+Data SDK support:
+
+* iOS：`iOS 10.0 or later`
+
 
 ## Import SDK
 [Download VDA SDK here][1] and add the .framework file into your Project.
