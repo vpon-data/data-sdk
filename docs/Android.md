@@ -9,9 +9,9 @@ lang:           "en"
 ---
 
 # Android SDK
+---
 
 ### Prerequisites
----
 Data SDK support version:
 
 * Android：`Android 5.0 or later`
@@ -55,11 +55,6 @@ Please add the Permissions below in your `AndroidManifest.xml`
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 ```
-
-
-# Start To Implement Data SDK
----
-Please follow the steps to integrate Data SDK.
 
 ### Import Data SDK
 
@@ -109,7 +104,6 @@ public class MainActivity extends Activity {
 
 
 
-
 ### Send Data
 Data SDK provides methods to send data in different scenarios:
 
@@ -153,7 +147,6 @@ public void onClick(View v) {
 
 
 # Debug Mode
----
 When you initilize Data SDK, you can enable debug mode with vpdataAnalytics.setDebugMode(true).
 
 
@@ -173,7 +166,6 @@ vpdataAnalytics.initialize(this, licenseKey, customerId);
 Please refer to our [Sample Code](https://github.com/vpon-sdk/Vpon-Android-Analytics) for a complete integration sample.
 
 # Download
----
 
 |Data SDK 2.0.0|
 |:-------:|
