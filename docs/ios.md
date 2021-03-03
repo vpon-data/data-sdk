@@ -9,10 +9,9 @@ lang: "en"
 ---
 
 # iOS SDK
+---
 
-
-### Prerequisites
---- 
+## Prerequisites
 
 Data SDK support:
 
@@ -24,9 +23,6 @@ You can [Download Data SDK here][1] and add the .framework file into your Projec
 
 Please be noted that Vpon supports both Objective-C and Swift languages.
 
-# Start To Implement Data SDK
----
-Please follow the steps to integrate Data SDK. 
 
 ## Import Data SDK
 
@@ -76,7 +72,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ```
 
 
-# Send Data
+## Send Data
 ---
 Data SDK provides below method to send data.
 
@@ -104,7 +100,7 @@ let builder = VDABuilder.createEventWithEventName("login", extraData: ["key": "v
 tracker.send(builder)
 ```
 
-# Debug Mode
+## Debug Mode
 ---
 When you initilize Data SDK, you can enable debug mode with setDebugMode:Yes / setDebugMode(true). 
 
@@ -138,10 +134,10 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 > **Note**：Set vpdataAnalytics.setDebugMode(false) before the App is launched.
 
-# Sample Code
+## Sample Code
 Please refer to [Sample Code](https://github.com/vpon-sdk/Vpon-iOS-Analytics) for a complete integration sample.
 
-# Download
+## Download
 ---
 
 |Data SDK 2.0.0|
