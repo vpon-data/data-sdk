@@ -45,7 +45,7 @@ Please add the Permissions below in your `AndroidManifest.xml`
 <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
 ```
 
-(Optional) Please add below permissions for additional data collection and analysis:
+(Optional) Please add below permissions for Data SDK for advanced data analysis and data activation:
 
 ```xml
 <!-- Optional permissions -->
@@ -55,17 +55,17 @@ Please add the Permissions below in your `AndroidManifest.xml`
 ```
 
 
-# Start To Implement VDA SDK
+# Start To Implement Data SDK
 ---
-Please follow the steps below to integrate VDA SDK in your application.
+Please follow the steps to integrate VDA SDK in your application.
 
-### Import VDA SDK
+### Import Data SDK
 
 ```java
 import com.vpon.sdk.VpdataAnalytics;
 ```
 
-### Declare VpdataAnalytics and Indicate A License Key and Custom ID
+### Declare VpdataAnalytics and Indicate License Key and Custom ID
 
 ```java
 public class MainActivity extends Activity {
@@ -109,11 +109,12 @@ public class MainActivity extends Activity {
 
 
 
-### Send Message
-VDA SDK provide below method to send messages as below:
+### Send Data
+Data SDK provides flexible method to send data in different scenarios:
 
 #### tracker.sendEvent()
-tracker.sendEvent() can be used when a specific event be triggered. Please refer to the sample code below to send a message when onClick() event be triggered:
+tracker.sendEvent() can be used when a specific event is triggered. 
+By including the tracker.sendEvent(), you can define a custom event that collects specific data. For example, you can define a onClick() event when a user clicks a item. Please refer to the sample code below:
 
 ```java
 public void onClick(View v) {
@@ -134,7 +135,7 @@ public void onClick(View v) {
 }
 ```
 
-Besides, you can also save the message about the page that user view currently in an object and use tracker.sendEvent() to send the message:
+Another example is that you want to collect the URL accessed by a user. Using tracker.sendEvent(), you can define another onClick() event to collect the data of previous URL and current URL accessed by a user.
 
 ```java
 public void onClick(View v) {
