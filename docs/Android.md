@@ -10,15 +10,13 @@ lang:           "en"
 
 # Prerequisites
 ---
-VDA SDK support:
+Data SDK support version:
 
 * Android：`Android 5.0 or later`
 
-Before you start to integrate Vpon SDK, make sure your app is compatible.
-
 
 ### Import SDK
-You can [download VDA SDK here][1] and import the SDK file into your Android Studio project.
+You can [download Data SDK here][1] and import the file into your Android Studio project.
 
 Open build.gradle in App-level, modify dependencies as below:
 
