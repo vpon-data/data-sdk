@@ -16,16 +16,18 @@ Data SDK support:
 * iOS：`iOS 10.0 or later`
 
 
-## Import SDK
-[Download VDA SDK here][1] and add the .framework file into your Project.
+### Prepare for Data SDK import
+You can [Download Data SDK here][1] and add the .framework file into your Project.
 
-# Start To Implement VDA SDK
+Please be noted that Vpon support both Objective-C and Swift languages.
+
+# Start To Implement Data SDK
 ---
-Please follow the steps below to integrate VDA SDK in your application.
+Please follow the steps to integrate Data SDK. 
 
-## Import VDA SDK
+## Import Data SDK
 
-Please import VponDataAnalytics in every page that will integrate with Vpon Analytics.
+Please import VponDataAnalytics in the files expected to be integrated with Data SDK.
 
 ### Objective-C
 
@@ -39,9 +41,9 @@ Please import VponDataAnalytics in every page that will integrate with Vpon Anal
 import VponDataAnalytics
 ```
 
-## VDA SDK Initialization
+## Data SDK Initialization
 
-Please follow the tips below to initialize VDA SDK in the AppDelegae.h
+Please follow the instructions to initialize Data SDK in the AppDelegae.h
 
 ### Objective-C
 
@@ -71,13 +73,15 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ```
 
 
-# Send Message
+# Send Data
 ---
-VDA SDK provide below method to send messages:
+Data SDK provides the method to send data.
 
 
 ## send()
-Call send() and add payload with extraData if necessary when you trying to send data to Vpon.
+Call send(). 
+
+NOTE: extraData is optional. If you want to collect data when a specific event is triggered, please call send() and use extraData to collect that data.
 
 
 ### Objective-C
@@ -91,17 +95,16 @@ VDABuilder *builder = [VDABuilder createEventWithEventName:@"login" extraData:@{
 
 ### Swift
 
-```swift
+```swift
 let tracker = VDATracker()
 let builder = VDABuilder.createEventWithEventName("login", extraData: ["key": "value"])
 tracker.send(builder)
-
 ```
-
 
 # Debug Mode
 ---
-Config debug mode with setDebugMode when initilizing VDA SDK to enable or disable debug log when you implement the SDK.
+***You can config debug mode with setDebugMode when you implement and initilize Data SDK. 
+When initilizing Data SDK to enable or disable debug log when you implement Data SDK.
 
 
 ```objc
@@ -129,12 +132,12 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ```
 
 # Sample Code
-Please refer to our [Sample Code](https://github.com/vpon-sdk/Vpon-iOS-Analytics) for a complete integration sample.
+Please refer to [Sample Code](https://github.com/vpon-sdk/Vpon-iOS-Analytics) for a complete integration sample.
 
 # Download
 ---
 
-|VDA 2.0.0|
+|Data SDK 2.0.0|
 |:-------:|
 |[Download][1]|
 
