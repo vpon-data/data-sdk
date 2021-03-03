@@ -73,7 +73,6 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 
 ## Send Data
----
 Data SDK provides below method to send data.
 
 
@@ -101,7 +100,6 @@ tracker.send(builder)
 ```
 
 ## Debug Mode
----
 When you initilize Data SDK, you can enable debug mode with setDebugMode:Yes / setDebugMode(true). 
 
 
@@ -138,7 +136,6 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 Please refer to [Sample Code](https://github.com/vpon-sdk/Vpon-iOS-Analytics) for a complete integration sample.
 
 ## Download
----
 
 |Data SDK 2.0.0|
 |:-------:|
