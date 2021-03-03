@@ -15,5 +15,5 @@ menu:
         url: /android
       - page: Permission
         url: /permission
-      - page: Debug Interface
-        url: /debug_interface
+      - page: Debug Mode
+        url: /debug_mode
