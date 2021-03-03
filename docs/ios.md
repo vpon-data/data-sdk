@@ -73,11 +73,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 
 ## Send Data
-Data SDK provides below method to send data.
-
-
-## send()
-Call send(). 
+Please follow the instructions to send data.
 
 NOTE: extraData is optional. If you want to collect data when a specific event is triggered, please call send() and use extraData to collect that data.
 
