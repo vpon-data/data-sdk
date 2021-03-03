@@ -15,7 +15,7 @@ Data SDK support version:
 * Android：`Android 5.0 or later`
 
 
-### Prepare for SDK import
+### Prepare for Data SDK import
 You can [download Data SDK here][1] and import the file into your Android Studio project.
 
 Open build.gradle in App-level, modify dependencies as below:
@@ -35,7 +35,7 @@ dependencies {
 ### Permission
 Please add the Permissions below in your `AndroidManifest.xml`
 
-(Required) Please add below premissions for Data SDK:
+(Required) Please add below premissions for basic data collection:
 
 ```xml
 <!-- Required permissions -->
@@ -45,7 +45,7 @@ Please add the Permissions below in your `AndroidManifest.xml`
 <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
 ```
 
-(Optional) Please add below permissions for Data SDK for advanced data analysis and data activation:
+(Optional) Please add below permissions for advanced data collection and data analysis:
 
 ```xml
 <!-- Optional permissions -->
@@ -57,7 +57,7 @@ Please add the Permissions below in your `AndroidManifest.xml`
 
 # Start To Implement Data SDK
 ---
-Please follow the steps to integrate VDA SDK in your application.
+Please follow the steps to integrate Data SDK.
 
 ### Import Data SDK
 
@@ -94,7 +94,7 @@ public class MainActivity extends Activity {
 
         // Set true to enable debug mode, set false before app release
         // Set up before vpdataAnalytics.initialize
-        vpdataAnalytics.setDebugMode(true);
+        vpdataAnalytics.setDebugMode(false);
 
         vpdataAnalytics.initialize(this, licenseKey, customerId);
 
@@ -105,16 +105,15 @@ public class MainActivity extends Activity {
 
 ```
 
-> **Note**：Set vpdataAnalytics.setDebugMode(true); as `false` before you launch the App.
 
 
 
 ### Send Data
-Data SDK provides flexible method to send data in different scenarios:
+Data SDK provides methods to send data in different scenarios:
 
 #### tracker.sendEvent()
 tracker.sendEvent() can be used when a specific event is triggered. 
-By including the tracker.sendEvent(), you can define a custom event that collects specific data. For example, you can define a onClick() event when a user clicks a item. Please refer to the sample code below:
+By using the tracker.sendEvent(), you can define a custom event that collects specific data. For example, you can define a onClick() event when a user clicks a item. Please refer to the sample code below:
 
 ```java
 public void onClick(View v) {
@@ -153,7 +152,7 @@ public void onClick(View v) {
 
 # Debug Mode
 ---
-Config debug mode with setDebugMode when initilizing VDA SDK to enable or disable debug log when you implement the SDK.
+When you initilize Data SDK, you can enable debug mode with vpdataAnalytics.setDebugMode(true).
 
 
 ```java
@@ -166,6 +165,7 @@ vpdataAnalytics.setDebugMode(true);
 
 vpdataAnalytics.initialize(this, licenseKey, customerId);
 ```
+> **Note**：Set vpdataAnalytics.setDebugMode(false) before the App is launched.
 
 # Sample Code
 Please refer to our [Sample Code](https://github.com/vpon-sdk/Vpon-Android-Analytics) for a complete integration sample.
@@ -173,7 +173,7 @@ Please refer to our [Sample Code](https://github.com/vpon-sdk/Vpon-Android-Analy
 # Download
 ---
 
-|VDA 2.0.0|
+|Data SDK 2.0.0|
 |:-------:|
 |[Download][1]|
 
