@@ -103,8 +103,7 @@ tracker.send(builder)
 
 # Debug Mode
 ---
-***You can config debug mode with setDebugMode when you implement and initilize Data SDK. 
-When initilizing Data SDK to enable or disable debug log when you implement Data SDK.
+You need to config debug mode with setDebugMode when you initilize Data SDK. 
 
 
 ```objc
