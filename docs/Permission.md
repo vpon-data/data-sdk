@@ -14,7 +14,6 @@ lang:           "en"
 Vpon Data SDK requires very limited permissions from App users. 
 
 The basic requirements are Network and Wi-Fi permissions to enable data collection in devices.  
-
 Geolocation permission is optional according to your App type.
 
 ![](/docs/images/permission.png)
