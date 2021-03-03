@@ -103,9 +103,8 @@ tracker.send(builder)
 
 # Debug Mode
 ---
-You need to config debug mode with setDebugMode when you initilize Data SDK. 
+When you initilize Data SDK, you can enable debug mode with config setDebugMode:Yes/config.setDebugMode(true). 
 
-Please disable debug mode manually before you launch the App to App Store.
 
 ```objc
 #import <VponDataAnalytics/VponDataAnalytics.h>
@@ -117,6 +116,7 @@ Please disable debug mode manually before you launch the App to App Store.
     ...
 }
 ```
+
 
 ### Swift
 
@@ -130,6 +130,8 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
         ...
 }
 ```
+
+> **Note**：Set vpdataAnalytics.setDebugMode(false) before the App is launched.
 
 # Sample Code
 Please refer to [Sample Code](https://github.com/vpon-sdk/Vpon-iOS-Analytics) for a complete integration sample.
