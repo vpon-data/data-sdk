@@ -6,7 +6,6 @@ description:    ""
 keywords:       "datasdk"
 permalink:       /data_privacy
 lang:           "en"
-nav_order: 2
 ---
 
 # Data Privacy
