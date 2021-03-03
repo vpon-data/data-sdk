@@ -91,11 +91,13 @@ VDABuilder *builder = [VDABuilder createEventWithEventName:@"login" extraData:@{
 
 ### Swift
 
-```swift
+```swift
 let tracker = VDATracker()
 let builder = VDABuilder.createEventWithEventName("login", extraData: ["key": "value"])
 tracker.send(builder)
+
 ```
+
 
 # Debug Mode
 ---
