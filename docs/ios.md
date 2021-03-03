@@ -19,7 +19,7 @@ Data SDK support:
 ### Prepare for Data SDK import
 You can [Download Data SDK here][1] and add the .framework file into your Project.
 
-Please be noted that Vpon support both Objective-C and Swift languages.
+Please be noted that Vpon supports both Objective-C and Swift languages.
 
 # Start To Implement Data SDK
 ---
@@ -75,7 +75,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 # Send Data
 ---
-Data SDK provides the method to send data.
+Data SDK provides below method to send data.
 
 
 ## send()
