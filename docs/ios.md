@@ -105,6 +105,7 @@ tracker.send(builder)
 ---
 You need to config debug mode with setDebugMode when you initilize Data SDK. 
 
+Please disable debug mode manually before you launch the App to App Store.
 
 ```objc
 #import <VponDataAnalytics/VponDataAnalytics.h>
@@ -112,7 +113,7 @@ You need to config debug mode with setDebugMode when you initilize Data SDK.
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     VDAConfiguration *config = [VDAConfiguration sharedInstance];
     ...
-    [config setDebugMode:NO];
+    [config setDebugMode:Yes];
     ...
 }
 ```
@@ -125,7 +126,7 @@ import VponDataAnalytics
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions:      
     [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         ...
-        config.setDebugMode(false)
+        config.setDebugMode(true)
         ...
 }
 ```
