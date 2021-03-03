@@ -11,7 +11,7 @@ lang:           "en"
 # Android SDK
 ---
 
-### Prerequisites
+## Prerequisites
 Data SDK support version:
 
 * Android：`Android 5.0 or later`
@@ -34,7 +34,7 @@ dependencies {
 }
 ```
 
-### Permission
+## Permission
 Please add the Permissions below in your `AndroidManifest.xml`
 
 (Required) Please add below premissions for basic data collection:
