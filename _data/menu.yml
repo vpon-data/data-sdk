@@ -1,7 +1,7 @@
 menu:
   - title: '' 
     subfolderitems:
-      - page: Introduction
+      - page: Overview
         url: /
       - page: Data Privacy
         url: /data_privacy
