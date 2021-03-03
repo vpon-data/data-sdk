@@ -17,7 +17,7 @@ The basic requirements are Network and Wi-Fi permissions to enable data collecti
 
 Geolocation permission is optional according to your App type.
 
-![](docs/images/permission.png)
+![](/docs/images/permission.png)
 
 The permission setup details are shown as follows:
 
