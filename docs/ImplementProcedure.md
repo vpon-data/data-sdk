@@ -21,10 +21,10 @@ lang:           "en"
 [iOS](https://datasdk.vpon.com/ios) , [android](https://datasdk.vpon.com/android) 
 * Use [Debug Mode](https://datasdk.vpon.com/debug_mode) for SDK integration diagnosis. 
 * Check the integration results and data transmission status with Vpon Contact.  
-5. Submit 
+3. Submit 
 * Check marketplace (Apple Store or Google Play) policy with Vpon Contact before submission  
 * Submit your App to marketplace and notify Vpon Contact when your App is available on marketplaces
-6. Explore 
+4. Explore 
 * Start to collect and explore the user insights that Vpon prepares for you.
 
 Vpon Contact email: datasdk.support<span>@vpon.com
