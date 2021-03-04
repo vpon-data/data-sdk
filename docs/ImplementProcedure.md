@@ -10,6 +10,9 @@ lang:           "en"
 
 # Implement Procedure
 ---
+
+![](/docs/images/implement_procedure.png)
+
 1. Apply
 * Apply to Vpon Contact for Data SDK license registration
 * Required info: App Name, App URL
