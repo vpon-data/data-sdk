@@ -11,7 +11,7 @@ lang:           "en"
 # Implement Procedure
 ---
 
-Four steps to leverage powerful Vpon Data SDK
+Four steps to leverage Vpon Data SDK.  
 ![](/docs/images/implement_procedure.png)
 
 ## 1. Apply
