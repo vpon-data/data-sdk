@@ -14,6 +14,7 @@ lang:           "en"
 Four steps to leverage Vpon Data SDK.  
 ![](/docs/images/implement_procedure.png)
 
+
 ## 1. Apply
 * Apply to Vpon Contact for Data SDK license registration
 * Required info: App Name, App URL
