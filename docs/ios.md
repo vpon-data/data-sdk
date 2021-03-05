@@ -13,13 +13,13 @@ lang: "en"
 
 ## Prerequisites
 
-Data SDK support:
+Data SDK support version:
 
 * iOS：`iOS 10.0 or later`
 
 
 ### Prepare for Data SDK import
-You can [Download Data SDK here][1] and add the .framework file into your Project.
+You can [download Data SDK here][1] and add the .framework file into your Project.
 
 Please be noted that Vpon supports both Objective-C and Swift languages.
 
