@@ -169,4 +169,6 @@ Please refer to our [Sample Code](https://github.com/vpon-sdk/Vpon-Android-Analy
 
 |Data SDK 2.0.0|
 |:-------:|
-|Download|
+|[Download][1]|
+
+[1]: assets/download/vpon-data-sdk-v200-release.aar
