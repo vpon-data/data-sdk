@@ -5,11 +5,12 @@
       <a class="nav-list-link" href="{{ item.url }}">{{ item.page }}</a>
     </li>
   {% else %}
-    <hr>
-    <h4 style="text-align:center">{{ item.page }}</h4> 
+    <li class="nav-list-item">
+      <a class="nav-list-link" href="javascript: void(0);">{{ item.page }}</a>
+    </li>
   {% endif %}
   {% for entry in item.subfolderitems %}
-    <li class="nav-list-item">
+    <li class="nav-list-item sub">
       <a class="nav-list-link" href="{{ entry.url }}">{{ entry.page }}</a>
     </li>
   {% endfor %}
