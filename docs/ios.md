@@ -19,9 +19,10 @@ Data SDK support version:
 
 
 ### Prepare for Data SDK import
-You can [download Data SDK here][1] and add the .framework file into your Project.
+You can [download Data SDK here][1] and add the .framework file into your Project. 
 
-Please be noted that Vpon supports both Objective-C and Swift languages.
+Please be noted that Vpon supports both Objective-C and Swift languages. If your App is developed using Objective-C, please refer to [iOS developer's guildline](https://developer.apple.com/documentation/swift/imported_c_and_objective-c_apis/importing_swift_into_objective-c) or 
+[Sample Code](https://github.com/vpon-sdk/Vpon-iOS-Analytics) for a complete integration setting. 
 
 
 ## Import Data SDK
