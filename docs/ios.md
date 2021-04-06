@@ -73,17 +73,19 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 
 ## Send Data
-Please follow the instructions to send data.
+Data SDK provides methods to send data in different scenarios:
 
-NOTE: extraData is optional. If you want to collect data when a specific event is triggered, please call send() and use extraData to collect that data.
+### tracker.send()
+tracker.send() can be used when a specific event is triggered. By using the tracker.send(), you can define a custom event that collects specific data. Please refer to the sample code below:
 
 
 ### Objective-C
 
 ```objc
 VDATracker *tracker = [[VDATracker alloc] init];
-VDABuilder *builder = [VDABuilder createEventWithEventName:@"login" extraData:@{@"key": @"value"}];
+VDABuilder *builder = [VDABuilder createEventWithEventName:@"item_view" extraData:@{@"id": @"payload", @"name": @"Coat", @"price": @(10), @"color": @"Blue", @"size": @"XL", @"tags": @"OrangeBear,fiber", @"currency": @"NTD"}];
 [tracker send:builder];
+
 ```
 
 
@@ -91,9 +93,30 @@ VDABuilder *builder = [VDABuilder createEventWithEventName:@"login" extraData:@{
 
 ```swift
 let tracker = VDATracker()
-let builder = VDABuilder.createEventWithEventName("login", extraData: ["key": "value"])
+let builder = VDABuilder.createEventWithEventName("item_view", extraData: ["id": "payload", "name": "Coat", "price": 10, "color": "Blue", "size": "XL", "tags": "OrangeBear,fiber", "currency": "NTD"])
 tracker.send(builder)
 ```
+
+Another example is that you want to collect the URL accessed by a user. Using tracker.send(), you can define another event to collect the data of previous URL and current URL accessed by a user.
+
+
+### Objective-C
+
+```objc
+VDATracker *tracker = [[VDATracker alloc] init];
+VDABuilder *builder = [VDABuilder createEventWithEventName:@"page_view" extraData:@{@"pervious": @"URL of Last Page", @"current": @"URL of Current Page"}];
+[tracker send:builder];
+
+```
+
+### Swift
+
+```swift
+let tracker = VDATracker()
+let builder = VDABuilder.createEventWithEventName("page_view", extraData: ["pervious": "URL of Last Page", "current": "URL of Current Page"])
+tracker.send(builder)
+```
+
 
 ## Debug Mode
 When you initilize Data SDK, you can enable debug mode with setDebugMode:Yes / setDebugMode(true). 
