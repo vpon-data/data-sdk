@@ -27,7 +27,7 @@ Please be noted that Vpon supports both Objective-C and Swift languages. If your
 
 ## Import Data SDK
 
-Please import VponDataAnalytics in the files expected to be integrated with Data SDK.
+Import VponDataAnalytics as below.
 
 ### Objective-C
 
@@ -43,7 +43,7 @@ import VponDataAnalytics
 
 ## Data SDK Initialization
 
-Please follow the instructions to initialize Data SDK in the AppDelegae.h
+Initialize Data SDK in the AppDelegae.h as below.
 
 ### Objective-C
 
