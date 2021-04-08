@@ -57,12 +57,13 @@ Please add the Permissions below in your `AndroidManifest.xml`
 ```
 
 ## Import Data SDK
-Please follow the instructions to initialize Data SDK
+Please import VpondataAnalytics as below
 
 ```java
 import com.vpon.sdk.VpdataAnalytics;
 ```
 
+## Initialize Data SDK
 #### Declare VpdataAnalytics and Indicate License Key and Custom ID
 
 ```java
