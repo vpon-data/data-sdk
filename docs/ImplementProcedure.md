@@ -17,7 +17,6 @@ Four steps to leverage Vpon Data SDK.
 
 1. ## Apply
 -  Apply to Vpon Contact for Data SDK license registration
--  Required info: App Name, App URL
 2. ## Integrate 
 - Start to integrate Data SDK according to website instructions. 
 [iOS](https://datasdk.vpon.com/ios) , [android](https://datasdk.vpon.com/android) 
