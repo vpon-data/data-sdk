@@ -14,7 +14,11 @@ Debug Mode provides a check mechanism to help App publishers understand the inte
 
 Debug Mode checks SDK integration in 3-steps: ***SDK Initialization***, ***SDK Info Collection***, and ***Endpoint Connection***.
 
-When start running App, ***SDK Initialization*** step will check SDK initialization status and display the device basic information in the developer console shown as follows.
+When start running App, the ***SDK Initialization*** step will check the SDK initialization status and display the device basic information in the developer console shown as follows.
+
+Debug Mode provides a check mechanism to help App publishers understand the integration status. When Vpon Data SDK is integrated with SDK debug_mode enabled, App publishers can see the checking messages on the developer console
+
+
 ```
 [VponData] Start SDK integration tests...
 [VponData] Checking SDK and device status...
@@ -44,11 +48,12 @@ However, App publishers may see error messages if inappropriate setting occurs s
 [VponData] License key is invalid. 
 [VponData] Fail to initialize SDK. Please check the required settings in Vpon Data SDK website: https://datasdk.vpon.com/
 ```
-These error messages indicate that License key is invalid, which remind App publishers to check License key setting when calling SDK API.
+These error messages indicate that the License key is invalid, which reminds App publishers to check the License key setting when calling SDK API.
 
 ```
 [VponData] Fail to receive Vpon endpoint’s feedback. Endpoint response code : 0(-1009, The Internet connection appears to be offline.). Please make sure your network connection is stable and check Vpon’s endpoint connection again.
 ```
-These above error messages indicate that the device is not connected to network or the network is not stable. 
+
+The above error messages indicate that the device is not connected to the network or the network is not stable.
 
 If some errors keep unsolved, App publishers can collect all the messages that start with [VponData] in developer console, and then send the messages to Vpon Contact: datasdk.support<span>@vpon.com for further supports.
