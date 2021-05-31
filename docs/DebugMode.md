@@ -46,7 +46,7 @@ However, App publishers may see error messages if inappropriate setting occurs s
 [VponData] Start SDK integration tests...
 [VponData] Checking SDK and device status...
 [VponData] License key is invalid. 
-[VponData] Fail to initialize SDK. Please check the required settings on Vpon Data SDK website: https://datasdk.vpon.com/
+[VponData] Fail to initialize SDK. Please check the required settings in Vpon Data SDK : https://datasdk.vpon.com/
 ```
 These error messages indicate that the License key is invalid, which reminds App publishers to check the License key setting when calling SDK API.
 
