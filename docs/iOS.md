@@ -207,5 +207,4 @@ Please refer to [Sample Code](https://github.com/vpon-sdk/Vpon-iOS-Analytics) fo
 |:-------:|
 |[Download][1]|
 
-[1]: https://m.vpon.com/data/sdk/ios/i-vda-20210423-6291617-v2.0.2.tar.gz
-
+[1]: https://m.vpon.com/data/sdk/ios/i-vda-v2.0.2-20210514-7af97eb-978565.tar.gz
