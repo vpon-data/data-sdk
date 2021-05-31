@@ -204,4 +204,4 @@ Please refer to our [Sample Code](https://github.com/vpon-sdk/Vpon-Android-Analy
 |:-------:|
 |[Download][1]|
 
-[1]: https://m.vpon.com/data/sdk/android/vpon-analytics-sdk-obf202-32401202-2104231437-c31526e.aar 
+[1]: https://m.vpon.com/data/sdk/android/a-vda-obf-v2.0.2-20210521-604f565-093040.aar
