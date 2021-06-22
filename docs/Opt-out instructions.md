@@ -8,7 +8,7 @@ permalink:       /opt-out
 lang:           "en"
 ---
 
-# opt-out instructions
+# Opt-out instructions
 ---
 
 
