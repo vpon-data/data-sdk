@@ -4,7 +4,7 @@ title:          "opt-out"
 lead:           ""
 description:    ""
 keywords:       "datasdk"
-permalink:       /opt-out
+permalink:       /opt_out
 lang:           "en"
 ---
 
