@@ -15,5 +15,5 @@ menu:
         url: /permission
       - page: Debug Mode
         url: /debug_mode
-  - page: Opt-out Instructions
-    url: /opt_out
+#  - page: Opt-out Instructions
+#    url: /opt_out
