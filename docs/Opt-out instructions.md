@@ -11,6 +11,6 @@ lang:           "en"
 # Opt-out instructions
 ---
 iOS and Android both provide on-device mechanisms that allow users to opt out the use of their information. 
-Please refer to [iOS](https://datasdk.vpon.com/opt-out-ios) and [Android](https://datasdk.vpon.com/android-opt-out) opt-out instructions for more information.
+Please refer to [iOS](https://datasdk.vpon.com/ios-opt-out) and [Android](https://datasdk.vpon.com/android-opt-out) opt-out instructions for more information.
 
 
