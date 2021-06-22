@@ -30,13 +30,13 @@ Please be noted that Vpon supports both Objective-C and Swift languages. If your
 
 Please import VponDataAnalytics as below.
 
-### Objective-C
+#### Objective-C
 
 ```objc
 #import <VponDataAnalytics/VponDataAnalytics.h>
 ```
 
-### Swift
+#### Swift
 
 ```swift
 import VponDataAnalytics
@@ -46,14 +46,14 @@ import VponDataAnalytics
 
 Please initialize Data SDK in the `AppDelegae.h` or `AppDelegae.swift` as below
 
-#### License Key
+### License Key
 You should receive a unique license key when your application is approved. If you do not receive it, please email it to Vpon Contact.
 
 
-#### Opt-in
+### Opt-in
 To manage user consent in your App, Data SDK provides three Opt-In options: DEFAULT, CONSENT, and NOCONSENT. DEFAULT indicates the user has neither granted nor declined consent, CONSENT indicates the user gives his/her consent, and NOCONSENT indicates the user refuses to give his/her consent. Please refer to the sample code below:
 
-### Objective-C
+#### Objective-C
 ```objc
 // Opt-In options: 
 // VDAOptInDEFAULT 
@@ -69,7 +69,7 @@ To manage user consent in your App, Data SDK provides three Opt-In options: DEFA
 [config setLicenseKey:@"testKey" withCustomID:@"" withOptIn:VDAOptInNOCONSENT];
 
 ```
-### Swift
+#### Swift
 ```swift
 // Opt-In options: 
 // .DEFAULT 
@@ -96,7 +96,7 @@ Below is an example to initialize Data SDK with users' explicit authorization:
 
 
 
-### Objective-C
+#### Objective-C
 ```objc
 #import <VponDataAnalytics/VponDataAnalytics.h>
 
@@ -108,7 +108,7 @@ Below is an example to initialize Data SDK with users' explicit authorization:
 }
 ```
 
-### Swift
+#### Swift
 ```swift
 import VponDataAnalytics
 
@@ -127,7 +127,7 @@ Data SDK provides tracker.send() method to send data in different scenarios.
 By using the tracker.send(), you can define a custom event that collects specific data. Please refer to the sample code below:
 
 
-### Objective-C
+#### Objective-C
 
 ```objc
 VDATracker *tracker = [[VDATracker alloc] init];
@@ -137,7 +137,7 @@ VDABuilder *builder = [VDABuilder createEventWithEventName:@"item_view" extraDat
 ```
 
 
-### Swift
+#### Swift
 
 ```swift
 let tracker = VDATracker()
@@ -148,7 +148,7 @@ tracker.send(builder)
 Another example is that you want to collect the URL accessed by a user. Using tracker.send(), you can define another event to collect the data of the previous URL and current URL accessed by a user.
 
 
-### Objective-C
+#### Objective-C
 
 ```objc
 VDATracker *tracker = [[VDATracker alloc] init];
@@ -157,7 +157,7 @@ VDABuilder *builder = [VDABuilder createEventWithEventName:@"page_view" extraDat
 
 ```
 
-### Swift
+#### Swift
 
 ```swift
 let tracker = VDATracker()
@@ -169,7 +169,7 @@ tracker.send(builder)
 ## Debug Mode
 When you initialize Data SDK, you can enable debug mode with setDebugMode:Yes / setDebugMode(true). 
 
-### Objective-C
+#### Objective-C
 
 ```objc
 #import <VponDataAnalytics/VponDataAnalytics.h>
@@ -183,7 +183,7 @@ When you initialize Data SDK, you can enable debug mode with setDebugMode:Yes / 
 ```
 
 
-### Swift
+#### Swift
 
 ```swift
 import VponDataAnalytics
