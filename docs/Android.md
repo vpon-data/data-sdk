@@ -67,11 +67,11 @@ import com.vpon.sdk.VpdataAnalytics;
 
 Declare VpdataAnalytics and setup License Key & Opt-In in this step. 
 
-#### License Key
+### License Key
 You should receive a unique license key when your application is approved. If you do not receive it, please email it to Vpon Contact.
 
 
-#### Opt-In
+### Opt-In
 To manage user consent in your App, Data SDK provides three Opt-In options: DEFAULT, CONSENT, and NOCONSENT. DEFAULT indicates the user has neither granted nor declined consent, CONSENT indicates the user gives his/her consent, and NOCONSENT indicates the user refuses to give his/her consent. Please refer to the sample code below:
 
 ```
