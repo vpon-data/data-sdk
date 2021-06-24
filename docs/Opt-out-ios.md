@@ -40,7 +40,7 @@ When you first launch an App that implemented ATT framework, a pop-out window wi
 
 In the Setting→Privacy→Advertising page, you can also manage App tracking permissions in **Allow Apps to Request to Track**. If you turn off **Allow Apps to Request to Track**, all Apps are not allowed to track your device, and no more ATT pop-out window will be displayed once you chose to turn off . On the other hand, if you turn on **Allow Apps to Request to Track**, you can decide to give tracking permission to different Apps.
 
-## Reset Advertising Identifier
+### Reset Advertising Identifier
 Turn off **Allow Apps to Request to Track**, and turn it on will reset IDFA.
 
 
