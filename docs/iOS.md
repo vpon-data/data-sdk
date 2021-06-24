@@ -128,8 +128,9 @@ For iOS 14.5 or later device, you must call Data SDK after receiving user's trac
 
 You can also find ATT on-device setting [here](https://datasdk.vpon.com/opt-out-ios) for more information.
 
-Similar to Opt-In, Data SDK only collect data with users' explicit authorization. Below is the flow of Data SDK integration.
+Similar to Opt-In, Data SDK only collect data with users' explicit authorization. Below is the flow of Data SDK integration.  
 
+<img src="/docs/images/CONSENT_flow.png" alt="drawing" />
 
 
 
