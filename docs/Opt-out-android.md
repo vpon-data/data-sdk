@@ -9,7 +9,7 @@ lang:           "en"
 ---
 
 # Android ADID opt-out setting instructions
---
+---
 
 Generally, Android phones offer two functions related privacy protection. The first is to reset the advertising ID, Android Advertising ID (ADID), while the second is to opt out of personalized ads. 
 
