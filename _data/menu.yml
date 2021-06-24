@@ -18,7 +18,7 @@ menu:
   - page: Opt-out Instructions
     url: /opt-out
     subfolderitems:
-      - page: iOS Opt-out Instructions
+      - page: iOS Opt-out
         url: /opt-out-ios
-      - page: Android Opt-out Instructions
+      - page: Android Opt-out
         url: /opt-out-android
