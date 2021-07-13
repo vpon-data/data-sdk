@@ -122,7 +122,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ```
 
 ### App Tracking Transparency (ATT) for iOS 14.5 or later
-Starting with iOS 14.5, Apps need to ask user’s permission to track activity across apps and websites through App Tracking Transparency (ATT) framework. Please refer to [Apple’s user privacy and data use page](https://developer.apple.com/app-store/user-privacy-and-data-use/)for more information. 
+Starting with iOS 14.5, Apps need to ask user’s permission to track activity across apps and websites through App Tracking Transparency (ATT) framework. Please refer to [Apple’s user privacy and data use page](https://developer.apple.com/app-store/user-privacy-and-data-use/) for more information. 
 
 For iOS 14.5 or later device, you must call Data SDK after receiving user's tracking permission through ATT framework. Otherwise, Data SDK can not retrieve user’s IDFA. Vpon can neither provide related analytics services nor help you monetize your Apps. 
 
