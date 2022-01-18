@@ -216,8 +216,8 @@ Please refer to [Sample Code](https://github.com/vpon-sdk/Vpon-iOS-Analytics) fo
 
 ## Download
 
-|Data SDK 2.0.2|
+|Data SDK 2.0.3|
 |:-------:|
 |[Download][1]|
 
-[1]: https://m.vpon.com/data/sdk/ios/i-vda-v2.0.2-20210514-7af97eb-978565.tar.gz
+[1]: https://m.vpon.com/data/sdk/ios/i-vda-v2.0.3-20220107-de7a407-546430.tar.gz
