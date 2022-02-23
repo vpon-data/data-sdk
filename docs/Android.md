@@ -67,11 +67,11 @@ import com.vpon.sdk.VpdataAnalytics;
 
 Declare VpdataAnalytics and setup License Key & Opt-In in this step. 
 
-### License Key
-You should receive a unique license key when your application is approved. If you do not receive it, please email it to Vpon Contact.
+#### License Key
+You should receive a unique license key when your application is approved. If you do not receive it, please email Vpon Contact.
 
 
-### Opt-In
+#### Opt-In
 To manage user consent in your App, Data SDK provides three Opt-In options: DEFAULT, CONSENT, and NOCONSENT. DEFAULT indicates the user has neither granted nor declined consent, CONSENT indicates the user gives his/her consent, and NOCONSENT indicates the user refuses to give his/her consent. Please refer to the sample code below:
 
 ```
@@ -98,6 +98,8 @@ If a user changes his/her consent status, for example, from provides the consent
 
 Below is an example to initialize Data SDK with users' explicit authorization:
 
+
+Java
 
 ```java
 public class MainActivity extends Activity {
@@ -137,7 +139,36 @@ public class MainActivity extends Activity {
         tracker = new VpdataAnalytics.Tracker();
     }
 }
+```
 
+Kotlin
+
+```kotlin
+class MainActivity : Activity() {
+    // TODO set your licenseKey & customerId
+    private val licenseKey = "mock_license_key"
+    private val customerId = ""
+    private var vpdataAnalytics: VpdataAnalytics? = null
+    private var tracker: VpdataAnalytics.Tracker? = null
+    private val PERMISSION_REQUEST_CODE = 2001
+    override fun onCreate(savedInstanceState: Bundle) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        // Request optional permission
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            requestPermissions(arrayOf(ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION, READ_PHONE_STATE), PERMISSION_REQUEST_CODE)
+        }
+        vpdataAnalytics = VpdataAnalytics
+        // Set true to enable debug mode, set false before app release
+        // Set up before vpdataAnalytics.initialize
+        vpdataAnalytics!!.setDebugMode(false)
+        // Set up license_key and opt-in
+        // If a user gives his/her consent, configure Opt-In as CONSENT
+        vpdataAnalytics!!.initialize(this, licenseKey, customerId, VpdataAnalytics.OptIn.CONSENT)
+        // Construct a Tracker for sending event
+        tracker = VpdataAnalytics.Tracker()
+    }
+}
 ```
 
 ## Send Data
@@ -145,6 +176,7 @@ Data SDK provides tracker.sendEvent() method to send data in different scenarios
 
 By using the tracker.sendEvent(), you can define a custom event that collects specific data. For example, you can define an onClick() event when a user clicks an item. Please refer to the sample code below:
 
+### Java
 
 ```java
 public void onClick(View v) {
@@ -164,7 +196,31 @@ public void onClick(View v) {
         }
 }
 ```
+
+### Kotlin
+
+```kotlin
+val sendClickListener = View.OnClickListener {
+        val payloadJsonObj = JSONObject();
+        try {
+            payloadJsonObj.put("id", "payloadJsonObj");
+            payloadJsonObj.put("name", "Coat");
+            payloadJsonObj.put("price", 100);
+            payloadJsonObj.put("color", "Blue");
+            payloadJsonObj.put("size", "XL");
+            payloadJsonObj.put("tags", "OrangeBear,fiber");
+            payloadJsonObj.put("currency", "NTD");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        tracker?.sendEvent("item_view", payloadJsonObj);
+    }
+```
+
+
 Another example is that you want to collect the URL accessed by a user. Using tracker.sendEvent(), you can define another onClick() event to collect the data of the previous URL and current URL accessed by a user.
+
+### Java
 
 ```java
 public void onClick(View v) {
@@ -180,11 +236,28 @@ public void onClick(View v) {
 ```
 
 
+### Kotlin
+
+```kotlin
+val sendClickListener = View.OnClickListener {
+        val payloadJsonObj = JSONObject()
+        try {
+            payloadJsonObj.put("pervious", "URL of Last Page")
+            payloadJsonObj.put("current", "URL of Current Page")
+        } catch (e: JSONException) {
+            e.printStackTrace()
+        }
+        tracker?.sendEvent("page_view", payloadJsonObj)    
+    }
+```
+
+
 ## Debug Mode
 When you initialize Data SDK, you can enable debug mode with vpdataAnalytics.setDebugMode(true) to check SDK integration status.
 
-```java
+### Java
 
+```java
 VpdataAnalytics vpdataAnalytics = VpdataAnalytics.INSTANCE;
 
 vpdataAnalytics.setDebugMode(true);
@@ -193,6 +266,17 @@ vpdataAnalytics.setDebugMode(true);
 
 vpdataAnalytics.initialize(this, licenseKey, customerId, VpdataAnalytics.OptIn.DEFAULT);
 ```
+
+### Kotlin
+
+```kotlin
+val vpdataAnalytics = VpdataAnalytics
+vpdataAnalytics.setDebugMode(true)
+// Set true to enable Debug Mode, remember to disable this setting before app release!
+// Must be set before vpdataAnalytics.initialize()
+vpdataAnalytics.initialize(this, licenseKey, customerId, VpdataAnalytics.OptIn.DEFAULT)
+```
+
 > **Note**：Set vpdataAnalytics.setDebugMode(false) before the App is launched.
 
 ## Sample Code
