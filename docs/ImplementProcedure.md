@@ -4,28 +4,14 @@ title:          "Implement Procedure"
 lead:           ""
 description:    ""
 keywords:       "datasdk"
-permalink:       /implement_procedure
+permalink:       /integrate_procedure
 lang:           "en"
 ---
 
-# Implement Procedure
+# Integration Procedure
 ---
 
-Four steps to leverage Vpon Data SDK.  
-![](/docs/images/implement_procedure.png)
+Depends on App publisher’s development schedule, it takes up to 1 month to integrate Data SDK. In the application phase, a Vpon business contact will be always in between to consolidate App publisher’s needs and to convey Vpon tech team's requirements. Starting from the installation phase, Vpon tech team and App publisher will communicate directly to speed up the integration process. Please check the complete integration process as follows:
 
 
-1. ## Apply
--  Apply to Vpon Contact for Data SDK license registration
-2. ## Integrate 
-- Start to integrate Data SDK according to website instructions. 
-[iOS](https://datasdk.vpon.com/ios), [android](https://datasdk.vpon.com/android) 
-- Use [Debug Mode](https://datasdk.vpon.com/debug_mode) for SDK integration diagnosis. 
-- Check the integration results and data transmission status with Vpon Contact.  
-3. ## Publish 
-- Check marketplace (Apple Store or Google Play) policy with Vpon Contact before submission  
-- Submit your App to the marketplace and notify Vpon Contact when your App is available on marketplaces
-4. ## Explore 
-- Start to collect and explore the user insights that Vpon prepares for you.
-
-Vpon Contact email: datasdk.support<span>@vpon.com
+![](/docs/images/integration_process.png) 
