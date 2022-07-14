@@ -14,7 +14,6 @@ menu:
       - page: Debug Mode
         url: /debug_mode
   - page: Change Log
-    url: 
     subfolderitems:
       - page: iOS SDK Change Log
         url: /ios_change_log
