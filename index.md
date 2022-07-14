@@ -13,4 +13,4 @@ This website is the collection of the documents that developers need when embedd
 
 [1]: https://datasdk.vpon.com/
 
-![](/docs/images/overview.png) 
+![](/docs/images/Overview.png) 
