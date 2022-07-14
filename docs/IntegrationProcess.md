@@ -26,11 +26,11 @@ App publisher contacts Vpon’s business contact and provide below information f
   
 ## 2. Installation
 1. Vpon tech team provides test license key and instruction for App publisher.
-2. App publisher needs to follow the implementation guideline [iOS](https://datasdk.vpon.com/ios) , [android](https://datasdk.vpon.com/android) to set events and trigger [Debug Mode](https://datasdk.vpon.com/debug_mode).
+2. App publisher needs to follow the implementation guideline [iOS](https://datasdk-developer.vpon.com/ios) , [android](https://datasdk-developer.vpon.com/android) to set events and trigger [Debug Mode](https://datasdk-developer.vpon.com/debug_mode).
   
   
 ## 3. Testing
-1. App publisher tests in a simulation environment using [Debug Mode](https://datasdk.vpon.com/debug_mode).
+1. App publisher tests in a simulation environment using [Debug Mode](https://datasdk-developer.vpon.com/debug_mode).
  
 ## 4.  Result check
 1. App publisher sends Debug Mode log back to Vpon’s tech team.
