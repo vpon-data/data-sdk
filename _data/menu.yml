@@ -13,10 +13,10 @@ menu:
         url: /permission
       - page: Debug Mode
         url: /debug_mode
-  - page: Opt-out Instructions
-    url: /opt-out
+  - page: Change Log
+    url: /change_log
     subfolderitems:
-      - page: iOS Opt-out
-        url: /opt-out-ios
-      - page: Android Opt-out
-        url: /opt-out-android
+      - page: iOS SDK Change Log
+        url: /ios_cahnge_log
+      - page: Android SDK Change Log
+        url: /android_change_log
