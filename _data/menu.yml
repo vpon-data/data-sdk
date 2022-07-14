@@ -1,8 +1,6 @@
 menu:
   - page: 'Overview' 
     url: /
-  - page: Data Privacy
-    url: /data_privacy
   - page: Integration Process
     url: /integration_process
   - page: Implementation Guide
