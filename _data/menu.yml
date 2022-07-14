@@ -17,6 +17,6 @@ menu:
     url: /change_log
     subfolderitems:
       - page: iOS SDK Change Log
-        url: /ios_cahnge_log
+        url: /ios_change_log
       - page: Android SDK Change Log
         url: /android_change_log
