@@ -1,10 +1,10 @@
 ---
 layout: default
-title:          "Integrate Process"
+title:          "Integration Process"
 lead:           ""
 description:    ""
 keywords:       "datasdk"
-permalink:       /integrate_process
+permalink:       /integration_process
 lang:           "en"
 ---
 
