@@ -3,8 +3,8 @@ menu:
     url: /
   - page: Data Privacy
     url: /data_privacy
-  - page: Implement Procedure
-    url: /implement_procedure
+  - page: Integrate Process
+    url: /integrate_process
   - page: Implementation Guide
     subfolderitems:
       - page: iOS SDK
