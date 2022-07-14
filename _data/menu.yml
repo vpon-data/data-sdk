@@ -15,7 +15,7 @@ menu:
         url: /debug_mode
   - page: Change Log
     subfolderitems:
-      - page: iOS SDK Change Log
+      - page: iOS SDK
         url: /ios_change_log
-      - page: Android SDK Change Log
+      - page: Android SDK
         url: /android_change_log
