@@ -13,7 +13,7 @@ lang:           "en"
 
 Depends on App publisher’s development schedule, it takes up to 1 month to integrate Data SDK. In the application phase, a Vpon business contact will be always in between to consolidate App publisher’s needs and to convey Vpon tech team's requirements. Starting from the installation phase, Vpon tech team and App publisher will communicate directly to speed up the integration process. Please check the complete integration process as follows:
 
-![](/docs/images/integration_process.png) 
+![](/docs/images/integration_process_2.png) 
 
 ## 1. Application
 App publisher contacts Vpon’s business contact and provide below information for Vpon. If you don’t have the business contact info, please send the inquiry email to datasdk.support<span>@vpon.com.
