@@ -9,32 +9,29 @@ lang: "en"
 ---
 
 # iOS SDK
----
 
-## Prerequisites
+Welcome to the integration guide of Data SDK. You can leverage Data SDK in just several steps:
+1. [Check the Prerequisites](#check-the-prerequisites)
+2. [Download Data SDK](#download-data-sdk)
+3. [Import Data SDK](#import-data-sdk)
+4. [Initialize Data SDK](#initialize-data-sdk)
+5. [Set up customized events](#set-up-customized-events) (Optional but recommended)
+6. [Test in Debug Mode](#debug-mode)
 
-Data SDK support version:
+After completing steps 1 to 4, the minimum requirements, you can observe [Auto Events](auto-events.md) in your App.
 
-* iOS：`iOS 10.0 or later`
+Furthermore, set up customized events according to your App design and user focus in step 5. The event setting is flexible and even skippable. Nevertheless, we encourage you to set up suitable customized events to obtain a comprehensive picture of your App users.
 
+Finally, check the integration status in step 6, [Debug Mode](debug_mode.md). Debug Mode helps you test the SDK setting before submitting your App to the App marketplaces. You can turn Debug Mode on in the step of Data SDK initialization, check all go well, and then turn it off in the same place to publish your App.
 
-### Prepare for Data SDK import
-You can [download Data SDK here][1] and add the .framework file into your Project. 
+## Check the Prerequisites
+Supported version: iOS 10.0 or later
 
-Please be noted that Vpon supports both Objective-C and Swift languages. If your App is developed using Objective-C, please refer to [iOS developer's guideline](https://developer.apple.com/documentation/swift/imported_c_and_objective-c_apis/importing_swift_into_objective-c) or 
-[Sample Code](https://github.com/vpon-sdk/Vpon-iOS-Analytics) for a complete integration setting.
-
-
+## Download Data SDK
+Download Data SDK [HERE][1] and add the `.framework` file into your Project.
 
 ## Import Data SDK
-
-Please import VponDataAnalytics as below.
-
-#### Objective-C
-
-```objc
-#import <VponDataAnalytics/VponDataAnalytics.h>
-```
+Import `VponDataAnalytics` in your main function.
 
 #### Swift
 
@@ -42,122 +39,172 @@ Please import VponDataAnalytics as below.
 import VponDataAnalytics
 ```
 
-## Initialize Data SDK
+#### Objective-C
 
-Please initialize Data SDK in the `AppDelegae.h` or `AppDelegae.swift` as below
+```objc
+#import <VponDataAnalytics/VponDataAnalytics.h>
+```
+
+
+## Initialize Data SDK
+Initialize Data SDK in `AppDelegae.swift` or `AppDelegae.h`. in the application `didFinishLaunchingWithOptions` method to ensure [Auto Events](auto-events.md) functionality.
+
+In addition, manage License Key, Opt-in, and Debug Mode switch in this step.
+
 
 ### License Key
-You should receive a unique license key when your application is approved. If you do not receive it, please email it to Vpon Contact.
-
+You will receive a unique license key when your application is approved. See [Integration Process](integration_process.md) for more details.
+If you are still waiting to receive it or get into trouble with it, please email Vpon Contact for further assistance.
 
 ### Opt-in
-To manage user consent in your App, Data SDK provides three Opt-In options: DEFAULT, CONSENT, and NOCONSENT. DEFAULT indicates the user has neither granted nor declined consent, CONSENT indicates the user gives his/her consent, and NOCONSENT indicates the user refuses to give his/her consent. Please refer to the sample code below:
+Data SDK is committed to protecting App user privacy. Therefore, Data SDK only collects data with user consent, which means Data SDK only gathers data under the condition that a user agrees to App terms of use or privacy policy.
 
-#### Objective-C
-```objc
-// Opt-In options: 
-// VDAOptInDEFAULT 
-// VDAOptInCONSENT
-// VDAOptInNOCONSENT
+To help you manage App user consent efficiently, Data SDK provides three Opt-In options: `DEFAULT`, `CONSENT`, and `NOCONSENT`.
+- `DEFAULT`: the user has neither granted nor declined permission
+- `CONSENT`: the user gives consent
+- `NOCONSENT`: the user refuses to provide consent.
 
-// The default value of Opt-In is VDAOptInDEFAULT
+We recommend determining the status of user consent in the application `didFinishLaunchingWithOptions` method. After that, update the Opt-In option automatically and forward it to Data SDK simultaneously, depending on the latest permission status.
 
-// If a user gives his/her consent, configure Opt-In as VDAOptInCONSENT 
-[config setLicenseKey:@"testKey" withCustomID:@"" withOptIn:VDAOptInCONSENT];
+Warning messages will display on the developer console if Opt-In is set either as `NOCONSENT` or `DEFAULT`.
 
-//If a user refuses to give his/her consent, configure Opt-In as VDAOptInNOCONSENT
-[config setLicenseKey:@"testKey" withCustomID:@"" withOptIn:VDAOptInNOCONSENT];
-
-```
+Below is a setup example of License Key and Opt-in:
 #### Swift
-```swift
+```
+config.setLicenseKey("testKey", withCustomID: "testCustomID", withOptIn: .CONSENT)
+```
+#### Objective-C
+```
+[config setLicenseKey:@"testKey" withCustomID:@"testCustomID" withOptIn:VDAOptInCONSENT];
+```
+
+### Debug Mode
+Debug Mode allows you to interactively test your App events, including [Auto](auto-events.md) and [Customized](#set-up-customized-events), comprehensively with messages displayed in the developer console.  
+
+We suggest enabling Debug Mode and providing Debug Mode log to Vpon Contact before submitting your App in Marketplaces to guarantee the integration setting. See [Debug Mode](debug_mode.md) and [Integration Process](integration_process.md) for more details.
+
+If all goes well, turn Debug Mode off and publish your App to the Marketplace.
+
+Switch Debug Mode using the following codes
+#### Swift
+```
+// Turn Debug Mode on/off
+[config setDebugMode:YES];
+[config setDebugMode:NO];
+```
+#### Objective-C
+```
+// Turn Debug Mode on/off
+config.setDebugMode(true)
+config.setDebugMode(false)
+```
+
+Combining all together, see a comprehensive example of Data SDK initialization.
+#### Swift
+```
+import VponDataAnalytics
+
 // Opt-In options: 
 // .DEFAULT 
 // .CONSENT
 // .NOCONSENT
 
-// The default value of Opt-In is .DEFAULT
+// Debug Mode options: true/false
 
-// If a user gives his/her consent, configure Opt-In as .CONSENT 
-config.setLicenseKey("testkey", withCustomID: "customID", withOptIn: .CONSENT);
-
-//If a user refuses to give his/her consent, configure Opt-In as .NOCONSENT
-config.setLicenseKey("testkey", withCustomID: "customID", withOptIn: .NOCONSENT);
-
-```
-
-If a user gives his/her consent, you should configure Opt-In as CONSENT. If a user refuses to give his/her consent, you should configure Opt-In as NOCONSENT and should NOT send data to Vpon. Data SDK will display warning messages on the developer console if Opt-In is set either as NOCONSENT or DEFAULT.
-
-It is recommended that you determine the status of a user's consent at every app launch. After that, update the Opt-In value and forward it to Data SDK simultaneously according to the user's latest consent status. 
-
-If a user changes his/her consent status, for example, from provides the consent to declines the consent, your App must automatically update the Opt-In value from CONSENT to NOCONSENT and then forward the status to Data SDK.
-
-Below is an example to initialize Data SDK with users' explicit authorization:
-
-
-
-#### Objective-C
-```objc
-#import <VponDataAnalytics/VponDataAnalytics.h>
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    VDAConfiguration *config = [VDAConfiguration sharedInstance];
-    [config setLicenseKey:@"testKey" withCustomID:@"customID" withOptIn:VDAOptInCONSENT];
-    [config setDebugMode:NO];
-    [config initialize];
-}
-```
-
-#### Swift
-```swift
-import VponDataAnalytics
-
+// Configure Opt-In as .CONSENT when a user gives consent
+// Turn Debug Mode on 
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions:      
     [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let config = VDAConfiguration.sharedInstance
-        config.setLicenseKey("testkey", withCustomID: "customID", withOptIn: .CONSENT)
+        config.setLicenseKey("testKey", withCustomID: "testCustomID", withOptIn: .CONSENT)
+        config.setDebugMode(true)
+        config.initialize()
+}
+
+// Configure Opt-In as .NOCONSENT when a user refuses to give consent
+// Turn Debug Mode off 
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions:      
+    [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        let config = VDAConfiguration.sharedInstance
+        config.setLicenseKey("testKey", withCustomID: "testCustomID", withOptIn: .NOCONSENT)
         config.setDebugMode(false)
         config.initialize()
 }
 ```
 
-## Send Data
-Data SDK provides tracker.send() method to send data in different scenarios.
-
-By using the tracker.send(), you can define a custom event that collects specific data. Please refer to the sample code below:
-
-
 #### Objective-C
+```
+#import <VponDataAnalytics/VponDataAnalytics.h>
 
-```objc
-VDATracker *tracker = [[VDATracker alloc] init];
-VDABuilder *builder = [VDABuilder createEventWithEventName:@"item_view" extraData:@{@"id": @"payload", @"name": @"Coat", @"price": @(10), @"color": @"Blue", @"size": @"XL", @"tags": @"OrangeBear,fiber", @"currency": @"NTD"}];
-[tracker send:builder];
+// Opt-In options: 
+// VDAOptInDEFAULT 
+// VDAOptInCONSENT
+// VDAOptInNOCONSENT
 
+// Debug Mode options: YES/NO
+
+// Configure Opt-In as VDAOptInCONSENT when a user gives consent
+// Turn Debug Mode on
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    VDAConfiguration *config = [VDAConfiguration sharedInstance];
+    [config setLicenseKey:@"testKey" withCustomID:@"testCustomID" withOptIn:VDAOptInCONSENT];
+    [config setDebugMode:YES];
+    [config initialize];
+}
+
+// Configure Opt-In as VDAOptInNOCONSENT when a user refuses to give consent
+// Turn Debug Mode off
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    VDAConfiguration *config = [VDAConfiguration sharedInstance];
+    [config setLicenseKey:@"testKey" withCustomID:@"testCustomID" withOptIn:VDAOptInNOCONSENT ];
+    [config setDebugMode:NO];
+    [config initialize];
+}
 ```
 
+## Set up customized events
+If [Auto Events](auto-events.md) only partially fulfills your needs, Data SDK provides customized events to serve various App designs and meet your business focus.
+ 
+By calling the `tracker` method, you can define your event name and any additional information you want to collect. It's flexible, and most importantly, no limit on the number of events.
 
-#### Swift
+For instance, an E-Commerce(EC) App wants to create a conversion funnel. Hence, recording users' views on which product item is essential. Using the `tracker` method, this EC App can quickly implement an `item_view` event that tracks a coat with id, size, color, price, etc...extra details.
+
+Below are the sample codes and the final collected data.
+
+### Swift
 
 ```swift
 let tracker = VDATracker()
-let builder = VDABuilder.createEventWithEventName("item_view", extraData: ["id": "payload", "name": "Coat", "price": 10, "color": "Blue", "size": "XL", "tags": "OrangeBear,fiber", "currency": "NTD"])
+let builder = VDABuilder.createEventWithEventName("item_view", extraData: ["id": "payload", "name": "Coat", "price": 100, "color": "Blue", "size": "XL", "currency": "NTD"])
 tracker.send(builder)
 ```
 
-Another example is that you want to collect the URL accessed by a user. Using tracker.send(), you can define another event to collect the data of the previous URL and current URL accessed by a user.
-
-
-#### Objective-C
+### Objective-C
 
 ```objc
 VDATracker *tracker = [[VDATracker alloc] init];
-VDABuilder *builder = [VDABuilder createEventWithEventName:@"page_view" extraData:@{@"pervious": @"URL of Last Page", @"current": @"URL of Current Page"}];
+VDABuilder *builder = [VDABuilder createEventWithEventName:@"item_view" extraData:@{@"id": @"payload", @"name": @"Coat", @"price": @(100), @"color": @"Blue", @"size": @"XL", @"currency": @"NTD"}];
 [tracker send:builder];
-
 ```
 
-#### Swift
+### Collected data in JSON
+```
+{
+    "event_name": "item_view"
+    "id": "03356",
+    "name": "Coat", 
+    "price": 100, 
+    "color": "Blue", 
+    "size": "XL", 
+    "currency": "NTD"
+}
+```
+
+Another example is that an Online Travel Agency(OTA) App wants to observe the browsing history to optimize its user experience. Using the `tracker` method, the OTA App can set up a `page_view` event that traces the user journey.  
+
+Below are the sample codes and the collected data.
+
+### Swift
 
 ```swift
 let tracker = VDATracker()
@@ -165,46 +212,30 @@ let builder = VDABuilder.createEventWithEventName("page_view", extraData: ["perv
 tracker.send(builder)
 ```
 
-
-## Debug Mode
-When you initialize Data SDK, you can enable debug mode with setDebugMode:Yes / setDebugMode(true). 
-
-#### Objective-C
+### Objective-C
 
 ```objc
-#import <VponDataAnalytics/VponDataAnalytics.h>
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    VDAConfiguration *config = [VDAConfiguration sharedInstance];
-    ...
-    [config setDebugMode:Yes];
-    ...
-}
+VDATracker *tracker = [[VDATracker alloc] init];
+VDABuilder *builder = [VDABuilder createEventWithEventName:@"page_view" extraData:@{@"pervious": @"URL of Last Page", @"current": @"URL of Current Page"}];
+[tracker send:builder];
 ```
 
-
-#### Swift
-
-```swift
-import VponDataAnalytics
-
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions:      
-    [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        ...
-        config.setDebugMode(true)
-        ...
+### Collected data in JSON
+```
+{
+    "event_name": "page_view"
+    "previous": "URL of Last Page", 
+    "current": "URL of Current Page"
 }
 ```
-
-> **Note**：Set `setDebugMode:Yes` \ `setDebugMode(false)` before the App is launched.
 
 ## Sample Code
-Please refer to [Sample Code](https://github.com/vpon-sdk/Vpon-iOS-Analytics) for a complete integration sample.
+See also [Sample Code](https://github.com/vpon-sdk/Vpon-iOS-Analytics)  for a complete integration reference.
 
 ## Download
 
-|Data SDK 2.0.3|
+|Data SDK 2.0.4|
 |:-------:|
 |[Download][1]|
 
-[1]: https://m.vpon.com/data/sdk/ios/i-vda-v2.0.3-20220107-de7a407-546430.tar.gz
+[1]: https://m.vpon.com/data/sdk/ios/i-vda-v2.0.4-20221020-c15aa7d-252500.tar.gz
