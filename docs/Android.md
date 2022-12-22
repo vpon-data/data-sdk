@@ -19,11 +19,11 @@ Welcome to the integration guide of Data SDK. You can leverage Data SDK in just 
 6. [Set up customized events](#set-up-customized-events) (Optional but recommended)
 7. [Test in Debug Mode](#debug-mode)
 
-After completing steps 1 to 5, the minimum requirements, you can observe [Auto Events](auto-events.md) in your App.
+After completing steps 1 to 5, the minimum requirements, you can observe [Auto Events](AutoEvents.md) in your App.
 
 Furthermore, set up [customized events](#set-up-customized-events) according to your App design and user focus in step 6. The event setting is flexible and even skippable. Nevertheless, we encourage you to set up suitable customized events to obtain a comprehensive picture of your App users.
 
-Finally, check the integration status in step 7, [Debug Mode](debug_mode.md). Debug Mode helps you test the SDK setting before submitting your App to the App marketplaces. You can turn Debug Mode on in the step of Data SDK initialization], check all go well, and then turn it off in the same place to publish your App.
+Finally, check the integration status in step 7, [Debug Mode](DebugMode.md). Debug Mode helps you test the SDK setting before submitting your App to the App marketplaces. You can turn Debug Mode on in the step of Data SDK initialization], check all go well, and then turn it off in the same place to publish your App.
 
 ## Check the Prerequisites
 Support version: Android 5.0 or later
@@ -49,7 +49,7 @@ dependencies {
 
 ### Add Permissions
 In your `AndroidManifest.xml`, add the required permissions as below.
-See [Permission](permission.md) for more details.
+See [Permission](Permission.md) for more details.
 
 ```xml
 <uses-permission android:name="android.permission.INTERNET"/>
@@ -73,7 +73,7 @@ Initialize Data SDK in your main Application `onCreate()` method and main Activi
 In addition, manage [License Key](#license-key), [Opt-in](#opt-in), and [Debug Mode](#debug-mode) switch in this step.
 
 ### License Key
-You will receive a unique license key when your application is approved. See [Integration Process](integration_process.md) for more details.
+You will receive a unique license key when your application is approved. See [Integration Process](IntegrationProcess.md) for more details.
 
 If you are still waiting to receive it or get into trouble with it, please email Vpon Contact for further assistance.
 
@@ -101,7 +101,7 @@ vpdataAnalytics!!.initialize(this, licenseKey, customerId, VpdataAnalytics.OptIn
 ### Debug Mode
 Debug Mode allows you to interactively test your App events, including [Auto](auto-events.md) and [Customized](#set-up-customized-events), with messages displayed in the developer console.
 
-We suggest enabling Debug Mode and providing Debug Mode log to Vpon Contact before submitting your App in Marketplaces to guarantee the integration correctness. See [Debug Mode](debug_mode.md) and [Integration Process](integration_process.md) for more details.
+We suggest enabling Debug Mode and providing Debug Mode log to Vpon Contact before submitting your App in Marketplaces to guarantee the integration correctness. See [Debug Mode](DebugMode.md) and [Integration Process](IntegrationProcess.md) for more details.
 
 If all goes well, turn Debug Mode off and publish your App to the Marketplace.
 
@@ -115,7 +115,7 @@ vpdataAnalytics.setDebugMode(false);
 #### Kotlin
 ```
 // Turn Debug Mode on/off
-vpdataAnalytics!!.setDebugMode(true)
+vpdataAnalytics!!.setDebugMode(true
 vpdataAnalytics!!.setDebugMode(false)
 ```
 
@@ -222,7 +222,7 @@ class MainActivity : Activity() {
 ```
 
 ## Set up customized events
-If [Auto Events](auto-events.md) only partially fulfills your needs, Data SDK provides customized events to serve various App designs and meet your business focus.
+If [Auto Events](AutoEvents.md) only partially fulfills your needs, Data SDK provides customized events to serve various App designs and meet your business focus.
 
 By calling the tracker method, you can define your event name and any additional information you want to collect. It's flexible, and most importantly, no limit on the number of events.
 
