@@ -9,18 +9,31 @@ lang:           "en"
 ---
 
 # Android SDK
----
 
-## Prerequisites
-Data SDK support version:
+Welcome to the integration guide of Data SDK. You can leverage Data SDK in just several steps:
+1. [Check the Prerequisites](#check-the-prerequisites)
+2. [Download Data SDK](#download-data-sdk)
+3. [Set up App Configurations](#set-up-app-configurations)
+4. [Import Data SDK](#import-data-sdk)
+5. [Initialize Data SDK](#initialize-data-sdk)
+6. [Set up customized events](#set-up-customized-events) (Optional but recommended)
+7. [Test in Debug Mode](#debug-mode)
 
-* Android：`Android 5.0 or later`
+After completing steps 1 to 5, the minimum requirements, you can observe [Auto Events](auto-events.md) in your App.
 
+Furthermore, set up [customized events](#set-up-customized-events) according to your App design and user focus in step 6. The event setting is flexible and even skippable. Nevertheless, we encourage you to set up suitable customized events to obtain a comprehensive picture of your App users.
 
-### Prepare for Data SDK import
-You can [download Data SDK here][1] and import the file into your Android Studio project.
+Finally, check the integration status in step 7, [Debug Mode](debug_mode.md). Debug Mode helps you test the SDK setting before submitting your App to the App marketplaces. You can turn Debug Mode on in the step of Data SDK initialization], check all go well, and then turn it off in the same place to publish your App.
 
-Open `build.gradle` in App-level, modify dependencies as below:
+## Check the Prerequisites
+Support version: Android 5.0 or later
+
+## Download Data SDK 
+Download Data SDK [HERE][1] and add the file to your Android Studio project.
+
+## Set up App Configurations
+### Build dependencies 
+In your module (app-level) Gradle file (usually `<project>/<app-module>/build.gradle` ), modify dependencies as below.
 
 ```xml
 dependencies {
@@ -34,84 +47,116 @@ dependencies {
 }
 ```
 
-## Permission
-Please add the Permissions below in your `AndroidManifest.xml`
-
-(Required) Please add below premissions for basic data collection:
+### Add Permissions
+In your `AndroidManifest.xml`, add the required permissions as below.
+See [Permission](permission.md) for more details.
 
 ```xml
-<!-- Required permissions -->
 <uses-permission android:name="android.permission.INTERNET"/>
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
 <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
-```
-
-(Optional) Please add below permissions for advanced data collection and data analysis:
-
-```xml
-<!-- Optional permissions -->
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 ```
 
 ## Import Data SDK
-Please import VpondataAnalytics as below
+Import `VponDataAnalytics` in your main Application or main Activity files. For example, MainApplication, MainActivity, or other core functions of your App.
 
-```java
+```
 import com.vpon.sdk.VpdataAnalytics;
 ```
 
 ## Initialize Data SDK
+Initialize Data SDK in your main Application `onCreate()` method and main Activity `onCreate()` method separately to ensure [Auto Events](auto-events.md) functionality.
+In addition, manage [License Key](#license-key), [Opt-in](#opt-in), and [Debug Mode](#debug-mode) switch in this step.
 
-Declare VpdataAnalytics and setup License Key & Opt-In in this step. 
+### License Key
+You will receive a unique license key when your application is approved. See [Integration Process](integration_process.md) for more details.
 
-#### License Key
-You should receive a unique license key when your application is approved. If you do not receive it, please email Vpon Contact.
+If you are still waiting to receive it or get into trouble with it, please email Vpon Contact for further assistance.
 
+### Opt-In
+Data SDK is committed to protecting App user privacy. Therefore, Data SDK only collects data with user consent, which means Data SDK only gathers data under the condition that a user agrees to App terms of use or privacy policy.
 
-#### Opt-In
-To manage user consent in your App, Data SDK provides three Opt-In options: DEFAULT, CONSENT, and NOCONSENT. DEFAULT indicates the user has neither granted nor declined consent, CONSENT indicates the user gives his/her consent, and NOCONSENT indicates the user refuses to give his/her consent. Please refer to the sample code below:
+To help you manage App user consent efficiently, Data SDK provides three Opt-In options: DEFAULT, CONSENT, and NOCONSENT.
+- `DEFAULT`: the user has neither granted nor declined permission
+- `CONSENT`: the user gives consent
+- `NOCONSENT`: the user refuses to provide consent
 
+We recommend determining the status of user consent in the initialization step. After that, update the Opt-In option automatically and forward it to Data SDK simultaneously, depending on the latest permission status.
+Warning messages will display on the developer console if Opt-In is set either as `NOCONSENT` or `DEFAULT`.
+
+Below is a setup example of License Key and Opt-in
+#### Java
 ```
+vpdataAnalytics.initialize(this, licenseKey, customerId, VpdataAnalytics.OptIn.CONSENT);
+```
+#### Kotlin
+```
+vpdataAnalytics!!.initialize(this, licenseKey, customerId, VpdataAnalytics.OptIn.CONSENT)
+```
+
+### Debug Mode
+Debug Mode allows you to interactively test your App events, including [Auto](auto-events.md) and [Customized](#set-up-customized-events), with messages displayed in the developer console.
+
+We suggest enabling Debug Mode and providing Debug Mode log to Vpon Contact before submitting your App in Marketplaces to guarantee the integration correctness. See [Debug Mode](debug_mode.md) and [Integration Process](integration_process.md) for more details.
+
+If all goes well, turn Debug Mode off and publish your App to the Marketplace.
+
+Switch Debug Mode using the following codes
+#### Java
+```
+// Turn Debug Mode on/off
+vpdataAnalytics.setDebugMode(true);
+vpdataAnalytics.setDebugMode(false);
+```
+#### Kotlin
+```
+// Turn Debug Mode on/off
+vpdataAnalytics!!.setDebugMode(true)
+vpdataAnalytics!!.setDebugMode(false)
+```
+
+Combining all together, see a comprehensive example of Data SDK initialization.
+
+#### Java
+In your main Application
+```java
 // Opt-In options: 
 // VpdataAnalytics.OptIn.DEFAULT 
 // VpdataAnalytics.OptIn.CONSENT
 // VpdataAnalytics.OptIn.NOCONSENT
 
-// Opt-In is setup as VpdataAnalytics.OptIn.DEFAULT by default  
+// Debug Mode options: true/false
 
-// If a user gives his/her consent, configure Opt-In as CONSENT 
-vpdataAnalytics.initialize(this, licenseKey, customerId, VpdataAnalytics.OptIn.CONSENT)
-
-//If a user refuse to give his/her consent, configure Opt-In as NOCONSENT
-vpdataAnalytics.initialize(this, licenseKey, customerId, VpdataAnalytics.OptIn.NOCONSENT)
-
-```
-
-If a user gives his/her consent, you should configure Opt-In as CONSENT. If a user refuses to give his/her consent, you should configure Opt-In as NOCONSENT and should NOT send data to Vpon. Data SDK will display warning messages on the developer console if Opt-In is set either as  NOCONSENT or DEFAULT.
-
-It is recommended that you determine the status of a user's consent at every app launch. After that, update the Opt-In value and forward it to Data SDK simultaneously according to the user's latest consent status. 
-
-If a user changes his/her consent status, for example, from provides the consent to declines the consent, your App must automatically update the Opt-In value from CONSENT to NOCONSENT and then forward the status to Data SDK.
-
-Below is an example to initialize Data SDK with users' explicit authorization:
-
-
-Java
-
-```java
-public class MainActivity extends Activity {
-
-    // TODO set your licenseKey & customerId
-    private String licenseKey = "mock_license_key";
+public class MainApplication extends Application {
+    // Set your license_key & customer_id
+    private String licenseKey = "testKey";
     private String customerId = "";
 
-    private VpdataAnalytics vpdataAnalytics;
+    // Configure Opt-In as VpdataAnalytics.OptIn.CONSENT when a user gives consent
+    // Turn Debug Mode on
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        VpdataAnalytics vpdataAnalytics = VpdataAnalytics.INSTANCE;
 
+        // Set up before vpdataAnalytics.initialize
+        vpdataAnalytics.setDebugMode(true);
+
+        // Set up license_key and opt-in
+    	// If a user gives their consent, configure Opt-In as CONSENT
+        vpdataAnalytics.initialize(this, licenseKey, customerId, VpdataAnalytics.OptIn.CONSENT);  
+    }
+}
+```
+
+In your main Activity
+```java
+public class MainActivity extends Activity {
     private VpdataAnalytics.Tracker tracker = null;
-
     private final int PERMISSION_REQUEST_CODE = 2001;
 
     @Override
@@ -119,36 +164,47 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Request optional permission
+        // Request permissions
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            requestPermissions(new String[]{ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION, READ_PHONE_STATE}, PERMISSION_REQUEST_CODE);
+            requestPermissions(new String[]{ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION,READ_PHONE_STATE}, PERMISSION_REQUEST_CODE);
         }
-
-        vpdataAnalytics = VpdataAnalytics.INSTANCE;
-
-        // Set true to enable debug mode, set false before app release
-        // Set up before vpdataAnalytics.initialize
-        vpdataAnalytics.setDebugMode(false);
-	
-	
-        // Set up license_key and opt-in
-	// If a user gives his/her consent, configure Opt-In as CONSENT 
-        vpdataAnalytics.initialize(this, licenseKey, customerId, VpdataAnalytics.OptIn.CONSENT);
-        
         // Construct a Tracker for sending event
         tracker = new VpdataAnalytics.Tracker();
     }
 }
 ```
 
-Kotlin
+#### Kotlin
+In your main Application
+```kotlin
+// Opt-In options: 
+// VpdataAnalytics.OptIn.DEFAULT 
+// VpdataAnalytics.OptIn.CONSENT
+// VpdataAnalytics.OptIn.NOCONSENT
+
+// Debug Mode options: true/false
+class MainApplication : Application() {
+    // set up your license_key & customer_id
+    private val licenseKey = "testKey"
+    private val customerId = ""
+    
+    // Configure Opt-In as VpdataAnalytics.OptIn.CONSENT when a user gives consent
+    // Turn Debug Mode on
+    override fun onCreate() {
+        super.onCreate()
+        val vpdataAnalytics = VpdataAnalytic
+        // Set up before vpdataAnalytics.initialize
+        vpdataAnalytics!!.setDebugMode(true)
+        // Set up license_key and opt-in
+        vpdataAnalytics!!.initialize(this, licenseKey, customerId, VpdataAnalytics.OptIn.CONSENT)
+    }
+}
+```
+
+In your main Activity
 
 ```kotlin
 class MainActivity : Activity() {
-    // TODO set your licenseKey & customerId
-    private val licenseKey = "mock_license_key"
-    private val customerId = ""
-    private var vpdataAnalytics: VpdataAnalytics? = null
     private var tracker: VpdataAnalytics.Tracker? = null
     private val PERMISSION_REQUEST_CODE = 2001
     override fun onCreate(savedInstanceState: Bundle) {
@@ -158,25 +214,21 @@ class MainActivity : Activity() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             requestPermissions(arrayOf(ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION, READ_PHONE_STATE), PERMISSION_REQUEST_CODE)
         }
-        vpdataAnalytics = VpdataAnalytics
-        // Set true to enable debug mode, set false before app release
-        // Set up before vpdataAnalytics.initialize
-        vpdataAnalytics!!.setDebugMode(false)
-        // Set up license_key and opt-in
-        // If a user gives his/her consent, configure Opt-In as CONSENT
-        vpdataAnalytics!!.initialize(this, licenseKey, customerId, VpdataAnalytics.OptIn.CONSENT)
+
         // Construct a Tracker for sending event
         tracker = VpdataAnalytics.Tracker()
     }
 }
 ```
 
-## Send Data
-Data SDK provides tracker.sendEvent() method to send data in different scenarios.
+## Set up customized events
+If [Auto Events](auto-events.md) only partially fulfills your needs, Data SDK provides customized events to serve various App designs and meet your business focus.
 
-By using the tracker.sendEvent(), you can define a custom event that collects specific data. For example, you can define an onClick() event when a user clicks an item. Please refer to the sample code below:
+By calling the tracker method, you can define your event name and any additional information you want to collect. It's flexible, and most importantly, no limit on the number of events.
 
-### Java
+For instance, an E-Commerce App wants to create a conversion funnel. Hence, recording users' views on which product item is essential. Using the tracker method, this EC App can quickly implement an `item_view` event that tracks a coat with id, size, color, price, etc...extra details.
+Below are the sample codes and the final collected data.
+#### Java
 
 ```java
 public void onClick(View v) {
@@ -187,17 +239,15 @@ public void onClick(View v) {
 		payloadJsonObj.put("price", 100);
 		payloadJsonObj.put("color", "Blue");
 		payloadJsonObj.put("size", "XL");
-		payloadJsonObj.put("tags", "OrangeBear,fiber");
 		payloadJsonObj.put("currency", "NTD");
 		} catch (JSONException e) {
 		e.printStackTrace();
-	        }
+	    }
 	tracker.sendEvent("item_view", payloadJsonObj);
-        }
 }
 ```
 
-### Kotlin
+#### Kotlin
 
 ```kotlin
 val sendClickListener = View.OnClickListener {
@@ -208,7 +258,6 @@ val sendClickListener = View.OnClickListener {
             payloadJsonObj.put("price", 100);
             payloadJsonObj.put("color", "Blue");
             payloadJsonObj.put("size", "XL");
-            payloadJsonObj.put("tags", "OrangeBear,fiber");
             payloadJsonObj.put("currency", "NTD");
         } catch (JSONException e) {
             e.printStackTrace();
@@ -217,16 +266,29 @@ val sendClickListener = View.OnClickListener {
     }
 ```
 
+#### Collected data in JSON
+```{
+    "event_name": "item_view"
+    "id": "03356",
+    "name": "Coat", 
+    "price": 100, 
+    "color": "Blue", 
+    "size": "XL", 
+    "currency": "NTD"
+}
+```
 
-Another example is that you want to collect the URL accessed by a user. Using tracker.sendEvent(), you can define another onClick() event to collect the data of the previous URL and current URL accessed by a user.
+Another example is that an Online Travel Agency(OTA) App wants to observe the browsing history to optimize its user experience. Using the tracker method, the OTA App can set up a `page_view` event that traces the user journey.  
 
-### Java
+Below are the sample codes and the collected data.
+
+#### Java
 
 ```java
 public void onClick(View v) {
 	JSONObject payloadJsonObj = new JSONObject();
 	try {
-		payloadJsonObj.put("pervious", "URL of Last Page");
+		payloadJsonObj.put("previous", "URL of Last Page");
 		payloadJsonObj.put("current", "URL of Current Page");
 	} catch (JSONException e) {
 		e.printStackTrace();
@@ -236,7 +298,7 @@ public void onClick(View v) {
 ```
 
 
-### Kotlin
+#### Kotlin
 
 ```kotlin
 val sendClickListener = View.OnClickListener {
@@ -251,41 +313,22 @@ val sendClickListener = View.OnClickListener {
     }
 ```
 
-
-## Debug Mode
-When you initialize Data SDK, you can enable debug mode with vpdataAnalytics.setDebugMode(true) to check SDK integration status.
-
-### Java
-
-```java
-VpdataAnalytics vpdataAnalytics = VpdataAnalytics.INSTANCE;
-
-vpdataAnalytics.setDebugMode(true);
-// Set true to enable Debug Mode, remember to disable this setting before app release!
-// Must be set before vpdataAnalytics.initialize()
-
-vpdataAnalytics.initialize(this, licenseKey, customerId, VpdataAnalytics.OptIn.DEFAULT);
+#### Collected data in JSON
 ```
-
-### Kotlin
-
-```kotlin
-val vpdataAnalytics = VpdataAnalytics
-vpdataAnalytics.setDebugMode(true)
-// Set true to enable Debug Mode, remember to disable this setting before app release!
-// Must be set before vpdataAnalytics.initialize()
-vpdataAnalytics.initialize(this, licenseKey, customerId, VpdataAnalytics.OptIn.DEFAULT)
+{
+    "event_name": "page_view"
+    "previous": "URL of Last Page", 
+    "current": "URL of Current Page"
+}
 ```
-
-> **Note**：Set vpdataAnalytics.setDebugMode(false) before the App is launched.
 
 ## Sample Code
-Please refer to our [Sample Code](https://github.com/vpon-sdk/Vpon-Android-Analytics) for a complete integration.
+See also [Sample Code](https://github.com/vpon-sdk/Vpon-Android-Analytics) for a complete integration reference.
 
 ## Download
 
-|Data SDK 2.0.2|
+|Data SDK 2.0.4|
 |:-------:|
 |[Download][1]|
 
-[1]: https://m.vpon.com/data/sdk/android/a-vda-obf-v2.0.2-20210521-604f565-093040.aar
+[1]: https://m.vpon.com/data/sdk/android/a-vda-obf-v2.0.4-20221020-57f65c7-148627.aar
