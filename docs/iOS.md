@@ -171,7 +171,7 @@ For instance, an E-Commerce(EC) App wants to create a conversion funnel. Hence, 
 
 Below are the sample codes and the final collected data.
 
-### Swift
+#### Swift
 
 ```swift
 let tracker = VDATracker()
@@ -179,7 +179,7 @@ let builder = VDABuilder.createEventWithEventName("item_view", extraData: ["id":
 tracker.send(builder)
 ```
 
-### Objective-C
+#### Objective-C
 
 ```objc
 VDATracker *tracker = [[VDATracker alloc] init];
@@ -187,7 +187,7 @@ VDABuilder *builder = [VDABuilder createEventWithEventName:@"item_view" extraDat
 [tracker send:builder];
 ```
 
-### Collected data in JSON
+#### Collected data in JSON
 ```
 {
     "event_name": "item_view"
@@ -204,7 +204,7 @@ Another example is that an Online Travel Agency(OTA) App wants to observe the br
 
 Below are the sample codes and the collected data.
 
-### Swift
+#### Swift
 
 ```swift
 let tracker = VDATracker()
@@ -212,7 +212,7 @@ let builder = VDABuilder.createEventWithEventName("page_view", extraData: ["perv
 tracker.send(builder)
 ```
 
-### Objective-C
+#### Objective-C
 
 ```objc
 VDATracker *tracker = [[VDATracker alloc] init];
@@ -220,7 +220,7 @@ VDABuilder *builder = [VDABuilder createEventWithEventName:@"page_view" extraDat
 [tracker send:builder];
 ```
 
-### Collected data in JSON
+#### Collected data in JSON
 ```
 {
     "event_name": "page_view"
