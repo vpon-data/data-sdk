@@ -47,7 +47,7 @@ import VponDataAnalytics
 
 
 ## Initialize Data SDK
-Initialize Data SDK in `AppDelegae.swift` or `AppDelegae.h`. in the application `didFinishLaunchingWithOptions` method to ensure [Auto Events](auto-events.md) functionality.
+Initialize Data SDK in `AppDelegate.swift` or `AppDelegate.h`. in the application `didFinishLaunchingWithOptions` method to ensure [Auto Events](auto-events.md) functionality.
 
 In addition, manage License Key, Opt-in, and Debug Mode switch in this step.
 
@@ -79,7 +79,7 @@ config.setLicenseKey("testKey", withCustomID: "testCustomID", withOptIn: .CONSEN
 ```
 
 ### Debug Mode
-Debug Mode allows you to interactively test your App events, including [Auto](AutoEvents.md) and [Customized](#set-up-customized-events), comprehensively with messages displayed in the developer console.  
+Debug Mode allows you to interactively test your App events, including [Auto](AutoEvents.md) and [Customized](#set-up-customized-events), with messages displayed in the developer console.  
 
 We suggest enabling Debug Mode and providing Debug Mode log to Vpon Contact before submitting your App in Marketplaces to guarantee the integration setting. See [Debug Mode](DebugMode.md) and [Integration Process](IntegrationProcess.md) for more details.
 
@@ -89,14 +89,14 @@ Switch Debug Mode using the following codes
 #### Swift
 ```
 // Turn Debug Mode on/off
-[config setDebugMode:YES];
-[config setDebugMode:NO];
+config.setDebugMode(true)
+config.setDebugMode(false)
 ```
 #### Objective-C
 ```
 // Turn Debug Mode on/off
-config.setDebugMode(true)
-config.setDebugMode(false)
+[config setDebugMode:YES];
+[config setDebugMode:NO];
 ```
 
 Combining all together, see a comprehensive example of Data SDK initialization.
