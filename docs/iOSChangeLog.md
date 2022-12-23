@@ -7,7 +7,7 @@ keywords: "datasdk"
 permalink: /ios_change_log
 lang: "en"
 ---
-# Vpon iOS Data SDK Change Log
+# iOS Change Log
 
 ## 2.0.4
 
