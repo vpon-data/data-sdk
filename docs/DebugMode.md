@@ -9,7 +9,6 @@ lang:           "en"
 ---
 
 # Debug Mode
----
 Debug Mode provides a check mechanism to help App publishers understand the integration status. When an App integrates Vpon Data SDK with Debug Mode enabled, App publishers can see the checking messages on the developer console.
 
 Debug Mode checks SDK integration in 3-steps: ***SDK Initialization***, ***SDK Info Collection***, and ***Endpoint Connection***.
