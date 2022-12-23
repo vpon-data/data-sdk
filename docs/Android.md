@@ -99,7 +99,7 @@ vpdataAnalytics!!.initialize(this, licenseKey, customerId, VpdataAnalytics.OptIn
 ```
 
 ### Debug Mode
-Debug Mode allows you to interactively test your App events, including [Auto](auto-events.md) and [Customized](#set-up-customized-events), with messages displayed in the developer console.
+Debug Mode allows you to interactively test your App events, including [Auto](AutoEvents.md) and [Customized](#set-up-customized-events), with messages displayed in the developer console.
 
 We suggest enabling Debug Mode and providing Debug Mode log to Vpon Contact before submitting your App in Marketplaces to guarantee the integration correctness. See [Debug Mode](DebugMode.md) and [Integration Process](IntegrationProcess.md) for more details.
 
@@ -267,7 +267,8 @@ val sendClickListener = View.OnClickListener {
 ```
 
 #### Collected data in JSON
-```{
+```
+{
     "event_name": "item_view"
     "id": "03356",
     "name": "Coat", 
