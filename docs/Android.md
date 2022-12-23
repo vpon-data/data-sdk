@@ -23,7 +23,7 @@ After completing steps 1 to 5, the minimum requirements, you can observe [Auto E
 
 Furthermore, set up [customized events](#set-up-customized-events) according to your App design and user focus in step 6. The event setting is flexible and even skippable. Nevertheless, we encourage you to set up suitable customized events to obtain a comprehensive picture of your App users.
 
-Finally, check the integration status in step 7, [Debug Mode](DebugMode.md). Debug Mode helps you test the SDK setting before submitting your App to the App marketplaces. You can turn Debug Mode on in the step of Data SDK initialization], check all go well, and then turn it off in the same place to publish your App.
+Finally, check the integration status in step 7, [Debug Mode](DebugMode.md). Debug Mode helps you test the SDK setting before submitting your App to the App marketplaces. You can turn Debug Mode on in the step of Data SDK initialization, check all go well, and then turn it off in the same place to publish your App.
 
 ## Check the Prerequisites
 Support version: Android 5.0 or later
