@@ -19,7 +19,7 @@ Welcome to the integration guide of Data SDK. You can leverage Data SDK in just 
 6. [Set up customized events](#set-up-customized-events) (Optional but recommended)
 7. [Test in Debug Mode](#debug-mode)
 
-After completing steps 1 to 5, the minimum requirements, you can observe [Auto Events](AutoEvents.md)in your App.
+After completing steps 1 to 5, the minimum requirements, you can observe [Auto Events](AutoEvents.md) in your App.
 
 Furthermore, set up [customized events](#set-up-customized-events) according to your App design and user focus in step 6. The event setting is flexible and even skippable. Nevertheless, we encourage you to set up suitable customized events to obtain a comprehensive picture of your App users.
 
