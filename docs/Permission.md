@@ -9,7 +9,6 @@ lang:           "en"
 ---
 
 # Permission
----
 
 Vpon Data SDK requires very limited permissions from App users. 
 
