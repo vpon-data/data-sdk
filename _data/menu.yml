@@ -13,6 +13,8 @@ menu:
         url: /permission
       - page: Debug Mode
         url: /debug_mode
+      - page: Auto Events
+        url: /auto-events
   - page: Change Log
     subfolderitems:
       - page: iOS SDK
