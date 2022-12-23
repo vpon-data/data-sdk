@@ -7,7 +7,7 @@ keywords:       "datasdk"
 permalink:       /android_change_log
 lang:           "en"
 ---
-# Vpon Android Data SDK Change Log
+# Android Change Log
 
 ## 2.0.4
 
