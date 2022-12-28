@@ -1,13 +1,10 @@
-$color: (
-    v_OG: rgb(255, 132, 0),
-    v_Light_OG: rgb(255, 162, 45),
-    v_Dark_OG: rgb(255, 93, 0),
-    v_GY: rgb(125, 125, 125),
-    v_Light_GY: rgb(175, 175, 175),
-    v_Dark_IDG: rgb(0, 73, 172),
-    v_IDG: rgb(0, 113, 199),
-    v_Light_IDG: rgb(45, 151, 220),
-    v_Light_BU: rgb(25, 185, 210),
+$root-color: (
+    primary: #0073c8,
+    secondary: #ff8200,
+    tertiary: #19b9d2,
+    gray: #7d7d7d,
+    pink: #e377c2,
+    error: #ee0000,
 );
 
 $body-background-color: #FFF;
@@ -19,9 +16,9 @@ $body-heading-color:#222222;
 $nav-child-link-color: $grey-dk-000;
 $search-result-preview-color: $grey-dk-000;
 
-$link-color: map-get($color, v_IDG);
-$btn-primary-color:  map-get($color, v_Light_IDG);
-$base-button-color: map-get($color, v_IDG);
+$link-color: map-get($root-color, secondary);
+$btn-primary-color: map-get($root-color, primary);
+$base-button-color: map-get($root-color, primary);
 
 $code-background-color: #EEE;
 $search-background-color: rgba(255, 255, 255, 1);
