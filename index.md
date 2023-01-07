@@ -15,7 +15,7 @@ This website collects all the documents developers need when embedding Vpon Data
 
 The general workflow of Data SDK includes three steps.
 * Trigger events by user's actions, such as App launch. 
-  * See [Auto Events](/docs/AutoEvents.md) and Customized Events ([iOS](/docs/iOS.md#set-up-customized-events), [Android](/docs/Android.md#set-up-customized-events) )for more details.
+  * See [Auto Events](/docs/AutoEvents.md) and Customized Events ([iOS](/docs/iOS.md#set-up-customized-events), [Android](/docs/Android.md#set-up-customized-events)) for more details.
 * Collect device-based data. 
   * See [Data Collection](https://datasdk.vpon.com/introduction/data-collection) for more information.
 * Send data to the server after encryption. 
