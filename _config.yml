@@ -99,7 +99,7 @@ ga_tracking_flag: true
 
 plugins:
   - jekyll-seo-tag
-  - jekyll-tabs
+  # - jekyll-tabs
 
 
 compress_html:
