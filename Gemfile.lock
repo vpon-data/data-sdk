@@ -96,6 +96,7 @@ DEPENDENCIES
   html-proofer
   jekyll (~> 4.0.0)
   jekyll-feed (~> 0.6)
+  jekyll-tabs
   minima (~> 2.0)
   tzinfo-data
   webrick (~> 1.7)
