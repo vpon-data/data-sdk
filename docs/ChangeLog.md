@@ -9,7 +9,7 @@ lang: "en"
 ---
 
 # Change Log
-
+<!-- 
 {% tabs log %}
 
 {% tab log iOS %}
@@ -69,4 +69,4 @@ lang: "en"
 
 {% endtab %}
 
-{% endtabs %}
+{% endtabs %} -->
