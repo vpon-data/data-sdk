@@ -142,9 +142,9 @@ vpdataAnalytics!!.setDebugMode(false)
 Combining all together, see a comprehensive example of Data SDK initialization.
 #### In your main Application
 
-{% tabs all-application-android %}
+<!---{% tabs all-application-android %}--->
 
-{% tabs all-application-android Java %}
+<!---{% tabs all-application-android Java %}--->
 ```java
 // Opt-In options: 
 // VpdataAnalytics.OptIn.DEFAULT 
@@ -174,9 +174,9 @@ public class MainApplication extends Application {
     }
 }
 ```
-{% endtab %}
+<!---{% endtab %}--->
 
-{% tabs all-application-android Kotlin %}
+<!---{% tabs all-application-android Kotlin %}--->
 ```kotlin
 // Opt-In options: 
 // VpdataAnalytics.OptIn.DEFAULT 
@@ -201,15 +201,15 @@ class MainApplication : Application() {
     }
 }
 ```
-{% endtab %}
+<!---{% endtab %}--->
 
-{% endtabs %}
+{<!---% endtabs %}--->
 
 #### In your main Activity
 
-{% tabs all-activity-android %}
+<!---{% tabs all-activity-android %}--->
 
-{% tabs all-activity-android Java %}
+<!---{% tabs all-activity-android Java %}--->
 ```java
 public class MainActivity extends Activity {
     private VpdataAnalytics.Tracker tracker = null;
@@ -229,9 +229,9 @@ public class MainActivity extends Activity {
     }
 }
 ```
-{% endtab %}
+<!---{% endtab %}--->
 
-{% tabs all-activity-android Kotlin %}
+<!---{% tabs all-activity-android Kotlin %}--->
 ```kotlin
 class MainActivity : Activity() {
     private var tracker: VpdataAnalytics.Tracker? = null
@@ -249,9 +249,9 @@ class MainActivity : Activity() {
     }
 }
 ```
-{% endtab %}
+<!---{% endtab %}--->
 
-{% endtabs %}
+<!---{% endtabs %}--->
 
 ## Set up customized events
 If [Auto Events](AutoEvents.md) only partially fulfills your needs, Data SDK provides customized events to serve various App designs and meet your business focus.
@@ -261,9 +261,9 @@ By calling the tracker method, you can define your event name and any additional
 For instance, an E-Commerce App wants to create a conversion funnel. Hence, recording users' views on which product item is essential. Using the tracker method, this EC App can quickly implement an `item_view` event that tracks a coat with id, size, color, price, etc...extra details.
 Below are the sample codes and the final collected data.
 
-{% tabs customized-event-android %}
+<!---{% tabs customized-event-android %}--->
 
-{% tabs customized-event-android Java %}
+<!---{% tabs customized-event-android Java %}--->
 ```java
 public void onClick(View v) {
 	JSONObject payloadJsonObj = new JSONObject();
@@ -280,9 +280,9 @@ public void onClick(View v) {
 	tracker.sendEvent("item_view", payloadJsonObj);
 }
 ```
-{% endtab %}
+<!---{% endtab %}--->
 
-{% tabs customized-event-android Kotlin %}
+<!---{% tabs customized-event-android Kotlin %}--->
 
 ```kotlin
 val sendClickListener = View.OnClickListener {
@@ -300,9 +300,9 @@ val sendClickListener = View.OnClickListener {
         tracker?.sendEvent("item_view", payloadJsonObj);
     }
 ```
-{% endtab %}
+<!---{% endtab %}--->
 
-{% tabs customized-event-android Collected Data in JSON %}
+<!---{% tabs customized-event-android Collected Data in JSON %}--->
 ```
 {
     "event_name": "item_view"
@@ -314,17 +314,17 @@ val sendClickListener = View.OnClickListener {
     "currency": "NTD"
 }
 ```
-{% endtab %}
+<!---{% endtab %}--->
 
-{% endtabs %}
+<!---{% endtabs %}--->
 
 Another example is that an Online Travel Agency(OTA) App wants to observe the browsing history to optimize its user experience. Using the tracker method, the OTA App can set up a `page_view` event that traces the user journey.  
 
 Below are the sample codes and the collected data.
 
-#{% tabs customized-event-android2 %}
+<!---{% tabs customized-event-android2 %}--->
 
-#{% tabs customized-event-android2 Java %}
+<!---{% tabs customized-event-android2 Java %}--->
 ```java
 public void onClick(View v) {
 	JSONObject payloadJsonObj = new JSONObject();
@@ -337,9 +337,9 @@ public void onClick(View v) {
 	tracker.sendEvent("page_view", payloadJsonObj);
 }
 ```
-#{% endtab %}
+<!---{% endtab %}--->
 
-#{% tabs customized-event-android2 Kotlin %}
+<!---{% tabs customized-event-android2 Kotlin %}--->
 ```kotlin
 val sendClickListener = View.OnClickListener {
         val payloadJsonObj = JSONObject()
@@ -352,9 +352,9 @@ val sendClickListener = View.OnClickListener {
         tracker?.sendEvent("page_view", payloadJsonObj)    
     }
 ```
-#{% endtab %}
+<!---{% endtab %}--->
 
-#{% tabs customized-event-android2 Collected Data in JSON %}
+<!---{% tabs customized-event-android2 Collected Data in JSON %}--->
 ```
 {
     "event_name": "page_view"
@@ -362,9 +362,9 @@ val sendClickListener = View.OnClickListener {
     "current": "URL of Current Page"
 }
 ```
-#{% endtab %}
+<!---{{% endtab %}--->
 
-#{% endtabs %}
+<!---{% endtabs %}--->
 
 ## Sample Code
 See also [Sample Code](https://github.com/vpon-sdk/Vpon-Android-Analytics) for a complete integration reference.
