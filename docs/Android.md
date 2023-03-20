@@ -89,18 +89,23 @@ We recommend determining the status of user consent in the initialization step. 
 Warning messages will display on the developer console if Opt-In is set either as `NOCONSENT` or `DEFAULT`.
 
 Below is a setup example of License Key and Opt-in
+
 {% tabs lic-android %}
+
 {% tabs lic-android Java %}
 ```
 vpdataAnalytics.initialize(this, licenseKey, customerId, VpdataAnalytics.OptIn.CONSENT);
 ```
 {% endtab %}
+
 {% tabs lic-android Kotlin %}
 ```
 vpdataAnalytics!!.initialize(this, licenseKey, customerId, VpdataAnalytics.OptIn.CONSENT)
 ```
 {% endtab %}
+
 {% endtabs %}
+
 ### Debug Mode
 Debug Mode allows you to interactively test your App events, including [Auto](AutoEvents.md) and [Customized](#set-up-customized-events), with messages displayed in the developer console.
 
@@ -109,28 +114,36 @@ We suggest enabling Debug Mode and providing Debug Mode log to Vpon Contact befo
 If all goes well, turn Debug Mode off and publish your App to the Marketplace.
 
 Switch Debug Mode using the following codes
+
 {% tabs debug-android %}
+
 {% tabs debug-android Java %}
 ```
 // Turn Debug Mode on
 vpdataAnalytics.setDebugMode(true);
+
 // Turn Debug Mode off
 vpdataAnalytics.setDebugMode(false);
 ```
 {% endtab %}
+
 {% tabs lic-android Kotlin %}
 ```
 // Turn Debug Mode on
 vpdataAnalytics!!.setDebugMode(true)
+
 // Turn Debug Mode off
 vpdataAnalytics!!.setDebugMode(false)
 ```
 {% endtab %}
+
 {% endtabs %}
 
 Combining all together, see a comprehensive example of Data SDK initialization.
 #### In your main Application
+
 {% tabs all-application-android %}
+
 {% tabs all-application-android Java %}
 ```java
 // Opt-In options: 
@@ -162,6 +175,7 @@ public class MainApplication extends Application {
 }
 ```
 {% endtab %}
+
 {% tabs all-application-android Kotlin %}
 ```kotlin
 // Opt-In options: 
@@ -188,10 +202,13 @@ class MainApplication : Application() {
 }
 ```
 {% endtab %}
+
 {% endtabs %}
 
 #### In your main Activity
+
 {% tabs all-activity-android %}
+
 {% tabs all-activity-android Java %}
 ```java
 public class MainActivity extends Activity {
@@ -213,6 +230,7 @@ public class MainActivity extends Activity {
 }
 ```
 {% endtab %}
+
 {% tabs all-activity-android Kotlin %}
 ```kotlin
 class MainActivity : Activity() {
@@ -232,6 +250,7 @@ class MainActivity : Activity() {
 }
 ```
 {% endtab %}
+
 {% endtabs %}
 
 ## Set up customized events
@@ -243,6 +262,7 @@ For instance, an E-Commerce App wants to create a conversion funnel. Hence, reco
 Below are the sample codes and the final collected data.
 
 {% tabs customized-event-android %}
+
 {% tabs customized-event-android Java %}
 ```java
 public void onClick(View v) {
@@ -261,6 +281,7 @@ public void onClick(View v) {
 }
 ```
 {% endtab %}
+
 {% tabs customized-event-android Kotlin %}
 
 ```kotlin
@@ -280,6 +301,7 @@ val sendClickListener = View.OnClickListener {
     }
 ```
 {% endtab %}
+
 {% tabs customized-event-android Collected Data in JSON %}
 ```
 {
@@ -293,6 +315,7 @@ val sendClickListener = View.OnClickListener {
 }
 ```
 {% endtab %}
+
 {% endtabs %}
 
 Another example is that an Online Travel Agency(OTA) App wants to observe the browsing history to optimize its user experience. Using the tracker method, the OTA App can set up a `page_view` event that traces the user journey.  
@@ -300,6 +323,7 @@ Another example is that an Online Travel Agency(OTA) App wants to observe the br
 Below are the sample codes and the collected data.
 
 {% tabs customized-event-android2 %}
+
 {% tabs customized-event-android2 Java %}
 ```java
 public void onClick(View v) {
@@ -314,6 +338,7 @@ public void onClick(View v) {
 }
 ```
 {% endtab %}
+
 {% tabs customized-event-android2 Kotlin %}
 ```kotlin
 val sendClickListener = View.OnClickListener {
@@ -328,7 +353,8 @@ val sendClickListener = View.OnClickListener {
     }
 ```
 {% endtab %}
-{% tabs customized-event-android2Collected Data in JSON %}
+
+{% tabs customized-event-android2 Collected Data in JSON %}
 ```
 {
     "event_name": "page_view"
@@ -337,6 +363,7 @@ val sendClickListener = View.OnClickListener {
 }
 ```
 {% endtab %}
+
 {% endtabs %}
 
 ## Sample Code
