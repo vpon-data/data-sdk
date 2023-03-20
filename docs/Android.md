@@ -93,13 +93,13 @@ Below is a setup example of License Key and Opt-in
 {% tabs lic-android %}
 
 {% tabs lic-android Java %}
-```
+```java
 vpdataAnalytics.initialize(this, licenseKey, customerId, VpdataAnalytics.OptIn.CONSENT);
 ```
 {% endtab %}
 
 {% tabs lic-android Kotlin %}
-```
+```kotlin
 vpdataAnalytics!!.initialize(this, licenseKey, customerId, VpdataAnalytics.OptIn.CONSENT)
 ```
 {% endtab %}
@@ -127,7 +127,7 @@ vpdataAnalytics.setDebugMode(false);
 ```
 {% endtab %}
 
-{% tabs lic-android Kotlin %}
+{% tabs debug-android Kotlin %}
 ```
 // Turn Debug Mode on
 vpdataAnalytics!!.setDebugMode(true)
