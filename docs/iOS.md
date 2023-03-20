@@ -34,17 +34,19 @@ Download Data SDK [HERE][1] and add the `.framework` file into your Project.
 Import `VponDataAnalytics` in your main function.
 
 {% tabs log %}
+
 {% tab log Swift %}
 ```swift
 import VponDataAnalytics
 ```
 {% endtab %}
-{% tab log Objective-C%}
 
+{% tab log Objective-C%}
 ```objc
 #import <VponDataAnalytics/VponDataAnalytics.h>
 ```
 {% endtab %}
+
 {% endtabs %}
 
 ## Initialize Data SDK
