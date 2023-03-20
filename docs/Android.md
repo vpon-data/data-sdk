@@ -101,7 +101,6 @@ vpdataAnalytics!!.initialize(this, licenseKey, customerId, VpdataAnalytics.OptIn
 ```
 {% endtab %}
 {% endtabs %}
-
 ### Debug Mode
 Debug Mode allows you to interactively test your App events, including [Auto](AutoEvents.md) and [Customized](#set-up-customized-events), with messages displayed in the developer console.
 
