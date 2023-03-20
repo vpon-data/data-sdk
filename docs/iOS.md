@@ -33,18 +33,19 @@ Download Data SDK [HERE][1] and add the `.framework` file into your Project.
 ## Import Data SDK
 Import `VponDataAnalytics` in your main function.
 
-#### Swift
-
+{% tabs log %}
+{% tab log Swift %}
 ```swift
 import VponDataAnalytics
 ```
-
-#### Objective-C
+{% endtab %}
+{% tab log Objective-C%}
 
 ```objc
 #import <VponDataAnalytics/VponDataAnalytics.h>
 ```
-
+{% endtab %}
+{% endtabs %}
 
 ## Initialize Data SDK
 Initialize Data SDK in `AppDelegate.swift` or `AppDelegate.h`. in the application `didFinishLaunchingWithOptions` method to ensure [Auto Events](AutoEvents.md) functionality.
