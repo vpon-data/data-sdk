@@ -89,19 +89,22 @@ We recommend determining the status of user consent in the initialization step. 
 Warning messages will display on the developer console if Opt-In is set either as `NOCONSENT` or `DEFAULT`.
 
 Below is a setup example of License Key and Opt-in
+
 {% tabs lic-android %}
-{% tabs lic-android Java %}
+
+{% tab lic-android Java %}
 ```java
 vpdataAnalytics.initialize(this, licenseKey, customerId, VpdataAnalytics.OptIn.CONSENT);
 ```
 {% endtab %}
-{% tabs lic-android Kotlin %}
+
+{% tab lic-android Kotlin %}
 ```kotlin
 vpdataAnalytics!!.initialize(this, licenseKey, customerId, VpdataAnalytics.OptIn.CONSENT)
 ```
 {% endtab %}
-{% endtabs %}
 
+{% endtabs %}
 
 ### Debug Mode
 Debug Mode allows you to interactively test your App events, including [Auto](AutoEvents.md) and [Customized](#set-up-customized-events), with messages displayed in the developer console.
@@ -111,23 +114,37 @@ We suggest enabling Debug Mode and providing Debug Mode log to Vpon Contact befo
 If all goes well, turn Debug Mode off and publish your App to the Marketplace.
 
 Switch Debug Mode using the following codes
-#### Java
+
+{% tabs debug-android %}
+
+{% tab debug-android Java %}
 ```
-// Turn Debug Mode on/off
+// Turn Debug Mode on
 vpdataAnalytics.setDebugMode(true);
+
+// Turn Debug Mode off
 vpdataAnalytics.setDebugMode(false);
 ```
-#### Kotlin
+{% endtab %}
+
+{% tab debug-android Kotlin %}
 ```
-// Turn Debug Mode on/off
-vpdataAnalytics!!.setDebugMode(true
+// Turn Debug Mode on
+vpdataAnalytics!!.setDebugMode(true)
+
+// Turn Debug Mode off
 vpdataAnalytics!!.setDebugMode(false)
 ```
+{% endtab %}
+
+{% endtabs %}
 
 Combining all together, see a comprehensive example of Data SDK initialization.
+#### In your main Application
 
-#### Java
-In your main Application
+{% tabs all-application-android %}
+
+{% tab all-application-android Java %}
 ```java
 // Opt-In options: 
 // VpdataAnalytics.OptIn.DEFAULT 
@@ -157,30 +174,9 @@ public class MainApplication extends Application {
     }
 }
 ```
+{% endtab %}
 
-In your main Activity
-```java
-public class MainActivity extends Activity {
-    private VpdataAnalytics.Tracker tracker = null;
-    private final int PERMISSION_REQUEST_CODE = 2001;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        // Request permissions
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            requestPermissions(new String[]{ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION,READ_PHONE_STATE}, PERMISSION_REQUEST_CODE);
-        }
-        // Construct a Tracker for sending event
-        tracker = new VpdataAnalytics.Tracker();
-    }
-}
-```
-
-#### Kotlin
-In your main Application
+{% tab all-application-android Kotlin %}
 ```kotlin
 // Opt-In options: 
 // VpdataAnalytics.OptIn.DEFAULT 
@@ -205,9 +201,37 @@ class MainApplication : Application() {
     }
 }
 ```
+{% endtab %}
 
-In your main Activity
+{% endtabs %}
 
+#### In your main Activity
+
+{% tabs all-activity-android %}
+
+{% tab all-activity-android Java %}
+```java
+public class MainActivity extends Activity {
+    private VpdataAnalytics.Tracker tracker = null;
+    private final int PERMISSION_REQUEST_CODE = 2001;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // Request permissions
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            requestPermissions(new String[]{ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION,READ_PHONE_STATE}, PERMISSION_REQUEST_CODE);
+        }
+        // Construct a Tracker for sending event
+        tracker = new VpdataAnalytics.Tracker();
+    }
+}
+```
+{% endtab %}
+
+{% tab all-activity-android Kotlin %}
 ```kotlin
 class MainActivity : Activity() {
     private var tracker: VpdataAnalytics.Tracker? = null
@@ -225,6 +249,9 @@ class MainActivity : Activity() {
     }
 }
 ```
+{% endtab %}
+
+{% endtabs %}
 
 ## Set up customized events
 If [Auto Events](AutoEvents.md) only partially fulfills your needs, Data SDK provides customized events to serve various App designs and meet your business focus.
@@ -233,8 +260,10 @@ By calling the tracker method, you can define your event name and any additional
 
 For instance, an E-Commerce App wants to create a conversion funnel. Hence, recording users' views on which product item is essential. Using the tracker method, this EC App can quickly implement an `item_view` event that tracks a coat with id, size, color, price, etc...extra details.
 Below are the sample codes and the final collected data.
-#### Java
 
+{% tabs customized-event-android %}
+
+{% tab customized-event-android Java %}
 ```java
 public void onClick(View v) {
 	JSONObject payloadJsonObj = new JSONObject();
@@ -251,8 +280,9 @@ public void onClick(View v) {
 	tracker.sendEvent("item_view", payloadJsonObj);
 }
 ```
+{% endtab %}
 
-#### Kotlin
+{% tab customized-event-android Kotlin %}
 
 ```kotlin
 val sendClickListener = View.OnClickListener {
@@ -270,8 +300,9 @@ val sendClickListener = View.OnClickListener {
         tracker?.sendEvent("item_view", payloadJsonObj);
     }
 ```
+{% endtab %}
 
-#### Collected data in JSON
+{% tab customized-event-android Collected Data in JSON %}
 ```
 {
     "event_name": "item_view"
@@ -283,13 +314,17 @@ val sendClickListener = View.OnClickListener {
     "currency": "NTD"
 }
 ```
+{% endtab %}
+
+{% endtabs %}
 
 Another example is that an Online Travel Agency(OTA) App wants to observe the browsing history to optimize its user experience. Using the tracker method, the OTA App can set up a `page_view` event that traces the user journey.  
 
 Below are the sample codes and the collected data.
 
-#### Java
+{% tabs customized-event-android2 %}
 
+{% tab customized-event-android2 Java %}
 ```java
 public void onClick(View v) {
 	JSONObject payloadJsonObj = new JSONObject();
@@ -302,10 +337,9 @@ public void onClick(View v) {
 	tracker.sendEvent("page_view", payloadJsonObj);
 }
 ```
+{% endtab %}
 
-
-#### Kotlin
-
+{% tab customized-event-android2 Kotlin %}
 ```kotlin
 val sendClickListener = View.OnClickListener {
         val payloadJsonObj = JSONObject()
@@ -318,8 +352,9 @@ val sendClickListener = View.OnClickListener {
         tracker?.sendEvent("page_view", payloadJsonObj)    
     }
 ```
+{% endtab %}
 
-#### Collected data in JSON
+{% tab customized-event-android2 Collected Data in JSON %}
 ```
 {
     "event_name": "page_view"
@@ -327,6 +362,9 @@ val sendClickListener = View.OnClickListener {
     "current": "URL of Current Page"
 }
 ```
+{% endtab %}
+
+{% endtabs %}
 
 ## Sample Code
 See also [Sample Code](https://github.com/vpon-sdk/Vpon-Android-Analytics) for a complete integration reference.
