@@ -89,14 +89,19 @@ We recommend determining the status of user consent in the initialization step. 
 Warning messages will display on the developer console if Opt-In is set either as `NOCONSENT` or `DEFAULT`.
 
 Below is a setup example of License Key and Opt-in
-#### Java
-```
+{% tabs lic-android %}
+{% tabs lic-android Java %}
+```java
 vpdataAnalytics.initialize(this, licenseKey, customerId, VpdataAnalytics.OptIn.CONSENT);
 ```
-#### Kotlin
-```
+{% endtab %}
+{% tabs lic-android Kotlin %}
+```kotlin
 vpdataAnalytics!!.initialize(this, licenseKey, customerId, VpdataAnalytics.OptIn.CONSENT)
 ```
+{% endtab %}
+{% endtabs %}
+
 
 ### Debug Mode
 Debug Mode allows you to interactively test your App events, including [Auto](AutoEvents.md) and [Customized](#set-up-customized-events), with messages displayed in the developer console.
