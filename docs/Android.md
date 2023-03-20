@@ -184,6 +184,7 @@ public class MainApplication extends Application {
 // VpdataAnalytics.OptIn.NOCONSENT
 
 // Debug Mode options: true/false
+
 class MainApplication : Application() {
     // set up your license_key & customer_id
     private val licenseKey = "testKey"
@@ -194,8 +195,10 @@ class MainApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         val vpdataAnalytics = VpdataAnalytic
+	
         // Set up before vpdataAnalytics.initialize
         vpdataAnalytics!!.setDebugMode(true)
+	
         // Set up license_key and opt-in
         vpdataAnalytics!!.initialize(this, licenseKey, customerId, VpdataAnalytics.OptIn.CONSENT)
     }
@@ -224,6 +227,7 @@ public class MainActivity extends Activity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             requestPermissions(new String[]{ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION,READ_PHONE_STATE}, PERMISSION_REQUEST_CODE);
         }
+	
         // Construct a Tracker for sending event
         tracker = new VpdataAnalytics.Tracker();
     }
@@ -236,9 +240,11 @@ public class MainActivity extends Activity {
 class MainActivity : Activity() {
     private var tracker: VpdataAnalytics.Tracker? = null
     private val PERMISSION_REQUEST_CODE = 2001
+    
     override fun onCreate(savedInstanceState: Bundle) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+	
         // Request optional permission
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             requestPermissions(arrayOf(ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION, READ_PHONE_STATE), PERMISSION_REQUEST_CODE)
