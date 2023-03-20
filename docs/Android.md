@@ -322,9 +322,9 @@ Another example is that an Online Travel Agency(OTA) App wants to observe the br
 
 Below are the sample codes and the collected data.
 
-{% tabs customized-event-android2 %}
+#{% tabs customized-event-android2 %}
 
-{% tabs customized-event-android2 Java %}
+#{% tabs customized-event-android2 Java %}
 ```java
 public void onClick(View v) {
 	JSONObject payloadJsonObj = new JSONObject();
@@ -337,9 +337,9 @@ public void onClick(View v) {
 	tracker.sendEvent("page_view", payloadJsonObj);
 }
 ```
-{% endtab %}
+#{% endtab %}
 
-{% tabs customized-event-android2 Kotlin %}
+#{% tabs customized-event-android2 Kotlin %}
 ```kotlin
 val sendClickListener = View.OnClickListener {
         val payloadJsonObj = JSONObject()
@@ -352,9 +352,9 @@ val sendClickListener = View.OnClickListener {
         tracker?.sendEvent("page_view", payloadJsonObj)    
     }
 ```
-{% endtab %}
+#{% endtab %}
 
-{% tabs customized-event-android2 Collected Data in JSON %}
+#{% tabs customized-event-android2 Collected Data in JSON %}
 ```
 {
     "event_name": "page_view"
@@ -362,9 +362,9 @@ val sendClickListener = View.OnClickListener {
     "current": "URL of Current Page"
 }
 ```
-{% endtab %}
+#{% endtab %}
 
-{% endtabs %}
+#{% endtabs %}
 
 ## Sample Code
 See also [Sample Code](https://github.com/vpon-sdk/Vpon-Android-Analytics) for a complete integration reference.
