@@ -52,7 +52,7 @@ import VponDataAnalytics
 ## Initialize Data SDK
 Initialize Data SDK in `AppDelegate.swift` or `AppDelegate.h`. in the application `didFinishLaunchingWithOptions` method to ensure [Auto Events](AutoEvents.md) functionality.
 
-In addition, manage [License Key]((#license-key), [Opt-in](#opt-in), and [Debug Mode](#debug-mode) switch in this step.
+In addition, manage [License Key](#license-key), [Opt-in](#opt-in), and [Debug Mode](#debug-mode) switch in this step.
 
 
 ### License Key
