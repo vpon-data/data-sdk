@@ -72,14 +72,21 @@ We recommend determining the status of user consent in the application `didFinis
 Warning messages will display on the developer console if Opt-In is set either as `NOCONSENT` or `DEFAULT`.
 
 Below is a setup example of License Key and Opt-in:
-#### Swift
+{% tabs lic-ios %}
+
+{% tab lic-ios Swift %}
 ```
 config.setLicenseKey("testKey", withCustomID: "testCustomID", withOptIn: .CONSENT)
 ```
-#### Objective-C
+{% endtab %}
+
+{% tab lic-ios Objective-C%}
 ```
 [config setLicenseKey:@"testKey" withCustomID:@"testCustomID" withOptIn:VDAOptInCONSENT];
 ```
+{% endtab %}
+
+{% endtabs %}
 
 ### Debug Mode
 Debug Mode allows you to interactively test your App events, including [Auto](AutoEvents.md) and [Customized](#set-up-customized-events), with messages displayed in the developer console.  
@@ -89,21 +96,36 @@ We suggest enabling Debug Mode and providing Debug Mode log to Vpon Contact befo
 If all goes well, turn Debug Mode off and publish your App to the Marketplace.
 
 Switch Debug Mode using the following codes
-#### Swift
+
+{% tabs debug-ios %}
+
+{% tab debug-ios Swift %}
 ```
-// Turn Debug Mode on/off
+// Turn Debug Mode on
 config.setDebugMode(true)
+
+// Turn Debug Mode off
 config.setDebugMode(false)
 ```
-#### Objective-C
+{% endtab %}
+
+{% tab debug-ios Objective-C%}
 ```
-// Turn Debug Mode on/off
+// Turn Debug Mode on
 [config setDebugMode:YES];
+
+// Turn Debug Mode off
 [config setDebugMode:NO];
 ```
+{% endtab %}
+
+{% endtabs %}
 
 Combining all together, see a comprehensive example of Data SDK initialization.
-#### Swift
+{% tabs allexample-ios %}
+
+{% tab allexample-ios Swift %}
+
 ```
 import VponDataAnalytics
 
@@ -134,8 +156,9 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
         config.initialize()
 }
 ```
+{% endtab %}
 
-#### Objective-C
+{% tab allexample-ios Objective-C%}
 ```
 #import <VponDataAnalytics/VponDataAnalytics.h>
 
@@ -164,6 +187,8 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     [config initialize];
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 ## Set up customized events
 If [Auto Events](AutoEvents.md) only partially fulfills your needs, Data SDK provides customized events to serve various App designs and meet your business focus.
@@ -174,23 +199,23 @@ For instance, an E-Commerce(EC) App wants to create a conversion funnel. Hence, 
 
 Below are the sample codes and the final collected data.
 
-#### Swift
-
+{% tabs customized-event-ios %}
+{% tab customized-event-ios Swift %}
 ```swift
 let tracker = VDATracker()
 let builder = VDABuilder.createEventWithEventName("item_view", extraData: ["id": "payload", "name": "Coat", "price": 100, "color": "Blue", "size": "XL", "currency": "NTD"])
 tracker.send(builder)
 ```
-
-#### Objective-C
+{% endtab %}
+{% tab customized-event-ios Objective-C %}
 
 ```objc
 VDATracker *tracker = [[VDATracker alloc] init];
 VDABuilder *builder = [VDABuilder createEventWithEventName:@"item_view" extraData:@{@"id": @"payload", @"name": @"Coat", @"price": @(100), @"color": @"Blue", @"size": @"XL", @"currency": @"NTD"}];
 [tracker send:builder];
 ```
-
-#### Collected data in JSON
+{% endtab %}
+{% tab customized-event-ios Collected Data in JSON-C %}
 ```
 {
     "event_name": "item_view"
@@ -202,28 +227,31 @@ VDABuilder *builder = [VDABuilder createEventWithEventName:@"item_view" extraDat
     "currency": "NTD"
 }
 ```
+{% endtab %}
+{% endtabs %}
+
 
 Another example is that an Online Travel Agency(OTA) App wants to observe the browsing history to optimize its user experience. Using the `tracker` method, the OTA App can set up a `page_view` event that traces the user journey.  
 
 Below are the sample codes and the collected data.
 
-#### Swift
-
+{% tabs customized-event-ios2 %}
+{% tab customized-event-ios2 Swift %}
 ```swift
 let tracker = VDATracker()
 let builder = VDABuilder.createEventWithEventName("page_view", extraData: ["pervious": "URL of Last Page", "current": "URL of Current Page"])
 tracker.send(builder)
 ```
-
-#### Objective-C
+{% endtab %}
+{% tab customized-event-ios2 Objective-C %}
 
 ```objc
 VDATracker *tracker = [[VDATracker alloc] init];
 VDABuilder *builder = [VDABuilder createEventWithEventName:@"page_view" extraData:@{@"pervious": @"URL of Last Page", @"current": @"URL of Current Page"}];
 [tracker send:builder];
 ```
-
-#### Collected data in JSON
+{% endtab %}
+{% tab customized-event-ios2 Collected Data in Json %}
 ```
 {
     "event_name": "page_view"
@@ -231,6 +259,8 @@ VDABuilder *builder = [VDABuilder createEventWithEventName:@"page_view" extraDat
     "current": "URL of Current Page"
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 ## Sample Code
 See also [Sample Code](https://github.com/vpon-sdk/Vpon-iOS-Analytics)  for a complete integration reference.
