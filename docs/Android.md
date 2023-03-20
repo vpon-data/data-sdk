@@ -90,21 +90,21 @@ Warning messages will display on the developer console if Opt-In is set either a
 
 Below is a setup example of License Key and Opt-in
 
-{% tabs lic-android %}
+<!---{% tabs lic-android %}--->
 
-{% tabs lic-android Java %}
+<!---<!---{% tabs lic-android Java %}--->
 ```java
 vpdataAnalytics.initialize(this, licenseKey, customerId, VpdataAnalytics.OptIn.CONSENT);
 ```
-{% endtab %}
+<!---{% endtab %}--->
 
-{% tabs lic-android Kotlin %}
+<!---{% tabs lic-android Kotlin %}
 ```kotlin
 vpdataAnalytics!!.initialize(this, licenseKey, customerId, VpdataAnalytics.OptIn.CONSENT)
 ```
-{% endtab %}
+<!---{% endtab %}--->
 
-{% endtabs %}
+<!---{% endtabs %}--->
 
 ### Debug Mode
 Debug Mode allows you to interactively test your App events, including [Auto](AutoEvents.md) and [Customized](#set-up-customized-events), with messages displayed in the developer console.
@@ -115,9 +115,9 @@ If all goes well, turn Debug Mode off and publish your App to the Marketplace.
 
 Switch Debug Mode using the following codes
 
-{% tabs debug-android %}
+<!---{{% tabs debug-android %}--->
 
-{% tabs debug-android Java %}
+<!---{{% tabs debug-android Java %}--->
 ```
 // Turn Debug Mode on
 vpdataAnalytics.setDebugMode(true);
@@ -125,9 +125,9 @@ vpdataAnalytics.setDebugMode(true);
 // Turn Debug Mode off
 vpdataAnalytics.setDebugMode(false);
 ```
-{% endtab %}
+<!---{{% endtab %}--->
 
-{% tabs debug-android Kotlin %}
+<!---{{% tabs debug-android Kotlin %}--->
 ```
 // Turn Debug Mode on
 vpdataAnalytics!!.setDebugMode(true)
@@ -135,9 +135,9 @@ vpdataAnalytics!!.setDebugMode(true)
 // Turn Debug Mode off
 vpdataAnalytics!!.setDebugMode(false)
 ```
-{% endtab %}
+<!---{{% endtab %}--->
 
-{% endtabs %}
+<!---{{% endtabs %}--->
 
 Combining all together, see a comprehensive example of Data SDK initialization.
 #### In your main Application
@@ -203,7 +203,7 @@ class MainApplication : Application() {
 ```
 <!---{% endtab %}--->
 
-{<!---% endtabs %}--->
+<!---{% endtabs %}--->
 
 #### In your main Activity
 
