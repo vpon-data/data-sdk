@@ -309,7 +309,7 @@ val sendClickListener = View.OnClickListener {
 {% endtab %}
 
 {% tab customized-event-android Collected Data in JSON %}
-```
+```json
 {
     "event_name": "item_view"
     "id": "03356",
@@ -361,7 +361,7 @@ val sendClickListener = View.OnClickListener {
 {% endtab %}
 
 {% tab customized-event-android2 Collected Data in JSON %}
-```
+```json
 {
     "event_name": "page_view"
     "previous": "URL of Last Page", 
