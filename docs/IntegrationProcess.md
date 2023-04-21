@@ -14,7 +14,7 @@ lang:           "en"
 The Integration Process is designed to guide you through the seamless integration of the Data SDK into your app. It provides step-by-step instructions tailored for both iOS and Android platforms. If you encounter any issues or have questions during the process, please do not hesitate to contact us via email for assistance.
 
 
-![](/docs/images/integration_process4.png) 
+![](/docs/images/integration_process_4.png) 
 
 | Step | Role        | Task                                                                                                    | Duration          |
 |------|-------------|---------------------------------------------------------------------------------------------------------|-------------------|
