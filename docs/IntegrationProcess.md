@@ -18,7 +18,7 @@ The Integration Process is designed to guide you through the seamless integratio
 
 | Step | Role        | Task                                                                                                    | Duration          |
 |------|-------------|---------------------------------------------------------------------------------------------------------|-------------------|
-| Application    | App publisher | a. Fill out the [business request form]([https://www.example.com/form](https://airtable.com/shr0Mts1aMzUlzEIm)) with your app's information and submit.        |         1 day          |
+| Application    | App publisher | a. Fill out the [Business Request Form](https://airtable.com/shr0Mts1aMzUlzEIm) with your app's information and submit.        |         1 day          |
 |      | Vpon        | b. Vpon confirms the pre-inquiry and sends the SDK license key and privacy policy document..                                | 2 days            |
 | Installation| App publisher | a. Download and import the Data SDK for your platform ([iOS](http://datasdk-developer.vpon.com/ios) or [Android](http://datasdk-developer.vpon.com/android)), then follow the step-by-step integration guide provided by Vpon for initializing the Data SDK, setting the opt-in status, and enabling [Debug Mode](http://datasdk-developer.vpon.com/debug_mode). |          2 days         |
 |      | App publisher   | b. Optionally, set up custom events and payloads based on your app's requirements. Review best practices and tips for implementation ([iOS](http://datasdk-developer.vpon.com/ios#set-up-customized-events) or [Android](http://datasdk-developer.vpon.com/android#set-up-customized-events)).  | 2-5 days |
