@@ -11,33 +11,24 @@ lang:           "en"
 # Integration Process
 ---
 
-Depends on App publisher’s development schedule, it takes up to 1 month to integrate Data SDK. In the application phase, a Vpon business contact will be always in between to consolidate App publisher’s needs and to convey Vpon tech team's requirements. Starting from the installation phase, Vpon tech team and App publisher will communicate directly to speed up the integration process. Please check the complete integration process as follows:
+The Integration Process is designed to guide you through the seamless integration of the Data SDK into your app. It provides step-by-step instructions tailored for both iOS and Android platforms. If you encounter any issues or have questions during the process, please do not hesitate to contact us via email for assistance.
 
-![](/docs/images/integration_process_2.png) 
 
-## 1. Application
-App publisher contacts Vpon’s business contact and provide below information for Vpon. 
-#### Necessary information
-- Your company name
-- App name
-- App OS (iOS, Android, or both)
-- App link (For Apps that have been officially launched)
-- App package ID (For Apps that haven’t been officially launched)
-  
-## 2. Installation
-1. Vpon tech team provides test license key and instruction for App publisher.
-2. App publisher needs to follow the implementation guideline [iOS](iOS.md) , [Android](Android.md) to set events and trigger [Debug Mode](DebugMode.md).
-  
-  
-## 3. Testing
-1. App publisher tests in a simulation environment using [Debug Mode](DebugMode.m).
- 
-## 4.  Result check
-1. App publisher sends Debug Mode log back to Vpon’s tech team.
-2. Vpon tech team checks Debug Mode log and data in the database.
+![](/docs/images/integration_process4.png) 
 
-## 5. Release
-1. Vpon tech team provides official license key
-2. App publisher replaces the license key with the official one and then submits the App to the marketplace.
-  
+| Step | Role        | Task                                                                                                    | Duration          |
+|------|-------------|---------------------------------------------------------------------------------------------------------|-------------------|
+| Application    | App publisher | a. Fill out the [business request form]([https://www.example.com/form](https://airtable.com/shr0Mts1aMzUlzEIm)) with your app's information and submit.        |         1 day          |
+|      | Vpon        | b. Vpon confirms the pre-inquiry and sends the SDK license key and privacy policy document..                                | 2 days            |
+| Installation| App publisher | a. Download and import the Data SDK for your platform ([iOS](http://datasdk-developer.vpon.com/ios) or [Android](http://datasdk-developer.vpon.com/android)), then follow the step-by-step integration guide provided by Vpon for initializing the Data SDK, setting the opt-in status, and enabling [Debug Mode](http://datasdk-developer.vpon.com/debug_mode). |          2 days         |
+|      | App publisher   | b. Optionally, set up custom events and payloads based on your app's requirements. Review best practices and tips for implementation ([iOS](http://datasdk-developer.vpon.com/ios#set-up-customized-events) or [Android](http://datasdk-developer.vpon.com/android#set-up-customized-events)).  | 2-5 days |
+| Testing    | App publisher | a. Enable [Debug Mode](http://datasdk-developer.vpon.com/debug_mode) and test your app in a simulation environment. If you encounter issues or have questions, contact Vpon's support team. | 5-8 days          |
+|      | App publisher| b. Email the Debug Mode log to Vpon Contact for review.                               |         0.5 day          |
+|      | Vpon        | c. Vpon evaluates the integration and provides feedback. Address common issues and solutions if needed. | 2 days            |
+| Release    | App publisher | a. After successful testing, disable Debug Mode, and submit your app to the relevant app marketplaces.  |     0.5 day               |
+|      | App publisher  | b. Monitor your app's status during the platform review process (iOS: 1-7 days, Android: 1-3 days).     | Varies by platform |
 
+
+Note: The duration estimates provided are for reference only and may vary based on individual circumstances.
+
+If you encounter any issues or have questions during the integration process, please do not hesitate to reach out to us via email. Our support team is here to help and will gladly assist you with any concerns you may have.
