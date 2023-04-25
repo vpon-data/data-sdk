@@ -23,7 +23,7 @@ lang: "en"
 
 * Release Date: : 23 Apr. 2021
 * Add Opt-in function with warning notices
-* Modify Debug mode messages
+* Modify Debug Mode messages
 
 ## 2.0.0
 
