@@ -91,7 +91,7 @@ config.setLicenseKey("testKey", withCustomID: "testCustomID", withOptIn: .CONSEN
 ### Debug Mode
 Debug Mode allows you to interactively test your App events, including [Auto]({% link docs/AutoEvents.md %}) and [Customized](#set-up-customized-events), with messages displayed in the developer console.  
 
-We suggest enabling Debug Mode and providing Debug Mode log to Vpon Contact before submitting your App in Marketplaces to guarantee the integration setting. See [Debug Mode]({% link docs/DebugMode.md %}) and [Integration Process]({% link docs/IntegrationProcess.md %})for more details.
+We suggest enabling Debug Mode and providing Debug Mode log to Vpon Contact before submitting your App in Marketplaces to guarantee the integration setting. See [Debug Mode]({% link docs/DebugMode.md %}) and [Integration Process]({% link docs/IntegrationProcess.md %}) for more details.
 
 If all goes well, turn Debug Mode off and publish your App to the Marketplace.
 
@@ -191,7 +191,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtabs %}
 
 ## Set up customized events
-If [Auto Events]({% link docs/AutoEvents.md %})only partially fulfills your needs, Data SDK provides customized events to serve various App designs and meet your business focus.
+If [Auto Events]({% link docs/AutoEvents.md %}) only partially fulfills your needs, Data SDK provides customized events to serve various App designs and meet your business focus.
  
 By calling the `tracker` method, you can define your event name and any additional information you want to collect. It's flexible, and most importantly, no limit on the number of events.
 
