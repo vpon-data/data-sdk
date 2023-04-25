@@ -9,7 +9,7 @@ lang:           "en"
 ---
 
 # Overview
-This website collects all the documents developers need when embedding Vpon Data Software Development Kit (Data SDK), including the [integration process](http://datasdk-developer.vpon.com/integration_process),[integration process using post_url]({% post_url integration_process %}) implementation guides, and requirements for Android and iOS mobile Apps. Sample codes are also provided for the developer's reference. Visit our [official website][1] for the relevant information if you have business-side queries.
+This website collects all the documents developers need when embedding Vpon Data Software Development Kit (Data SDK), including the [integration process](http://datasdk-developer.vpon.com/integration_process),[integration process using post_url]({% post_url /docs/integration_process %}) implementation guides, and requirements for Android and iOS mobile Apps. Sample codes are also provided for the developer's reference. Visit our [official website][1] for the relevant information if you have business-side queries.
 
 [1]: https://datasdk.vpon.com/
 
