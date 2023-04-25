@@ -31,5 +31,4 @@ The Integration Process is designed to guide you through the seamless integratio
 
 Note: The duration estimates provided are for reference only and may vary based on individual circumstances.
 
-If you encounter any issues or have questions during the integration process, please do not hesitate to reach out to us via email [Vpon Contact](mailto:datasdk<span>.support@vpon.com)
-. Our support team is here to help and will gladly assist you with any concerns you may have. 
+If you encounter any issues or have questions during the integration process, please do not hesitate to reach out to us via email. Our support team is here to help and will gladly assist you with any concerns you may have. 
