@@ -62,7 +62,7 @@ See [Permission]({% link docs/Permission.md %}) for more details.
 ```
 
 ## Import Data SDK
-Import `VponDataAnalytics` in your main Application or main Activity files. For example, MainApplication, MainActivity, or other core functions of your App.
+Import `VpondataAnalytics` in your main Application or main Activity files. For example, MainApplication, MainActivity, or other core functions of your App.
 
 ```
 import com.vpon.sdk.VpdataAnalytics;
