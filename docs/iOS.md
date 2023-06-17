@@ -15,7 +15,8 @@ Welcome to the integration guide of Data SDK. You can leverage Data SDK in just 
 2. [Download Data SDK](#download-data-sdk)
 3. [Import Data SDK](#import-data-sdk)
 4. [Initialize Data SDK](#initialize-data-sdk)
-5. [Set up Customized Events](#set-up-customized-events) (Optional but recommended)
+5. [Set Up Background Geolocation Collection](#set-up-background-geolocation-collection) (Optional)
+5. [Set up Customized Events](#set-up-customized-events) (Optional)
 6. [Test in Debug Mode](#debug-mode)
 
 After completing steps 1 to 4, the minimum requirements, you can observe [Auto Events]({% link docs/AutoEvents.md %}) in your App.
@@ -190,6 +191,60 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtab %}
 {% endtabs %}
 
+## Set Up Background Geolocation Collection
+Background Geolocation Collection is a powerful feature that allows your app to continuously gather geolocation data from users, even when your app is running in the background. By leveraging this feature, you can provide more personalized experiences and services to your users. However, it's crucial to strictly adhere to Apple's guidelines and respect user privacy when implementing this feature​
+
+Before using this function, ensure that your project settings and permissions are properly set up. You can refer to the [Permission]({% link docs/IntegrPermission.md %}) section for more details on this.
+
+To integrate the Background Geolocation Collection feature into your iOS app, follow these steps:
+
+1. Initialization: Make sure the Data SDK is properly initialized in your app before you start using the geolocation collection feature.
+
+2. Start/Stop Interface: Data SDK provides an interface that allows app developers to easily call and control the geolocation tracking. Use the startLocationCollection method to begin collecting geolocation data, and the stopLocationCollection method to stop the data collection.
+
+3. Accuracy Level Configuration: The SDK allows you to set the level of accuracy for geolocation data collection by using the setLocationCollectionAccuracy method. There are three options available: high, mid, and low accuracy respectively.
+
+Here is a sample code snippet to use these methods:
+
+{% tabs setup-background %}
+{% tab setup-background Swift %}
+```swift
+// to start or stop geolocation collection with mid accuracy
+let config = VDAConfiguration.sharedInstance
+// Start geolocation collection
+config.startBackgroundLocationUpdate(frequency: .mid)
+
+// Stop geolocation collection
+config.stopBackgroundLocationUpdate()
+
+// to setup different accuracy levels
+config.startBackgroundLocationUpdate(frequency: .high)
+config.startBackgroundLocationUpdate(frequency: .mid)
+config.startBackgroundLocationUpdate(frequency: .low)
+
+```
+{% endtab %}
+
+{% tab setup-background Objective-C%}
+```objc
+// to start and stop geolocation collection with mid accuracy
+VDAConfiguration *config = [VDAConfiguration sharedInstance];
+// Start geolocation collection
+[config 
+startBackgroundLocationUpdateWithFrequency:VDAFrequencyMid];
+// Stop geolocation collection
+[config stopBackgroundLocationUpdate];
+// to setup different accuracy levels
+[config startBackgroundLocationUpdateWithFrequency:VDAFrequencyHigh];
+[config startBackgroundLocationUpdateWithFrequency:VDAFrequencyMid];
+[config startBackgroundLocationUpdateWithFrequency:VDAFrequencyLow];
+```
+{% endtab %}
+
+{% endtabs %}
+
+Once you have integrated the feature, you should test it to ensure it's working correctly. We recommend using the [Debug Mode]({% link docs/DebugMode.md %}) for this purpose. This mode allows you to interactively test your app events, including the geolocation collection, with messages displayed in the developer console.
+
 ## Set up Customized Events
 If [Auto Events]({% link docs/AutoEvents.md %}) only partially fulfills your needs, Data SDK provides customized events to serve various App designs and meet your business focus.
  
@@ -267,8 +322,7 @@ See also [Sample Code](https://github.com/vpon-sdk/Vpon-iOS-Analytics)  for a co
 
 ## Download
 
-|Data SDK 2.0.4|
+|Data SDK 2.0.5|
 |:-------:|
 |[Download][1]|
-
-[1]: https://m.vpon.com/data/sdk/ios/i-vda-v2.0.4-20221020-c15aa7d-252500.tar.gz
+[1]: https://m.vpon.com/data/sdk/ios/i-vda-v2.0.5-20230519-00657ea-465785.tar.gz
