@@ -213,10 +213,8 @@ Here is a sample code snippet to use these methods:
 let config = VDAConfiguration.sharedInstance
 // to start geolocation collection
 config.startBackgroundLocationUpdate(frequency: .mid)
-
 // to stop geolocation collection
 config.stopBackgroundLocationUpdate()
-
 // to setup different accuracy levels
 config.startBackgroundLocationUpdate(frequency: .high)
 config.startBackgroundLocationUpdate(frequency: .mid)
@@ -230,8 +228,7 @@ config.startBackgroundLocationUpdate(frequency: .low)
 // to start and stop geolocation collection with mid accuracy
 VDAConfiguration *config = [VDAConfiguration sharedInstance];
 // to start geolocation collection
-[config 
-startBackgroundLocationUpdateWithFrequency:VDAFrequencyMid];
+[config startBackgroundLocationUpdateWithFrequency:VDAFrequencyMid];
 // to stop geolocation collection
 [config stopBackgroundLocationUpdate];
 // to setup different accuracy levels
