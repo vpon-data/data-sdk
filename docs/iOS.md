@@ -229,10 +229,10 @@ config.startBackgroundLocationUpdate(frequency: .low)
 ```objc
 // to start and stop geolocation collection with mid accuracy
 VDAConfiguration *config = [VDAConfiguration sharedInstance];
-// Start geolocation collection
+// to start geolocation collection
 [config 
 startBackgroundLocationUpdateWithFrequency:VDAFrequencyMid];
-// Stop geolocation collection
+// to stop geolocation collection
 [config stopBackgroundLocationUpdate];
 // to setup different accuracy levels
 [config startBackgroundLocationUpdateWithFrequency:VDAFrequencyHigh];
