@@ -219,7 +219,6 @@ config.stopBackgroundLocationUpdate()
 config.startBackgroundLocationUpdate(frequency: .high)
 config.startBackgroundLocationUpdate(frequency: .mid)
 config.startBackgroundLocationUpdate(frequency: .low)
-
 ```
 {% endtab %}
 
