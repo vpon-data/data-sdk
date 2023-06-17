@@ -211,10 +211,10 @@ Here is a sample code snippet to use these methods:
 ```swift
 // to start or stop geolocation collection with mid accuracy
 let config = VDAConfiguration.sharedInstance
-// Start geolocation collection
+// to start geolocation collection
 config.startBackgroundLocationUpdate(frequency: .mid)
 
-// Stop geolocation collection
+// to stop geolocation collection
 config.stopBackgroundLocationUpdate()
 
 // to setup different accuracy levels
