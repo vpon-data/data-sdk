@@ -16,7 +16,7 @@ Welcome to the integration guide of Data SDK. You can leverage Data SDK in just 
 3. [Set up App Configurations](#set-up-app-configurations)
 4. [Import Data SDK](#import-data-sdk)
 5. [Initialize Data SDK](#initialize-data-sdk)
-6. [Set up customized events](#set-up-customized-events) (Optional but recommended)
+6. [Set up Customized Events](#set-up-customized-events) (Optional but recommended)
 7. [Test in Debug Mode](#debug-mode)
 
 After completing steps 1 to 5, the minimum requirements, you can observe [Auto Events]({% link docs/AutoEvents.md %}) in your App.
@@ -259,7 +259,7 @@ class MainActivity : Activity() {
 
 {% endtabs %}
 
-## Set up customized events
+## Set up Customized Events
 If [Auto Events]({% link docs/AutoEvents.md %})  only partially fulfills your needs, Data SDK provides customized events to serve various App designs and meet your business focus.
 
 By calling the tracker method, you can define your event name and any additional information you want to collect. It's flexible, and most importantly, no limit on the number of events.
