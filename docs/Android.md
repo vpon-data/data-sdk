@@ -16,8 +16,9 @@ Welcome to the integration guide of Data SDK. You can leverage Data SDK in just 
 3. [Set up App Configurations](#set-up-app-configurations)
 4. [Import Data SDK](#import-data-sdk)
 5. [Initialize Data SDK](#initialize-data-sdk)
-6. [Set up Customized Events](#set-up-customized-events) (Optional but recommended)
-7. [Test in Debug Mode](#debug-mode)
+5. [Set Up Background Geolocation Collection](#set-up-background-geolocation-collection) (Optional)
+5. [Set up Customized Events](#set-up-customized-events) (Optional)
+6. [Test in Debug Mode](#debug-mode)
 
 After completing steps 1 to 5, the minimum requirements, you can observe [Auto Events]({% link docs/AutoEvents.md %}) in your App.
 
@@ -258,6 +259,64 @@ class MainActivity : Activity() {
 {% endtab %}
 
 {% endtabs %}
+
+## Set Up Background Geolocation Collection
+Background Geolocation Collection is a powerful feature that allows your app to continuously gather geolocation data from users, even when your app is running in the background. By leveraging this feature, you can provide more personalized experiences and services to your users. However, it's crucial to strictly adhere to Google's guidelines and respect user privacy when implementing this feature​.
+
+Before using this function, ensure that your project settings and permissions are properly set up. You can refer to the [Permission]({% link docs/Permission.md %}) section for more details on this.
+
+To integrate the Background Geolocation Collection feature into your Android app, follow these steps:
+
+1. Initialization: Make sure the Data SDK is properly initialized in your app before you start using the background geolocation collection feature.
+
+2. Start/Stop Interface: Data SDK provides an interface that allows app developers to easily call and control the geolocation tracking. When calling the `startBackgroundLocationUpdate` method to begin collecting geolocation data, remember to set up the frequency for data collection as needed. Use the `stopBackgroundLocationUpdate` method to stop the data collection when it's no longer required.
+
+3. Accuracy Level Configuration: The SDK allows you to set the level of accuracy for geolocation data collection. There are three options available: `high`, `mid`, and `low` accuracy respectively. Note that the accuracy level and the frequency of updates may affect the app's battery usage, so choose your settings carefully.
+
+Here is a sample code snippet to use these methods:
+
+{% tabs setup-background %}
+{% tab setup-background java %}
+```java
+// to start geolocation collection with mid accuracy
+VpdataAnalytics.INSTANCE.startBackgroundLocationUpdate(VpdataAnalytics.Frequency.MID);
+
+// to stop geolocation collection
+VpdataAnalytics.INSTANCE.stopBackgroundLocationUpdate();
+
+
+// three accuracy options: high/mid/low
+// high accuracy 
+VpdataAnalytics.INSTANCE.startBackgroundLocationUpdate(VpdataAnalytics.Frequency.HIGH);
+// mid accuracy
+VpdataAnalytics.INSTANCE.startBackgroundLocationUpdate(VpdataAnalytics.Frequency.MID);
+// low accuracy
+VpdataAnalytics.INSTANCE.startBackgroundLocationUpdate(VpdataAnalytics.Frequency.LOW);
+```
+{% endtab %}
+
+{% tab setup-background kotlin%}
+```kotlin
+// to start geolocation collection with mid accuracy
+VpdataAnalytics.startBackgroundLocationUpdate(VpdataAnalytics.Frequency.MID)
+
+// to stop geolocation collection
+VpdataAnalytics.stopBackgroundLocationUpdate()
+
+// three accuracy options: high/mid/low
+// high accuracy 
+VpdataAnalytics.startBackgroundLocationUpdate(VpdataAna lytics.Frequency.HIGH)    
+// mid accuracy
+VpdataAnalytics.startBackgroundLocationUpdate(VpdataAnalytics.Frequency.MID)
+// low accuracy
+VpdataAnalytics.startBackgroundLocationUpdate(VpdataAnalytics.Frequency.LOW)
+```
+{% endtab %}
+
+{% endtabs %}
+
+Once you have integrated the feature, you should test it to ensure it's working correctly. We recommend using the [Debug Mode]({% link docs/DebugMode.md %}) for this purpose. This mode allows you to interactively test your app events, including the geolocation collection, with messages displayed in the developer console.
+
 
 ## Set up Customized Events
 If [Auto Events]({% link docs/AutoEvents.md %})  only partially fulfills your needs, Data SDK provides customized events to serve various App designs and meet your business focus.

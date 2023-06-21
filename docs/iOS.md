@@ -200,9 +200,9 @@ To integrate the Background Geolocation Collection feature into your iOS app, fo
 
 1. Initialization: Make sure the Data SDK is properly initialized in your app before you start using the background geolocation collection feature.
 
-2. Start/Stop Interface: Data SDK provides an interface that allows app developers to easily call and control the geolocation tracking. Use the `startBackgroundLocationUpdate` method to begin collecting geolocation data, and the `stopBackgroundLocationUpdate` method to stop the data collection.
+2. Start/Stop Interface: Data SDK provides an interface that allows app developers to easily call and control the geolocation tracking. When calling the `startBackgroundLocationUpdate` method to begin collecting geolocation data, remember to set up the frequency for data collection as needed. Use the `stopBackgroundLocationUpdate` method to stop the data collection when it's no longer required.
 
-3. Accuracy Level Configuration: The SDK allows you to set the level of accuracy for geolocation data collection. There are three options available: high, mid, and low accuracy respectively.
+3. Accuracy Level Configuration: The SDK allows you to set the level of accuracy for geolocation data collection. There are three options available: `high`, `mid`, and `low` accuracy respectively. Note that the accuracy level and the frequency of updates may affect the app's battery usage, so choose your settings carefully.
 
 Here is a sample code snippet to use these methods:
 
@@ -211,28 +211,36 @@ Here is a sample code snippet to use these methods:
 ```swift
 // to start or stop geolocation collection with mid accuracy
 let config = VDAConfiguration.sharedInstance
-// to start geolocation collection
 config.startBackgroundLocationUpdate(frequency: .mid)
+
 // to stop geolocation collection
 config.stopBackgroundLocationUpdate()
-// to setup different accuracy levels
+
+// three accuracy options: high/mid/low
+// high accuracy 
 config.startBackgroundLocationUpdate(frequency: .high)
+// mid accuracy
 config.startBackgroundLocationUpdate(frequency: .mid)
+// low accuracy
 config.startBackgroundLocationUpdate(frequency: .low)
 ```
 {% endtab %}
 
 {% tab setup-background Objective-C%}
 ```objc
-// to start and stop geolocation collection with mid accuracy
+// to start geolocation collection with mid accuracy
 VDAConfiguration *config = [VDAConfiguration sharedInstance];
-// to start geolocation collection
 [config startBackgroundLocationUpdateWithFrequency:VDAFrequencyMid];
+
 // to stop geolocation collection
 [config stopBackgroundLocationUpdate];
-// to setup different accuracy levels
+
+// three accuracy options: high/mid/low
+// high accuracy
 [config startBackgroundLocationUpdateWithFrequency:VDAFrequencyHigh];
+// mid accuracy
 [config startBackgroundLocationUpdateWithFrequency:VDAFrequencyMid];
+// low accuracy
 [config startBackgroundLocationUpdateWithFrequency:VDAFrequencyLow];
 ```
 {% endtab %}
