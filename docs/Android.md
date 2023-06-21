@@ -284,7 +284,6 @@ VpdataAnalytics.INSTANCE.startBackgroundLocationUpdate(VpdataAnalytics.Frequency
 // to stop geolocation collection
 VpdataAnalytics.INSTANCE.stopBackgroundLocationUpdate();
 
-
 // three accuracy options: high/mid/low
 // high accuracy 
 VpdataAnalytics.INSTANCE.startBackgroundLocationUpdate(VpdataAnalytics.Frequency.HIGH);
@@ -305,7 +304,7 @@ VpdataAnalytics.stopBackgroundLocationUpdate()
 
 // three accuracy options: high/mid/low
 // high accuracy 
-VpdataAnalytics.startBackgroundLocationUpdate(VpdataAna lytics.Frequency.HIGH)    
+VpdataAnalytics.startBackgroundLocationUpdate(VpdataAnalytics.Frequency.HIGH)    
 // mid accuracy
 VpdataAnalytics.startBackgroundLocationUpdate(VpdataAnalytics.Frequency.MID)
 // low accuracy
