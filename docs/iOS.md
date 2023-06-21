@@ -329,4 +329,5 @@ See also [Sample Code](https://github.com/vpon-sdk/Vpon-iOS-Analytics)  for a co
 |Data SDK 2.0.5|
 |:-------:|
 |[Download][1]|
+
 [1]: https://m.vpon.com/data/sdk/ios/i-vda-v2.0.5-20230519-00657ea-465785.tar.gz
