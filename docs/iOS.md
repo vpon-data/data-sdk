@@ -198,11 +198,11 @@ Before using this function, ensure that your project settings and permissions ar
 
 To integrate the Background Geolocation Collection feature into your iOS app, follow these steps:
 
-1. Initialization: Make sure the Data SDK is properly initialized in your app before you start using the geolocation collection feature.
+1. Initialization: Make sure the Data SDK is properly initialized in your app before you start using the background geolocation collection feature.
 
-2. Start/Stop Interface: Data SDK provides an interface that allows app developers to easily call and control the geolocation tracking. Use the startLocationCollection method to begin collecting geolocation data, and the stopLocationCollection method to stop the data collection.
+2. Start/Stop Interface: Data SDK provides an interface that allows app developers to easily call and control the geolocation tracking. Use the `startBackgroundLocationUpdate` method to begin collecting geolocation data, and the `stopBackgroundLocationUpdate` method to stop the data collection.
 
-3. Accuracy Level Configuration: The SDK allows you to set the level of accuracy for geolocation data collection by using the setLocationCollectionAccuracy method. There are three options available: high, mid, and low accuracy respectively.
+3. Accuracy Level Configuration: The SDK allows you to set the level of accuracy for geolocation data collection. There are three options available: high, mid, and low accuracy respectively.
 
 Here is a sample code snippet to use these methods:
 
