@@ -435,8 +435,8 @@ See also [Sample Code](https://github.com/vpon-sdk/Vpon-Android-Analytics) for a
 
 ## Download
 
-|Data SDK 2.0.4|
+|Data SDK 2.0.5|
 |:-------:|
 |[Download][1]|
 
-[1]: https://m.vpon.com/data/sdk/android/a-vda-obf-v2.0.4-20221020-57f65c7-148627.aar
+[1]: https://m.vpon.com/data/sdk/android/a-vda-obf-v2.0.5-20230518-d1f603d-281463.aar
