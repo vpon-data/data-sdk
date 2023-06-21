@@ -192,7 +192,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtabs %}
 
 ## Set Up Background Geolocation Collection
-Background Geolocation Collection is a powerful feature that allows your app to continuously gather geolocation data from users, even when your app is running in the background. By leveraging this feature, you can provide more personalized experiences and services to your users. However, it's crucial to strictly adhere to Apple's guidelines and respect user privacy when implementing this feature​
+Background Geolocation Collection is a powerful feature that allows your app to continuously gather geolocation data from users, even when your app is running in the background. By leveraging this feature, you can provide more personalized experiences and services to your users. However, it's crucial to strictly adhere to Apple's guidelines and respect user privacy when implementing this feature​.
 
 Before using this function, ensure that your project settings and permissions are properly set up. You can refer to the [Permission]({% link docs/Permission.md %}) section for more details on this.
 
