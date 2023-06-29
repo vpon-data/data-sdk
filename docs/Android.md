@@ -10,27 +10,34 @@ lang:           "en"
 
 # Android SDK
 
-Welcome to the integration guide of Data SDK. You can leverage Data SDK in just several steps:
+Welcome to your comprehensive guide to integrating the Data SDK!
+
+With our streamlined process, you can equip your App with powerful features, such as [Auto Events]({% link docs/AutoEvents.md %}) and Background Geolocation Collection, in a few straightforward steps:
+
 1. [Check the Prerequisites](#check-the-prerequisites)
 2. [Download Data SDK](#download-data-sdk)
 3. [Set up App Configurations](#set-up-app-configurations)
 4. [Import Data SDK](#import-data-sdk)
 5. [Initialize Data SDK](#initialize-data-sdk)
 5. [Set Up Background Geolocation Collection](#set-up-background-geolocation-collection) (Optional)
-5. [Set up Customized Events](#set-up-customized-events) (Optional)
+5. [Set up Custom Events](#set-up-custom-events) (Optional)
 6. [Test in Debug Mode](#debug-mode)
 
-After completing steps 1 to 5, the minimum requirements, you can observe [Auto Events]({% link docs/AutoEvents.md %}) in your App.
+Upon completing steps 1 to 5, you'll have fulfilled the minimum requirements and enabled [Auto Events]({% link docs/AutoEvents.md %}) tracking in your App.
 
-Furthermore, set up [Customized Events](#set-up-customized-events) according to your App design and user focus in step 6. The event setting is flexible and even skippable. Nevertheless, we encourage you to set up suitable customized events to obtain a comprehensive picture of your App users.
+Step 6 involves the optional setup of Background Geolocation Collection. This powerful feature allows continuous gathering of geolocation data from users, even when your App runs in the background, to provide more personalized experiences and services.
 
-Finally, check the integration status in step 7, [Debug Mode]({% link docs/DebugMode.md %}). Debug Mode helps you test the SDK setting before submitting your App to the App marketplaces. You can turn Debug Mode on in the step of Data SDK initialization, check all go well, and then turn it off in the same place to publish your App.
+Step 7 allows you to set up custom events according to your App's design and user needs. While optional, we highly recommend creating suitable custom events to obtain a comprehensive view of your App users.
+
+Lastly, in step 8, use the [Debug Mode]({% link docs/DebugMode.md %} )to verify your integration status. Debug Mode facilitates testing of all SDK configurations, including Background Geolocation Collection, Auto & Custom events, before launching your App on various platforms. We recommend enabling Debug Mode during Data SDK initialization, ensure everything is functioning as expected, and then disabling it before your App's publication.
+
+This guide is designed to make the integration process intuitive and efficient, letting you focus on building and enhancing your App.
 
 ## Check the Prerequisites
-Support version: Android 5.0 or later
+Ensure that your App supports Android version `5.0 or later` before proceeding with the Data SDK integration.
 
 ## Download Data SDK 
-Download Data SDK [HERE][1] and add the file to your Android Studio project.
+Start by downloading the Data SDK [HERE][1]. Once downloaded, include the `aar` file in your  Android Studio project.
 
 ## Set up App Configurations
 ### Build dependencies 
@@ -45,52 +52,83 @@ dependencies {
     //coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9'
+
+    //for background gelocation collection
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
 }
 ```
 
-### Add Permissions
-In your `AndroidManifest.xml`, add the required permissions as below.
-See [Permission]({% link docs/Permission.md %}) for more details.
+### Adjust Permissions
+To ensure the maximum functionality of the Data SDK, it's essential to modify your `AndroidManifest.xml` file to include specific permissions. Here's the suggested way to do it:
 
+#### Required Permissions
+These permissions are necessary for the SDK to operate effectively. Make sure to include these in your `AndroidManifest.xml`:
 ```xml
 <uses-permission android:name="android.permission.INTERNET"/>
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
 <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+```
+
+#### Recommended Additional Permissions
+We recommend adding these additional permissions to your `AndroidManifest.xml` file to enable data collection for network information and geolocation:
+```xml
+<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 ```
+While these permissions are technically optional, adding them is strongly advised to take full advantage of the SDK's features.
+
+#### Background Geolocation Permission
+If you choose to activate background geolocation data collection, add this optional permission:
+```xml
+<uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+```
+
+For more details about these permissions, refer to the [Permission]({% link docs/Permission.md %}).
+
 
 ## Import Data SDK
-Import `VpondataAnalytics` in your main Application or main Activity files. For example, MainApplication, MainActivity, or other core functions of your App.
+Import `VpondataAnalytics` in your main Application or main Activity files. For example, MainApplication, MainActivity, or other core functions of your App. You can do this using either `Java` or `Kotlin`.
 
-```
+{% tabs import-android %}
+
+{% tab import-android Java %}
+
+```java
 import com.vpon.sdk.VpdataAnalytics;
 ```
+{% endtab %}
+
+{% tab import-android Kotlin %}
+```kotlin
+import com.vpon.sdk.VpdataAnalytics
+```
+{% endtab %}
+
+{% endtabs %}
+
 
 ## Initialize Data SDK
-Initialize Data SDK in your main Application `onCreate()` method and main Activity `onCreate()` method separately to ensure [Auto Events]({% link docs/AutoEvents.md %}) functionality.
-In addition, manage [License Key](#license-key), [Opt-in](#opt-in), and [Debug Mode](#debug-mode) switch in this step.
+Initialize Data SDK in your main Application `onCreate()` method and main Activity `onCreate()` method separately. This ensures the [Auto Events]({% link docs/AutoEvents.md %}) feature operates correctly.
+
+You'll also manage the [License Key](#license-key), [Opt-in](#opt-in), and [Debug Mode](#debug-mode) in this step.
+
 
 ### License Key
-You will receive a unique license key when your application is approved. See [Integration Process]({% link docs/IntegrationProcess.md %}) for more details.
-
-If you are still waiting to receive it or get into trouble with it, please email Vpon Contact for further assistance.
+Upon approval of your application, you'll receive a unique license key. If you encounter any issues or haven't received your key, please refer to the [Integration Process]ㄊ({% link docs/IntegrationProcess.md %}) for further details or email Vpon Contact for additional support.
 
 ### Opt-In
-Data SDK is committed to protecting App user privacy. Therefore, Data SDK only collects data with user consent, which means Data SDK only gathers data under the condition that a user agrees to App terms of use or privacy policy.
+Data SDK respects user privacy by only collecting data with the user's explicit consent, meaning data is gathered only when a user agrees to your App's terms of use or privacy policy.
 
-To help you manage App user consent efficiently, Data SDK provides three Opt-In options: DEFAULT, CONSENT, and NOCONSENT.
-- `DEFAULT`: the user has neither granted nor declined permission
-- `CONSENT`: the user gives consent
-- `NOCONSENT`: the user refuses to provide consent
+To help you manage this consent effectively, Data SDK offers three Opt-In options: `DEFAULT`, `CONSENT`, and `NOCONSENT`.
+- `DEFAULT`: neither granted nor declined
+- `CONSENT`: granted
+- `NOCONSENT`: declined
 
-We recommend determining the status of user consent in the initialization step. After that, update the Opt-In option automatically and forward it to Data SDK simultaneously, depending on the latest permission status.
-Warning messages will display on the developer console if Opt-In is set either as `NOCONSENT` or `DEFAULT`.
+We recommend determining the status of user consent in the initialization step, then updating the Opt-In option and forwarding it to Data SDK depending on the latest permission status. If Opt-In is set to either `NOCONSENT` or `DEFAULT`, warning messages will display on the developer console.
 
-Below is a setup example of License Key and Opt-in
-
+Here's a setup example of License Key and Opt-in:
 {% tabs lic-android %}
 
 {% tab lic-android Java %}
@@ -108,14 +146,13 @@ vpdataAnalytics!!.initialize(this, licenseKey, customerId, VpdataAnalytics.OptIn
 {% endtabs %}
 
 ### Debug Mode
-Debug Mode allows you to interactively test your App events, including [Auto]({% link docs/AutoEvents.md %})  and [Customized](#set-up-customized-events), with messages displayed in the developer console.
+Debug Mode allows you to interactively test your App events, including [Auto]({% link docs/AutoEvents.md %}), [Custom](#set-up-custom-events), and Background Geolocation Collection.
 
-We suggest enabling Debug Mode and providing Debug Mode log to Vpon Contact before submitting your App in Marketplaces to guarantee the integration correctness. See [Debug Mode]({% link docs/DebugMode.md %}) and [Integration Process]({% link docs/IntegrationProcess.md %}) for more details.
+We recommend enabling Debug Mode and providing the Debug Mode log to Vpon Contact before submitting your App to various marketplaces, ensuring correct integration settings. If everything is working as expected, disable Debug Mode before publishing your App.
 
-If all goes well, turn Debug Mode off and publish your App to the Marketplace.
+For more detailed information, you can refer to the sections on [Debug Mode]({% link docs/DebugMode.md %}) and [Integration Process]({% link docs/IntegrationProcess.md %}).
 
-Switch Debug Mode using the following codes
-
+Here's how to toggle Debug Mode:
 {% tabs debug-android %}
 
 {% tab debug-android Java %}
@@ -140,7 +177,7 @@ vpdataAnalytics!!.setDebugMode(false)
 
 {% endtabs %}
 
-Combining all together, see a comprehensive example of Data SDK initialization.
+Here's a complete example that demonstrates how to initialize the Data SDK:
 #### In your main Application
 
 {% tabs all-application-android %}
@@ -261,7 +298,7 @@ class MainActivity : Activity() {
 {% endtabs %}
 
 ## Set Up Background Geolocation Collection
-Background Geolocation Collection is a powerful feature that allows your app to continuously gather geolocation data from users, even when your app is running in the background. By leveraging this feature, you can provide more personalized experiences and services to your users. However, it's crucial to strictly adhere to Google's guidelines and respect user privacy when implementing this feature​.
+Background Geolocation Collection is a powerful feature that allows continuous geolocation data collection, even when your App is running in the background. However, it's essential to respect user privacy and adhere to Google's guidelines when implementing this feature.
 
 Before using this function, ensure that your project settings and permissions are properly set up. You can refer to the [Permission]({% link docs/Permission.md %}) section for more details on this.
 
@@ -317,17 +354,19 @@ VpdataAnalytics.startBackgroundLocationUpdate(VpdataAnalytics.Frequency.LOW)
 Once you have integrated the feature, you should test it to ensure it's working correctly. We recommend using the [Debug Mode]({% link docs/DebugMode.md %}) for this purpose. This mode allows you to interactively test your app events, including the geolocation collection, with messages displayed in the developer console.
 
 
-## Set up Customized Events
-If [Auto Events]({% link docs/AutoEvents.md %})  only partially fulfills your needs, Data SDK provides customized events to serve various App designs and meet your business focus.
+## Set up Custom Events
+Custom events are a powerful tool to gain insights into user behavior, and Data SDK makes it simple to set them up.
 
-By calling the tracker method, you can define your event name and any additional information you want to collect. It's flexible, and most importantly, no limit on the number of events.
+By utilizing the `tracker` method, you can set up events that carry unique names and contain additional data you wish to gather. The strength of this feature lies in its flexibility - there's no cap on the number of events you can set up, making it adaptable to your App's specific design and business goals.
 
-For instance, an E-Commerce App wants to create a conversion funnel. Hence, recording users' views on which product item is essential. Using the tracker method, this EC App can quickly implement an `item_view` event that tracks a coat with id, size, color, price, etc...extra details.
-Below are the sample codes and the final collected data.
+Below, you will find examples of how to set up these custom events, along with representations of how the collected data may appear in a JSON string format on a mobile device. It's crucial to note that this data is encrypted for user privacy and cannot be directly accessed via the App developer console.
 
-{% tabs customized-event-android %}
+Let's consider an example where you're running an e-commerce App and you want to establish a conversion funnel. In this case, tracking user interactions with various product items becomes essential. By leveraging the tracker method, you can swiftly set up an `item_view` event that collects details such as the product's ID, size, color, and price.
 
-{% tab customized-event-android Java %}
+
+{% tabs custom-event-android %}
+
+{% tab custom-event-android Java %}
 ```java
 public void onClick(View v) {
 	JSONObject payloadJsonObj = new JSONObject();
@@ -346,7 +385,7 @@ public void onClick(View v) {
 ```
 {% endtab %}
 
-{% tab customized-event-android Kotlin %}
+{% tab custom-event-android Kotlin %}
 
 ```kotlin
 val sendClickListener = View.OnClickListener {
@@ -366,7 +405,7 @@ val sendClickListener = View.OnClickListener {
 ```
 {% endtab %}
 
-{% tab customized-event-android Collected Data in JSON %}
+{% tab custom-event-android Collected Data in JSON %}
 ```json
 {
     "event_name": "item_view"
@@ -382,13 +421,11 @@ val sendClickListener = View.OnClickListener {
 
 {% endtabs %}
 
-Another example is that an Online Travel Agency(OTA) App wants to observe the browsing history to optimize its user experience. Using the tracker method, the OTA App can set up a `page_view` event that traces the user journey.  
+Similarly, if you're operating an Online Travel Agency (OTA) App and want to optimize the user experience by understanding their browsing history, the tracker method can assist. It enables the configuration of a `page_view` event, tracing the user's navigation journey through your App.
 
-Below are the sample codes and the collected data.
+{% tabs custom-event-android2 %}
 
-{% tabs customized-event-android2 %}
-
-{% tab customized-event-android2 Java %}
+{% tab custom-event-android2 Java %}
 ```java
 public void onClick(View v) {
 	JSONObject payloadJsonObj = new JSONObject();
@@ -403,7 +440,7 @@ public void onClick(View v) {
 ```
 {% endtab %}
 
-{% tab customized-event-android2 Kotlin %}
+{% tab custom-event-android2 Kotlin %}
 ```kotlin
 val sendClickListener = View.OnClickListener {
         val payloadJsonObj = JSONObject()
@@ -418,7 +455,7 @@ val sendClickListener = View.OnClickListener {
 ```
 {% endtab %}
 
-{% tab customized-event-android2 Collected Data in JSON %}
+{% tab custom-event-android2 Collected Data in JSON %}
 ```json
 {
     "event_name": "page_view"

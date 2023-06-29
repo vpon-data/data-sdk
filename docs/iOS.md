@@ -12,7 +12,7 @@ lang: "en"
 
 Welcome to your comprehensive guide to integrating the Data SDK!
 
-With our streamlined process, you can equip your App with powerful features, such as [Auto Events] ({% link docs/AutoEvents.md %}) and Background Geolocation Collection, in a few straightforward steps:
+With our streamlined process, you can equip your App with powerful features, such as [Auto Events]({% link docs/AutoEvents.md %}) and Background Geolocation Collection, in a few straightforward steps:
 
 1. [Check the Prerequisites](#check-the-prerequisites)
 2. [Download Data SDK](#download-data-sdk)
@@ -22,21 +22,20 @@ With our streamlined process, you can equip your App with powerful features, suc
 5. [Set up Custom Events](#set-up-custom-events) (Optional)
 6. [Test in Debug Mode](#debug-mode)
 
-Upon completing steps 1 to 4, you'll have fulfilled the minimum requirements and enabled [Auto Events] ({% link docs/AutoEvents.md %}) tracking in your App.
+Upon completing steps 1 to 4, you'll have fulfilled the minimum requirements and enabled [Auto Events]({% link docs/AutoEvents.md %}) tracking in your App.
 
 Step 5 involves the optional setup of Background Geolocation Collection. This powerful feature allows continuous gathering of geolocation data from users, even when your App runs in the background, to provide more personalized experiences and services.
 
 Step 6 allows you to set up custom events according to your App's design and user needs. While optional, we highly recommend creating suitable custom events to obtain a comprehensive view of your App users.
 
-Lastly, in step 7, use the [Debug Mode] ({% link docs/DebugMode.md %} )to verify your integration status. Debug Mode facilitates testing of all SDK configurations, including Background Geolocation Collection, Auto & Custom events, before launching your App on various platforms. We recommend enabling Debug Mode during Data SDK initialization, ensure everything is functioning as expected, and then disabling it before your App's publication.
+Lastly, in step 7, use the [Debug Mode]({% link docs/DebugMode.md %} )to verify your integration status. Debug Mode facilitates testing of all SDK configurations, including Background Geolocation Collection, Auto & Custom events, before launching your App on various platforms. We recommend enabling Debug Mode during Data SDK initialization, ensure everything is functioning as expected, and then disabling it before your App's publication.
 
 This guide is designed to make the integration process intuitive and efficient, letting you focus on building and enhancing your App.
 
 ## Check the Prerequisites
-Ensure that your app supports iOS version `10.0 or later` before proceeding with the Data SDK integration.
+Ensure that your App supports iOS version `10.0 or later` before proceeding with the Data SDK integration.
 
 ## Download Data SDK
-
 Start by downloading the Data SDK [HERE][1]. Once downloaded, unzip and include the `VponDataAnalytics.xcframework` folder in your project.
 
 ## Import Data SDK
@@ -65,7 +64,7 @@ You'll also manage the [License Key](#license-key), [Opt-in](#opt-in), and [Debu
 
 
 ### License Key
-Upon approval of your application, you'll receive a unique license key. If you encounter any issues or haven't received your key, please refer to the [Integration Process] ({% link docs/IntegrationProcess.md %}) for further details or email Vpon Contact for additional support.
+Upon approval of your application, you'll receive a unique license key. If you encounter any issues or haven't received your key, please refer to the [Integration Process]ㄊ({% link docs/IntegrationProcess.md %}) for further details or email Vpon Contact for additional support.
 
 
 ### Opt-in
@@ -74,7 +73,7 @@ Data SDK respects user privacy by only collecting data with the user's explicit 
 To help you manage this consent effectively, Data SDK offers three Opt-In options: `DEFAULT`, `CONSENT`, and `NOCONSENT`.
 - `DEFAULT`: neither granted nor declined
 - `CONSENT`: granted
-- `NOCONSENT`: declined 
+- `NOCONSENT`: declined
 
 We recommend setting the user consent status in the application `didFinishLaunchingWithOptions` method, then updating the Opt-In option and forwarding it to Data SDK depending on the latest permission status. If Opt-In is set to either `NOCONSENT` or `DEFAULT`, warning messages will display on the developer console.
 
@@ -325,7 +324,7 @@ VDABuilder *builder = [VDABuilder createEventWithEventName:@"page_view" extraDat
 {% endtabs %}
 
 ## Sample Code
-See also [Sample Code](https://github.com/vpon-sdk/Vpon-iOS-Analytics)  for a complete integration reference.
+See also [Sample Code](https://github.com/vpon-sdk/Vpon-iOS-Analytics) for a complete integration reference.
 
 ## Download
 
