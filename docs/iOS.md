@@ -210,8 +210,9 @@ To integrate the Background Geolocation Collection feature into your iOS App, fo
 
 Here is a sample code snippet to use these methods:
 
-{% tabs setup-background %}
-{% tab setup-background Swift %}
+{% tabs setup-background-ios %}
+
+{% tab setup-background-ios Swift %}
 ```swift
 // to start or stop geolocation collection with mid accuracy
 let config = VDAConfiguration.sharedInstance
@@ -230,7 +231,7 @@ config.startBackgroundLocationUpdate(frequency: .low)
 ```
 {% endtab %}
 
-{% tab setup-background Objective-C%}
+{% tab setup-background-ios Objective-C%}
 ```objc
 // to start geolocation collection with mid accuracy
 VDAConfiguration *config = [VDAConfiguration sharedInstance];

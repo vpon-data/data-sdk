@@ -312,8 +312,9 @@ To integrate the Background Geolocation Collection feature into your Android app
 
 Here is a sample code snippet to use these methods:
 
-{% tabs setup-background %}
-{% tab setup-background java %}
+{% tabs setup-background-Android %}
+
+{% tab setup-background-Anadroid java %}
 ```java
 // to start geolocation collection with mid accuracy
 VpdataAnalytics.INSTANCE.startBackgroundLocationUpdate(VpdataAnalytics.Frequency.MID);
@@ -331,7 +332,7 @@ VpdataAnalytics.INSTANCE.startBackgroundLocationUpdate(VpdataAnalytics.Frequency
 ```
 {% endtab %}
 
-{% tab setup-background kotlin%}
+{% tab setup-background-Android kotlin%}
 ```kotlin
 // to start geolocation collection with mid accuracy
 VpdataAnalytics.startBackgroundLocationUpdate(VpdataAnalytics.Frequency.MID)
