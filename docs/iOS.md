@@ -272,6 +272,7 @@ let builder = VDABuilder.createEventWithEventName("item_view", extraData: ["id":
 tracker.send(builder)
 ```
 {% endtab %}
+
 {% tab custom-event-ios Objective-C %}
 
 ```objc
@@ -280,24 +281,27 @@ VDABuilder *builder = [VDABuilder createEventWithEventName:@"item_view" extraDat
 [tracker send:builder];
 ```
 {% endtab %}
-{% tab customi-event-ios Collected Data in JSON-C %}
+
+{% tab custom-event-ios Collected Data in JSON %}
 ```
 {
-    "event_name": "item_view"
-    "id": "03356",
-    "name": "Coat", 
-    "price": 100, 
-    "color": "Blue", 
-    "size": "XL", 
-    "currency": "NTD"
+    event_name: "item_view"
+    id: "03356",
+    name: "Coat", 
+    price: 100, 
+    color: "Blue", 
+    size: "XL", 
+    currency: "NTD"
 }
 ```
 {% endtab %}
+
 {% endtabs %}
 
 Similarly, if you're operating an Online Travel Agency (OTA) App and want to optimize the user experience by understanding their browsing history, the tracker method can assist. It enables the configuration of a `page_view` event, tracing the user's navigation journey through your App.
 
 {% tabs custom-event-ios2 %}
+
 {% tab custom-event-ios2 Swift %}
 ```swift
 let tracker = VDATracker()
@@ -305,6 +309,7 @@ let builder = VDABuilder.createEventWithEventName("page_view", extraData: ["perv
 tracker.send(builder)
 ```
 {% endtab %}
+
 {% tab custom-event-ios2 Objective-C %}
 
 ```objc
@@ -313,15 +318,17 @@ VDABuilder *builder = [VDABuilder createEventWithEventName:@"page_view" extraDat
 [tracker send:builder];
 ```
 {% endtab %}
+
 {% tab custom-event-ios2 Collected Data in Json %}
 ```
 {
-    "event_name": "page_view"
-    "previous": "URL of Last Page", 
-    "current": "URL of Current Page"
+    event_name: "page_view"
+    previous: "URL of Last Page", 
+    current: "URL of Current Page"
 }
 ```
 {% endtab %}
+
 {% endtabs %}
 
 ## Sample Code
