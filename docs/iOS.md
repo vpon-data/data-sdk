@@ -64,7 +64,7 @@ You'll also manage the [License Key](#license-key), [Opt-in](#opt-in), and [Debu
 
 
 ### License Key
-Upon approval of your application, you'll receive a unique license key. If you encounter any issues or haven't received your key, please refer to the [Integration Process]ㄊ({% link docs/IntegrationProcess.md %}) for further details or email Vpon Contact for additional support.
+Upon approval of your application, you'll receive a unique license key. If you encounter any issues or haven't received your key, please refer to the [Integration Process]({% link docs/IntegrationProcess.md %}) for further details or email Vpon Contact for additional support.
 
 
 ### Opt-in
