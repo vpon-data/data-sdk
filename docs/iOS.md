@@ -10,29 +10,37 @@ lang: "en"
 
 # iOS SDK
 
-Welcome to the integration guide of Data SDK. You can leverage Data SDK in just several steps:
+Welcome to your comprehensive guide to integrating the Data SDK!
+
+With our streamlined process, you can equip your App with powerful features, such as [Auto Events] ({% link docs/AutoEvents.md %}) and Background Geolocation Collection, in a few straightforward steps:
+
 1. [Check the Prerequisites](#check-the-prerequisites)
 2. [Download Data SDK](#download-data-sdk)
 3. [Import Data SDK](#import-data-sdk)
 4. [Initialize Data SDK](#initialize-data-sdk)
 5. [Set Up Background Geolocation Collection](#set-up-background-geolocation-collection) (Optional)
-5. [Set up Customized Events](#set-up-customized-events) (Optional)
+5. [Set up Custom Events](#set-up-custom-events) (Optional)
 6. [Test in Debug Mode](#debug-mode)
 
-After completing steps 1 to 4, the minimum requirements, you can observe [Auto Events]({% link docs/AutoEvents.md %}) in your App.
+Upon completing steps 1 to 4, you'll have fulfilled the minimum requirements and enabled [Auto Events] ({% link docs/AutoEvents.md %}) tracking in your App.
 
-Furthermore, set up customized events according to your App design and user focus in step 5. The event setting is flexible and even skippable. Nevertheless, we encourage you to set up suitable customized events to obtain a comprehensive picture of your App users.
+Step 5 involves the optional setup of Background Geolocation Collection. This powerful feature allows continuous gathering of geolocation data from users, even when your App runs in the background, to provide more personalized experiences and services.
 
-Finally, check the integration status in step 6, [Debug Mode]({% link docs/DebugMode.md %}). Debug Mode helps you test the SDK setting before submitting your App to the App marketplaces. You can turn Debug Mode on in the step of Data SDK initialization, check all go well, and then turn it off in the same place to publish your App.
+Step 6 allows you to set up custom events according to your App's design and user needs. While optional, we highly recommend creating suitable custom events to obtain a comprehensive view of your App users.
+
+Lastly, in step 7, use the [Debug Mode] ({% link docs/DebugMode.md %} )to verify your integration status. Debug Mode facilitates testing of all SDK configurations, including Background Geolocation Collection, Auto & Custom events, before launching your App on various platforms. We recommend enabling Debug Mode during Data SDK initialization, ensure everything is functioning as expected, and then disabling it before your App's publication.
+
+This guide is designed to make the integration process intuitive and efficient, letting you focus on building and enhancing your App.
 
 ## Check the Prerequisites
-Supported version: iOS 10.0 or later
+Ensure that your app supports iOS version `10.0 or later` before proceeding with the Data SDK integration.
 
 ## Download Data SDK
-Download Data SDK [HERE][1] and add the `.framework` file into your Project.
+
+Start by downloading the Data SDK [HERE][1]. Once downloaded, unzip and include the `VponDataAnalytics.xcframework` folder in your project.
 
 ## Import Data SDK
-Import `VponDataAnalytics` in your main function.
+Import `VponDataAnalytics` in your App's main function. You can do this using either `Swift` or `Objective-C`.
 
 {% tabs import-ios %}
 
@@ -51,30 +59,27 @@ import VponDataAnalytics
 {% endtabs %}
 
 ## Initialize Data SDK
-Initialize Data SDK in `AppDelegate.swift` or `AppDelegate.h`. in the application `didFinishLaunchingWithOptions` method to ensure [Auto Events]({% link docs/AutoEvents.md %})  functionality.
+Initialize Data SDK in your `AppDelegate.swift` or `AppDelegate.h` file, within the application `didFinishLaunchingWithOptions` method. This ensures the [Auto Events]({% link docs/AutoEvents.md %}) feature operates correctly.
 
-In addition, manage [License Key](#license-key), [Opt-in](#opt-in), and [Debug Mode](#debug-mode) switch in this step.
+You'll also manage the [License Key](#license-key), [Opt-in](#opt-in), and [Debug Mode](#debug-mode) in this step.
 
 
 ### License Key
-You will receive a unique license key when your application is approved. See [Integration Process]({% link docs/IntegrationProcess.md %}) for more details.
-If you are still waiting to receive it or get into trouble with it, please email Vpon Contact for further assistance.
+Upon approval of your application, you'll receive a unique license key. If you encounter any issues or haven't received your key, please refer to the [Integration Process] ({% link docs/IntegrationProcess.md %}) for further details or email Vpon Contact for additional support.
+
 
 ### Opt-in
-Data SDK is committed to protecting App user privacy. Therefore, Data SDK only collects data with user consent, which means Data SDK only gathers data under the condition that a user agrees to App terms of use or privacy policy.
+Data SDK respects user privacy by only collecting data with the user's explicit consent, meaning data is gathered only when a user agrees to your App's terms of use or privacy policy.
 
-To help you manage App user consent efficiently, Data SDK provides three Opt-In options: `DEFAULT`, `CONSENT`, and `NOCONSENT`.
-- `DEFAULT`: the user has neither granted nor declined permission
-- `CONSENT`: the user gives consent
-- `NOCONSENT`: the user refuses to provide consent.
+To help you manage this consent effectively, Data SDK offers three Opt-In options: `DEFAULT`, `CONSENT`, and `NOCONSENT`.
+- `DEFAULT`: neither granted nor declined
+- `CONSENT`: granted
+- `NOCONSENT`: declined 
 
-We recommend determining the status of user consent in the application `didFinishLaunchingWithOptions` method. After that, update the Opt-In option automatically and forward it to Data SDK simultaneously, depending on the latest permission status.
+We recommend setting the user consent status in the application `didFinishLaunchingWithOptions` method, then updating the Opt-In option and forwarding it to Data SDK depending on the latest permission status. If Opt-In is set to either `NOCONSENT` or `DEFAULT`, warning messages will display on the developer console.
 
-Warning messages will display on the developer console if Opt-In is set either as `NOCONSENT` or `DEFAULT`.
-
-Below is a setup example of License Key and Opt-in:
+Here's a setup example of License Key and Opt-in:
 {% tabs lic-ios %}
-
 {% tab lic-ios Swift %}
 ```
 config.setLicenseKey("testKey", withCustomID: "testCustomID", withOptIn: .CONSENT)
@@ -90,13 +95,13 @@ config.setLicenseKey("testKey", withCustomID: "testCustomID", withOptIn: .CONSEN
 {% endtabs %}
 
 ### Debug Mode
-Debug Mode allows you to interactively test your App events, including [Auto]({% link docs/AutoEvents.md %}) and [Customized](#set-up-customized-events), with messages displayed in the developer console.  
+Debug Mode allows you to interactively test your App events, including [Auto]({% link docs/AutoEvents.md %}), [Custom](#set-up-custom-events), and Background Geolocation Collection.
 
-We suggest enabling Debug Mode and providing Debug Mode log to Vpon Contact before submitting your App in Marketplaces to guarantee the integration setting. See [Debug Mode]({% link docs/DebugMode.md %}) and [Integration Process]({% link docs/IntegrationProcess.md %}) for more details.
+We recommend enabling Debug Mode and providing the Debug Mode log to Vpon Contact before submitting your App to various marketplaces, ensuring correct integration settings. If everything is working as expected, disable Debug Mode before publishing your App.
 
-If all goes well, turn Debug Mode off and publish your App to the Marketplace.
+For more detailed information, you can refer to the sections on [Debug Mode]({% link docs/DebugMode.md %}) and [Integration Process]({% link docs/IntegrationProcess.md %}).
 
-Switch Debug Mode using the following codes
+Here's how to toggle Debug Mode:
 
 {% tabs debug-ios %}
 
@@ -122,7 +127,7 @@ config.setDebugMode(false)
 
 {% endtabs %}
 
-Combining all together, see a comprehensive example of Data SDK initialization.
+Here's a complete example that demonstrates how to initialize the Data SDK:
 {% tabs allexample-ios %}
 
 {% tab allexample-ios Swift %}
@@ -192,13 +197,13 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtabs %}
 
 ## Set Up Background Geolocation Collection
-Background Geolocation Collection is a powerful feature that allows your app to continuously gather geolocation data from users, even when your app is running in the background. By leveraging this feature, you can provide more personalized experiences and services to your users. However, it's crucial to strictly adhere to Apple's guidelines and respect user privacy when implementing this feature​.
+Background Geolocation Collection is a powerful feature that allows continuous geolocation data collection, even when your App is running in the background. However, it's essential to respect user privacy and adhere to Apple's guidelines when implementing this feature.
 
 Before using this function, ensure that your project settings and permissions are properly set up. You can refer to the [Permission]({% link docs/Permission.md %}) section for more details on this.
 
-To integrate the Background Geolocation Collection feature into your iOS app, follow these steps:
+To integrate the Background Geolocation Collection feature into your iOS App, follow these steps:
 
-1. Initialization: Make sure the Data SDK is properly initialized in your app before you start using the background geolocation collection feature.
+1. Initialization: Make sure the Data SDK is properly initialized in your App before you start using the background geolocation collection feature.
 
 2. Start/Stop Interface: Data SDK provides an interface that allows app developers to easily call and control the geolocation tracking. When calling the `startBackgroundLocationUpdate` method to begin collecting geolocation data, remember to set up the frequency for data collection as needed. Use the `stopBackgroundLocationUpdate` method to stop the data collection when it's no longer required.
 
@@ -249,24 +254,25 @@ VDAConfiguration *config = [VDAConfiguration sharedInstance];
 
 Once you have integrated the feature, you should test it to ensure it's working correctly. We recommend using the [Debug Mode]({% link docs/DebugMode.md %}) for this purpose. This mode allows you to interactively test your app events, including the geolocation collection, with messages displayed in the developer console.
 
-## Set up Customized Events
-If [Auto Events]({% link docs/AutoEvents.md %}) only partially fulfills your needs, Data SDK provides customized events to serve various App designs and meet your business focus.
- 
-By calling the `tracker` method, you can define your event name and any additional information you want to collect. It's flexible, and most importantly, no limit on the number of events.
+## Set up Custom Events
+Custom events are a powerful tool to gain insights into user behavior, and Data SDK makes it simple to set them up.
 
-For instance, an E-Commerce(EC) App wants to create a conversion funnel. Hence, recording users' views on which product item is essential. Using the `tracker` method, this EC App can quickly implement an `item_view` event that tracks a coat with id, size, color, price, etc...extra details.
+By utilizing the `tracker` method, you can set up events that carry unique names and contain additional data you wish to gather. The strength of this feature lies in its flexibility - there's no cap on the number of events you can set up, making it adaptable to your App's specific design and business goals.
 
-Below are the sample codes and the final collected data.
+Below, you will find examples of how to set up these custom events, along with representations of how the collected data may appear in a JSON string format on a mobile device. It's crucial to note that this data is encrypted for user privacy and cannot be directly accessed via the App developer console.
 
-{% tabs customized-event-ios %}
-{% tab customized-event-ios Swift %}
+Let's consider an example where you're running an e-commerce App and you want to establish a conversion funnel. In this case, tracking user interactions with various product items becomes essential. By leveraging the tracker method, you can swiftly set up an `item_view` event that collects details such as the product's ID, size, color, and price.
+
+
+{% tabs custom-event-ios %}
+{% tab custom-event-ios Swift %}
 ```swift
 let tracker = VDATracker()
 let builder = VDABuilder.createEventWithEventName("item_view", extraData: ["id": "payload", "name": "Coat", "price": 100, "color": "Blue", "size": "XL", "currency": "NTD"])
 tracker.send(builder)
 ```
 {% endtab %}
-{% tab customized-event-ios Objective-C %}
+{% tab custom-event-ios Objective-C %}
 
 ```objc
 VDATracker *tracker = [[VDATracker alloc] init];
@@ -274,7 +280,7 @@ VDABuilder *builder = [VDABuilder createEventWithEventName:@"item_view" extraDat
 [tracker send:builder];
 ```
 {% endtab %}
-{% tab customized-event-ios Collected Data in JSON-C %}
+{% tab customi-event-ios Collected Data in JSON-C %}
 ```
 {
     "event_name": "item_view"
@@ -289,20 +295,17 @@ VDABuilder *builder = [VDABuilder createEventWithEventName:@"item_view" extraDat
 {% endtab %}
 {% endtabs %}
 
+Similarly, if you're operating an Online Travel Agency (OTA) App and want to optimize the user experience by understanding their browsing history, the tracker method can assist. It enables the configuration of a `page_view` event, tracing the user's navigation journey through your App.
 
-Another example is that an Online Travel Agency(OTA) App wants to observe the browsing history to optimize its user experience. Using the `tracker` method, the OTA App can set up a `page_view` event that traces the user journey.  
-
-Below are the sample codes and the collected data.
-
-{% tabs customized-event-ios2 %}
-{% tab customized-event-ios2 Swift %}
+{% tabs custom-event-ios2 %}
+{% tab custom-event-ios2 Swift %}
 ```swift
 let tracker = VDATracker()
 let builder = VDABuilder.createEventWithEventName("page_view", extraData: ["pervious": "URL of Last Page", "current": "URL of Current Page"])
 tracker.send(builder)
 ```
 {% endtab %}
-{% tab customized-event-ios2 Objective-C %}
+{% tab custom-event-ios2 Objective-C %}
 
 ```objc
 VDATracker *tracker = [[VDATracker alloc] init];
@@ -310,7 +313,7 @@ VDABuilder *builder = [VDABuilder createEventWithEventName:@"page_view" extraDat
 [tracker send:builder];
 ```
 {% endtab %}
-{% tab customized-event-ios2 Collected Data in Json %}
+{% tab custom-event-ios2 Collected Data in Json %}
 ```
 {
     "event_name": "page_view"

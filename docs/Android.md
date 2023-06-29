@@ -358,7 +358,7 @@ val sendClickListener = View.OnClickListener {
             payloadJsonObj.put("color", "Blue");
             payloadJsonObj.put("size", "XL");
             payloadJsonObj.put("currency", "NTD");
-        } catch (JSONException e) {
+        } catch (e: JSONException) {
             e.printStackTrace();
         }
         tracker?.sendEvent("item_view", payloadJsonObj);
