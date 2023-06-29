@@ -283,15 +283,15 @@ VDABuilder *builder = [VDABuilder createEventWithEventName:@"item_view" extraDat
 {% endtab %}
 
 {% tab custom-event-ios Collected Data in JSON %}
-```
+```json
 {
-    event_name: "item_view"
-    id: "03356",
-    name: "Coat", 
-    price: 100, 
-    color: "Blue", 
-    size: "XL", 
-    currency: "NTD"
+    "event_name": "item_view",
+    "id": "03356",
+    "name": "Coat", 
+    "price": 100, 
+    "color": "Blue", 
+    "size": "XL", 
+    "currency": "NTD"
 }
 ```
 {% endtab %}
@@ -320,11 +320,11 @@ VDABuilder *builder = [VDABuilder createEventWithEventName:@"page_view" extraDat
 {% endtab %}
 
 {% tab custom-event-ios2 Collected Data in Json %}
-```
+```json
 {
-    event_name: "page_view"
-    previous: "URL of Last Page", 
-    current: "URL of Current Page"
+    "event_name": "page_view",
+    "previous": "URL of Last Page", 
+    "current": "URL of Current Page"
 }
 ```
 {% endtab %}
