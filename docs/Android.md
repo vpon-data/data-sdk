@@ -19,7 +19,7 @@ With our streamlined process, you can equip your App with powerful features, suc
 3. [Set up App Configurations](#set-up-app-configurations)
 4. [Import Data SDK](#import-data-sdk)
 5. [Initialize Data SDK](#initialize-data-sdk)
-5. [Set Up Background Geolocation Collection](#set-up-background-geolocation-collection) (Optional)
+5. [Set up Background Geolocation Collection](#set-up-background-geolocation-collection) (Optional)
 5. [Set up Custom Events](#set-up-custom-events) (Optional)
 6. [Test in Debug Mode](#debug-mode)
 
@@ -297,7 +297,7 @@ class MainActivity : Activity() {
 
 {% endtabs %}
 
-## Set Up Background Geolocation Collection
+## Set up Background Geolocation Collection
 Background Geolocation Collection is a powerful feature that allows continuous geolocation data collection, even when your App is running in the background. However, it's essential to respect user privacy and adhere to Google's guidelines when implementing this feature.
 
 Before using this function, ensure that your project settings and permissions are properly set up. You can refer to the [Permission]({% link docs/Permission.md %}) section for more details on this.
