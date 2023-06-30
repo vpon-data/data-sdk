@@ -314,7 +314,7 @@ Here is a sample code snippet to use these methods:
 
 {% tabs setup-background-Android %}
 
-{% tab setup-background-Anadroid java %}
+{% tab setup-background-Android java %}
 ```java
 // to start geolocation collection with mid accuracy
 VpdataAnalytics.INSTANCE.startBackgroundLocationUpdate(VpdataAnalytics.Frequency.MID);
