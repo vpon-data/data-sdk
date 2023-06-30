@@ -52,11 +52,18 @@ dependencies {
     //coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9'
+}
+```
 
+If you choose to activate background geolocation data collection, also add Google Play Service Location dependency
+```xml
+dependencies {
+    ...
     //for background gelocation collection
     implementation 'com.google.android.gms:play-services-location:21.0.1'
 }
-```
+```    
+
 
 ### Adjust Permissions
 To ensure the maximum functionality of the Data SDK, it's essential to modify your `AndroidManifest.xml` file to include specific permissions. Here's the suggested way to do it:
