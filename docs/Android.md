@@ -123,7 +123,7 @@ You'll also manage the [License Key](#license-key), [Opt-in](#opt-in), and [Debu
 
 
 ### License Key
-Upon approval of your application, you'll receive a unique license key. If you encounter any issues or haven't received your key, please refer to the [Integration Process]ㄊ({% link docs/IntegrationProcess.md %}) for further details or email Vpon Contact for additional support.
+Upon approval of your application, you'll receive a unique license key. If you encounter any issues or haven't received your key, please refer to the [Integration Process]({% link docs/IntegrationProcess.md %}) for further details or email Vpon Contact for additional support.
 
 ### Opt-In
 Data SDK respects user privacy by only collecting data with the user's explicit consent, meaning data is gathered only when a user agrees to your App's terms of use or privacy policy.
