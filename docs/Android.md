@@ -239,7 +239,7 @@ class MainApplication : Application() {
     // Turn Debug Mode on
     override fun onCreate() {
         super.onCreate()
-        val vpdataAnalytics = VpdataAnalytic
+        val vpdataAnalytics = VpdataAnalytics
 	
         // Set up before vpdataAnalytics.initialize
         vpdataAnalytics!!.setDebugMode(true)
