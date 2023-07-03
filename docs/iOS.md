@@ -252,7 +252,7 @@ VDAConfiguration *config = [VDAConfiguration sharedInstance];
 
 {% endtabs %}
 
-Once you have integrated the feature, you should test it to ensure it's working correctly. We recommend using the [Debug Mode]({% link docs/DebugMode.md %}) for this purpose. This mode allows you to interactively test your app events, including the geolocation collection, with messages displayed in the developer console.
+Once you have integrated the feature, you should test it to ensure it's working correctly. We recommend using the [Debug Mode]({% link docs/DebugMode.md %}) for this purpose. This mode allows you to interactively test your App events, including the geolocation collection, with messages displayed in the developer console.
 
 ## Set up Custom Events
 Custom events are a powerful tool to gain insights into user behavior, and Data SDK makes it simple to set them up.
