@@ -9,35 +9,31 @@ lang:           "en"
 ---
 
 # Permission
+ 
+Simplify App permissions with the Vpon Data SDK to maximize potential and protect user privacy. This guide walks you through setting up Network and Geolocation Data permissions, including Background Geolocation, for your iOS and Android Apps. 
 
-Vpon Data SDK requires very limited permissions from App users. 
+As responsible publishers, it's crucial to craft user-friendly location permission prompts. By ensuring the right permissions, you provide a seamless experience while adhering to iOS and Android guidelines. Adapt permissions to your App's needs and respect user privacy. Let's effortlessly navigate app permissions to unlock your App's full potential and build trust with users.
 
-The basic requirements are Network and Wi-Fi permissions to enable data collection in devices.  
-Geolocation permission is optional according to your App type.
+## iOS
+Setting up your iOS App involves adjusting permissions in your `info.plist` and project settings.
 
-![](/docs/images/permission.png)
+| Type of Permission       | Required Adjustments                                                                                             |
+|--------------------------|-----------------------------------------------------------------------------------------------------------------|
+| Network Permissions      | Insert these keys in your App's `info.plist`with corresponding descriptions: <br> - NSLocationAlwaysAndWhenInUseUsageDescription <br> - NSLocationUsageDescription <br> - NSLocationWhenInUseUsageDescription <br> Enable the “Access WiFi Information” capability in your project settings for iOS 12 and later versions. |
+| Geolocation Permissions | Verify that your app has the necessary Location Authority. <br> Insert these keys in your App's `info.plist` with corresponding descriptions: <br> - NSLocationAlwaysAndWhenInUseUsageDescription <br> - NSLocationUsageDescription <br> - NSLocationWhenInUseUsageDescription |
+| Background Geolocation   | Enable the "Background Modes - Location updates" capability in your project settings. <br> In your App source code, set `allowsBackgroundLocationUpdates` to `true`. |
+| Advertising Identifier (IDFA)      | Follow instructions in our [IDFA guide](https://wiki.vpon.com/ios/idfa/) |
 
-The permission setup details are shown as follows:
+For more detailed integration steps, please refer to the [iOS]{%link docs/iOS.md %} page.
 
-**Android**
-* network:
-    * ACCESS_NETWORK_STATE
-    * ACCESS_WIFI_STATE
-    * CHANGE_WIFI_STATE
-    * READ_PHONE_STATE
-* geolocation: 
-    * ACCESS_COARSE_LOCATION or ACCESS_FINE_LOCATION
 
-**iOS**
-* network:
-  * Add LocationUsageDescription: 
-    * +NSLocationAlwaysAndWhenInUseUsageDescription
-    * +NSLocationUsageDescription
-    * +NSLocationWhenInUseUsageDescription
-  * Enable "Access WiFi Information" in ProjectSetting on iOS 12 and later versions"
-* geolocation:
-  * Need Location Authority
-  * Add LocationUsageDescription: 
-    * +NSLocationAlwaysAndWhenInUseUsageDescription
-    * +NSLocationUsageDescription
-    * +NSLocationWhenInUseUsageDescription
+## Android
+For your Android App, specific permissions need to be added to your `AndroidManifest.xml` file.
+
+| Type of Permission       | Required Adjustments                                                                                             |
+|--------------------------|-----------------------------------------------------------------------------------------------------------------|
+| Network Permissions      | Include these permissions: <br> - INTERNET <br> - ACCESS_NETWORK_STATE <br> - ACCESS_WIFI_STATE <br> - CHANGE_WIFI_STATE  <br> Depending on your target Android API level, include either: <br> - READ_PHONE_STATE for API-1 <br> - READ_BASIC_PHONE_STATE for API-33 and up (Android-13 and beyond) |
+| Geolocation Permissions | Add either of these permissions: <br> - ACCESS_COARSE_LOCATION <br> - ACCESS_FINE_LOCATION |
+| Background Geolocation   | Include the ACCESS_BACKGROUND_LOCATION permission. |
+
+For more detailed integration steps, please refer to the [Android]{%link docs/Android.md %} page.
