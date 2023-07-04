@@ -27,7 +27,7 @@ Setting up your iOS App involves adjusting permissions in your `info.plist` and 
 ### Note to iOS Developers: 
 Proper setup of the `info.plist` descriptions is crucial. If not done correctly, your Apps may encounter crashes or face App Store submission rejections. Make sure to double-check your descriptions to prevent any issues.
 
-For more detailed integration steps, please refer to the [iOS]({%link docs/iOS.md %})page.
+For more detailed integration steps, please refer to the [iOS]({%link docs/iOS.md %}) page.
 
 ## Android
 For your Android App, specific permissions need to be added to your `AndroidManifest.xml` file.
