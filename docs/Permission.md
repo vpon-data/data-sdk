@@ -12,7 +12,7 @@ lang:           "en"
  
 Simplify App permissions with the Vpon Data SDK to maximize potential and protect user privacy. This guide walks you through setting up Network and Geolocation Data permissions, including Background Geolocation, for your iOS and Android Apps. 
 
-As responsible publishers, it's crucial to craft user-friendly location permission prompts. By ensuring the right permissions, you provide a seamless experience while adhering to iOS and Android guidelines. Adapt permissions to your App's needs and respect user privacy. Let's effortlessly navigate app permissions to unlock your App's full potential and build trust with users.
+As responsible publishers, it's crucial to craft user-friendly location permission prompts. By ensuring the right permissions, you provide a seamless experience while adhering to iOS and Android guidelines. Adapt permissions to your App's needs and respect user privacy. Let's effortlessly navigate App permissions to unlock your App's full potential and build trust with users.
 
 ## iOS
 Setting up your iOS App involves adjusting permissions in your `info.plist` and project settings.
