@@ -19,9 +19,9 @@ Setting up your iOS App involves adjusting permissions in your `info.plist` and 
 
 | Type of Permission       | Required Adjustments                                                                                             |
 |--------------------------|-----------------------------------------------------------------------------------------------------------------|
-| Network Permissions      | Insert these keys in your App's `info.plist`with corresponding descriptions: <br> - NSLocationAlwaysAndWhenInUseUsageDescription <br> - NSLocationUsageDescription <br> - NSLocationWhenInUseUsageDescription <br> Enable the “Access WiFi Information” capability in your project settings for iOS 12 and later versions. |
-| Geolocation Permissions | Verify that your app has the necessary Location Authority. <br> Insert these keys in your App's `info.plist` with corresponding descriptions: <br> - NSLocationAlwaysAndWhenInUseUsageDescription <br> - NSLocationUsageDescription <br> - NSLocationWhenInUseUsageDescription |
-| Background Geolocation   | Enable the "Background Modes - Location updates" capability in your project settings. <br> In your App source code, set `allowsBackgroundLocationUpdates` to `true`. |
+| Network Permissions      | 1. Insert these keys in your App's `info.plist`with corresponding descriptions: <br> - NSLocationAlwaysAndWhenInUseUsageDescription <br> - NSLocationUsageDescription <br> - NSLocationWhenInUseUsageDescription <br> 2. Enable the “Access WiFi Information” capability in your project settings for iOS 12 and later versions. |
+| Geolocation Permissions | 1. Verify that your App has the necessary Location Authority. <br> 2. Insert these keys in your App's `info.plist` with corresponding descriptions: <br> - NSLocationAlwaysAndWhenInUseUsageDescription <br> - NSLocationUsageDescription <br> - NSLocationWhenInUseUsageDescription |
+| Background Geolocation   | 1. Enable the "Background Modes - Location updates" capability in your project settings. <br> 2. In your App source code, set `allowsBackgroundLocationUpdates` to `true`. |
 | Advertising Identifier (IDFA)      | Follow instructions in our [IDFA guide](https://wiki.vpon.com/ios/idfa/) |
 
 ### Note to iOS Developers: 
