@@ -24,16 +24,18 @@ Setting up your iOS App involves adjusting permissions in your `info.plist` and 
 | Background Geolocation   | Enable the "Background Modes - Location updates" capability in your project settings. <br> In your App source code, set `allowsBackgroundLocationUpdates` to `true`. |
 | Advertising Identifier (IDFA)      | Follow instructions in our [IDFA guide](https://wiki.vpon.com/ios/idfa/) |
 
-For more detailed integration steps, please refer to the [iOS]{%link docs/iOS.md %} page.
+### Note to iOS Developers: 
+Proper setup of the `info.plist` descriptions is crucial. If not done correctly, your Apps may encounter crashes or face App Store submission rejections. Make sure to double-check your descriptions to prevent any issues.
 
+For more detailed integration steps, please refer to the [iOS]{%link docs/iOS.md %} page.
 
 ## Android
 For your Android App, specific permissions need to be added to your `AndroidManifest.xml` file.
 
 | Type of Permission       | Required Adjustments                                                                                             |
 |--------------------------|-----------------------------------------------------------------------------------------------------------------|
-| Network Permissions      | Include these permissions: <br> - INTERNET <br> - ACCESS_NETWORK_STATE <br> - ACCESS_WIFI_STATE <br> - CHANGE_WIFI_STATE  <br> Depending on your target Android API level, include either: <br> - READ_PHONE_STATE for API-1 <br> - READ_BASIC_PHONE_STATE for API-33 and up (Android-13 and beyond) |
+| Network Permissions      | Include these permissions: <br> - INTERNET <br> - ACCESS_NETWORK_STATE <br> - ACCESS_WIFI_STATE <br> - CHANGE_WIFI_STATE  <br> Depending on your target Android API level, include either: <br> - READ_PHONE_STATE for `API-1` <br> - READ_BASIC_PHONE_STATE for `API-33 and up` (`Android-13 and beyond`) |
 | Geolocation Permissions | Add either of these permissions: <br> - ACCESS_COARSE_LOCATION <br> - ACCESS_FINE_LOCATION |
-| Background Geolocation   | Include the ACCESS_BACKGROUND_LOCATION permission. |
+| Background Geolocation   | Include the - ACCESS_BACKGROUND_LOCATION permission. <br> For `Android 10` devices: When your App requests runtime-permissions, a dialog will be presented with the option to "Allow all the time". <br> For `Android 11 and beyond`: Users must be guided to the App's settings to allow background location permissions. The dialog will not present the "Allow all the time" option, so users need to manually select "Always allow" (or a similar option, depending on language settings) in the App settings. |
 
 For more detailed integration steps, please refer to the [Android]{%link docs/Android.md %} page.
