@@ -14,7 +14,7 @@ Auto Events allow you to collect events more efficiently with minimal integratio
 
 |Event Name|Trigger Point|Support OS|
 |:---|:---|:---|
-|Launch| User lanunchs an App| iOS, Android|
+|Launch| User launches an App| iOS, Android|
 |First Open| User launches an App for the first time| iOS, Android|
 |App Update| User updates an App| iOS, Android|
 |OS Update| User updates device OS| iOS, Android|
