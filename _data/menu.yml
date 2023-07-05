@@ -11,6 +11,8 @@ menu:
         url: /android
       - page: Permission
         url: /permission
+      - page: App Submission
+        url: /app_submission  
       - page: Debug Mode
         url: /debug_mode
       - page: Auto Events
