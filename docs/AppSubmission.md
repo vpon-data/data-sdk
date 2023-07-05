@@ -28,8 +28,8 @@ To successfully integrate our Data SDK into your App and prepare for submission,
 If your App involves the Background Geolocation Collection feature, follow these extra steps:
 
 1. Meet Specific Requirements: The App Store and Google Play have unique rules for Apps that use background geolocation:
-    1. App Store: Describe location usage in your App's privacy policy and 'Info.plist' file. [Learn more](https://developer.apple.com/documentation/corelocation/handling_location_updates_in_the_background)
-    2. Google Play: Declare background location use in your App listing and in the 'Permissions Declaration Form'. [Learn more](https://support.google.com/googleplay/android-developer/answer/9799150?hl=en)
+    1. App Store: Describe location usage in your App's privacy policy and `Info.plist` file. [Learn more](https://developer.apple.com/documentation/corelocation/handling_location_updates_in_the_background)
+    2. Google Play: Declare background location use in your App listing and in the `Permissions Declaration Form`. [Learn more](https://support.google.com/googleplay/android-developer/answer/9799150?hl=en)
 
 2. Request for Permissions: Design clear prompts to ask users for their consent to collect background geolocation data.
 
@@ -37,7 +37,7 @@ If your App involves the Background Geolocation Collection feature, follow these
 
 Remember, it's crucial as an App publisher to effectively communicate the need for Data SDK's functionalities, including background geolocation, to your users and the App platforms.
 
-For any additional assistance, feel free to refer to our complete Data SDK Integration Guide [iOS]({% link docs/iOS.md %}) [Android] ({% link docs/Android.md %}) .
+For any additional assistance, feel free to refer to our complete Data SDK Integration Guide [iOS]({% link docs/iOS.md %}) [Android]({% link docs/Android.md %}) .
 
 
 
