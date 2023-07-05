@@ -8,7 +8,7 @@ permalink:       /app_submission
 lang:           "en"
 ---
 
-# App Submission Guide
+# App Submission
 ## Guidelines for Integrating Data SDK
 
 To successfully integrate our Data SDK into your App and prepare for submission, here's a comprehensive guide:
