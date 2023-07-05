@@ -13,28 +13,26 @@ lang:           "en"
 
 To successfully integrate our Data SDK into your App and prepare for submission, here's a comprehensive guide:
 
-1. Explore the Data SDK: Learn about the expansive features of our Data SDK that are designed to augment your App's capabilities.
+| **Index** | **Step Name** | **Details** |
+|:--------:|:-------------:|:-------------:|
+|1| Explore the Data SDK | Get familiar with the wide range of features our Data SDK offers, designed to enhance your App's performance.|
+|2| Master Store Guidelines | Understand the rules and comply with [App Store](https://developer.apple.com/app-store/review/guidelines/) and [Google Play](https://play.google.com/about/developer-content-policy/) to ensure a smooth App submission process.|
+|3| Manage Permissions Effectively | Navigate to our Data SDK [Permissions](./docs/Permission.md) Page for setting up the required permissions in your App accurately.|
+|4| Clear Communication | Use easy-to-understand prompts when requesting user permissions, explaining why your App needs certain data.|
+|5| Clarify Privacy Practices | Disclose in your App's privacy policy how data is collected, used, and the role our Data SDK plays in these processes.|
+|6| Create Comprehensive Documentation | Develop thorough documentation outlining why your App collects specific data.|
 
-2. Master Store Guidelines: Make sure to comply with the rules set by the App Store and Google Play for a smooth App submission process.
-
-3. Manage Permissions Effectively: Utilize our Data SDK [Permissions]({% link docs/Permission.md %})  Page to set up the required permissions for your App accurately.
-
-4. Clear Communication: Make it easy for users to understand why your App needs certain data. Use clear prompts when requesting permissions
-
-5. Clarify Privacy Practices: Use your App's privacy policy to disclose how data is collected, used, and the role our Data SDK plays in it.
-
-6. Create Comprehensive Documentation: Prepare extensive documentation outlining the reasons why your App collects specific data.
 
 ## Guidelines for Integrating Background Geolocation Collection
 If your App involves the Background Geolocation Collection feature, follow these extra steps:
 
-1. Meet Specific Requirements: The App Store and Google Play have unique rules for Apps that use background geolocation:
-    1. App Store: Describe location usage in your App's privacy policy and `Info.plist` file. [Learn more](https://developer.apple.com/documentation/corelocation/handling_location_updates_in_the_background)
-    2. Google Play: Declare background location use in your App listing and in the `Permissions Declaration Form`. [Learn more](https://support.google.com/googleplay/android-developer/answer/9799150?hl=en)
+| **Index** | **Step Name** | **Details** |
+|:--------:|:-------------:|:-------------:|
+|1| Meet Specific Requirements | Both the App Store and Google Play have distinct guidelines for Apps using background geolocation:<br>   - **App Store:** Describe location usage in your App's privacy policy and `Info.plist` file. [Learn more](https://developer.apple.com/documentation/corelocation/handling_location_updates_in_the_background)<br>  - **Google Play:** Declare background location use in your App listing and the `Permissions Declaration Form`. [Learn more](https://support.google.com/googleplay/android-developer/answer/9799150?hl=en)|
+|2| Request for Permissions | Create clear prompts to request user consent for collecting background geolocation data.|
+|3| Update your Privacy Policy | Ensure your App's privacy policy incorporates information about the Background Geolocation Collection feature.|
 
-2. Request for Permissions: Design clear prompts to ask users for their consent to collect background geolocation data.
 
-3. Update your Privacy Policy: Make sure your App's privacy policy includes information about the Background Geolocation Collection feature.
 
 Remember, it's crucial as an App publisher to effectively communicate the need for Data SDK's functionalities, including background geolocation, to your users and the App platforms.
 
