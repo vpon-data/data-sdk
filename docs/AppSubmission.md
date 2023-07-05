@@ -38,7 +38,7 @@ If your App involves the Background Geolocation Collection feature, follow these
 
 Remember, it's crucial as an App publisher to effectively communicate the need for Data SDK's functionalities, including background geolocation, to your users and the App platforms.
 
-For any additional assistance, feel free to refer to our complete Data SDK Integration Guide [iOS]({% link docs/iOS.md %}) [Android]({% link docs/Android.md %}) .
+For any additional assistance, feel free to refer to our complete Data SDK Integration Guide [iOS]({% link docs/iOS.md %}), [Android]({% link docs/Android.md %}) .
 
 
 
