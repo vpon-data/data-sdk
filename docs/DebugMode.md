@@ -123,7 +123,7 @@ Let's consider an example. Assume that we have an App named **Travel in Taipei**
 2. Changes the language from English (EN) to Japanese (JP)
 3. Clicks `Start Tracking`
 4. Opens another App (which sends **Travel in Taipei** to the background)
-5. Returns to the **Travel in Taipei** App(which bring it to the foreground) after a while
+5. Returns to the **Travel in Taipei** App (which bring it to the foreground) after a while
 6. Clicks `Stop Tracking`
 
 Given the tester's actions, the debug mode logs may appear as follows:
