@@ -3,7 +3,6 @@ menu:
     url: /
   - page: Integration Process
     url: /integration_process
-  - page: Implementation Guide
     subfolderitems:
       - page: iOS SDK
         url: /ios
