@@ -16,6 +16,9 @@ menu:
         url: /debug_mode
       - page: Auto Events
         url: /auto_events
+      - page: Background Geolocation Collection
+        url: /back_geo
+
   - page: Change Log
     subfolderitems:
       - page: iOS SDK
