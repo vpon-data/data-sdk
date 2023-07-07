@@ -34,8 +34,8 @@ A successful initialization log will look like this:
 [VponData] Start SDK integration tests...
 [VponData] Checking SDK and device status...
 [VponData] --SDK Version: iOS V2.0.5
-[VponData] --License key: your_license_key_here
-[VponData] --CustomID: 
+[VponData] --License key: your_license_key
+[VponData] --CustomID: your_custom_id
 [VponData] --Device Model Name: iPhone 12,3
 [VponData] --Device OS: iOS 15.1
 [VponData] --Device Limited_Ad_Tracking: True
@@ -113,7 +113,7 @@ Upon disabling the Background Geolocation Collection, the SDK checks and confirm
 Let's consider an example. Assume that we have an App named **Travel in Taipei** which integrates Data SDK.
 
 ### Actions set up by App Publisher using Data SDK
-1. Set up 1 custom event named `change language`.
+1. Set up 1 custom event named `change_language`.
 2. Integrated the background geolocation collection feature, which:
     1. Triggers the feature when users click `Start Tracking`.
     2. Disables the feature when users click `Stop Tracking`
