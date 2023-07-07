@@ -64,7 +64,7 @@ You'll also manage the [License Key](#license-key), [Opt-in](#opt-in), and [Debu
 
 
 ### License Key
-Upon approval of your application, you'll receive a unique license key. If you encounter any issues or haven't received your key, please refer to the [Integration Process]({% link docs/IntegrationProcess.md %}) for further details or email Vpon Contact for additional support.
+Upon approval of your application, you'll receive a unique license key. If you encounter any issues or haven't received your key, please refer to the [Integration Process]({% link docs/IntegrationProcess.md %}) for further details or email Vpon’s support team for additional support.
 
 
 ### Opt-in
@@ -96,7 +96,7 @@ config.setLicenseKey("testKey", withCustomID: "testCustomID", withOptIn: .CONSEN
 ### Debug Mode
 Debug Mode allows you to interactively test your App events, including [Auto]({% link docs/AutoEvents.md %}), [Custom](#set-up-custom-events), and Background Geolocation Collection.
 
-We recommend enabling Debug Mode and providing the Debug Mode log to Vpon Contact before submitting your App to various marketplaces, ensuring correct integration settings. If everything is working as expected, disable Debug Mode before publishing your App.
+We recommend enabling Debug Mode and providing the Debug Mode log to Vpon’s support team before submitting your App to various marketplaces, ensuring correct integration settings. If everything is working as expected, disable Debug Mode before publishing your App.
 
 For more detailed information, you can refer to the sections on [Debug Mode]({% link docs/DebugMode.md %}) and [Integration Process]({% link docs/IntegrationProcess.md %}).
 
