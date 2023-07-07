@@ -39,7 +39,7 @@ Always secure explicit user consent before initiating data collection.
 Strive to find a balance between data accuracy and battery life.
 
 ### - Store Submission Review
-Adhere to the guidelines of both the App Store and Google Play Store on background geolocation data collection. For more information, refer to [App Submission]({% link docs/AppPermission.md %}) .
+Adhere to the guidelines of both the App Store and Google Play Store on background geolocation data collection. For more information, refer to [App Submission]({% link docs/AppSubmission.md %}) .
 
 ### - Notification and User Experience
 Using the Background Geolocation Collection feature triggers system-generated location notifications that cannot be disabled. These notifications, such as "App_Name is actively using your location," might impact the user experience due to their frequency. It is, therefore, crucial to inform users clearly in the prompt and privacy policy about the feature's use.
@@ -54,4 +54,4 @@ The App begins collecting geolocation data when a user engages in specific activ
 The App employs a Mid Accuracy level, achieving a balance between data accuracy and battery usage.
 Leveraging this feature, the App has significantly improved itinerary planning and enhanced user engagement and personalization.
 
-For a detailed guide on how to request and handle permissions and prepare your App for submission, refer to our [Permissions]({% link docs/Permission.md %}) and [App Submission]({% link docs/AppPermission.md %}) pages.
+For a detailed guide on how to request and handle permissions and prepare your App for submission, refer to our [Permissions]({% link docs/Permission.md %}) and [App Submission]({% link docs/AppSubmission.md %}) pages.
