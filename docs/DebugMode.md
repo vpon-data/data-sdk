@@ -18,6 +18,10 @@ Before starting with the debug mode, ensure:
 - You have completed the SDK integration with your App.
 - Debug mode is enabled in your App.
 
+For both prerequisites, please refer to our SDK Integration Guide [iOS]({% link docs/iOS.md %}), [Android]({% link docs/Android.md %}) .
+
+Next, this guide describes the overall [Debug Mode Flow](#debug-mode-flow) and the logs related to [Background Geolocation Collection](#background-geolocation-collection), offering examples of both successful and unsuccessful logs. At the end, it provides a comprehensive [Debug Mode Example](#debug-mode-example), detailing the Debug mode with the App setup and operations.
+
 ## Debug Mode Flow
 The debug mode comprises three main steps:
 
@@ -26,7 +30,7 @@ The debug mode comprises three main steps:
 When the App is launched, this step ensures that the SDK has been initialized successfully with accurate parameters. It verifies the SDK version, license key, custom ID, device model name, device operating system, and the status of limited ad tracking.
 
 A successful initialization log will look like this:
-```json
+```
 [VponData] Start SDK integration tests...
 [VponData] Checking SDK and device status...
 [VponData] --SDK Version: iOS V2.0.5
@@ -44,6 +48,7 @@ Error Message Example:
 [VponData] License key is invalid. 
 [VponData] Fail to initialize SDK. Please check the required settings in Vpon Data SDK: https://datasdk.vpon.com/
 ```
+
 This error message indicates that the License key is invalid, which reminds App publishers to check the License key setting when calling SDK functions.
 
 ### 2. SDK Info Collection
@@ -104,7 +109,7 @@ Upon disabling the Background Geolocation Collection, the SDK checks and confirm
 [VponData] Background geolocation collection status check completed.
 ```
 
-## Debug Mode Example Scenario
+## Debug Mode Example
 Let's consider an example. Assume that we have an App named **Travel in Taipei** which integrates Data SDK.
 
 ### Actions set up by App Publisher using Data SDK
@@ -169,7 +174,7 @@ Given the tester's actions, the debug mode logs may appear as follows:
 [VponData][F3D2E6A7] Checking Vpon endpoint status...
 [VponData][F3D2E6A7] Succeed in sending data to Vpon endpoint. Endpoint response code: 200.
 
-// App Goes to the background
+// App goes to the background
 [VponData][B6C5D7F1] Checking triggered event data...
 [VponData][B6C5D7F1] --Collect Time: 2023-06-10 17:32:00 UTC+0
 [VponData][B6C5D7F1] --Event Type: auto
@@ -190,6 +195,6 @@ Given the tester's actions, the debug mode logs may appear as follows:
 
 ```
 
-Before submitting your App, it's a requirement to collect all messages that start with [VponData] in your developer console and send these debug mode logs to the Vpon support team. These logs are crucial for us to validate your SDK integration, provide necessary assistance, and ensure seamless data collection and transmission in your App.
+Before submitting your App, you're required to collect all messages beginning with `[VponData]` from your developer console. These debug mode logs should then be sent to Vpon's support team, which is a crucial step for us to validate your SDK integration, provide necessary assistance, and ensure seamless data collection and transmission in your App.
 
-If you encounter any issues or persistent errors during the testing process, please make sure to include these in the logs you send us. Our team is here to provide support and help troubleshoot any issues.
+The support team's email can be found in the footer of our website. If you encounter any issues or persistent errors during the testing process, please make sure to include these in the logs you send us. Our team is always here to provide support and help troubleshoot any issues.
