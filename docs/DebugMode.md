@@ -192,7 +192,6 @@ Given the tester's actions, the debug mode logs may appear as follows:
 [VponData] Checking background geolocation collection status...
 [VponData] Background geolocation collection is currently disabled.
 [VponData] Background geolocation collection status check completed.
-
 ```
 
 Before submitting your App, you're required to collect all messages beginning with `[VponData]` from your developer console. These debug mode logs should then be sent to Vpon's support team, which is a crucial step for us to validate your SDK integration, provide necessary assistance, and ensure seamless data collection and transmission in your App.
