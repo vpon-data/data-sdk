@@ -11,8 +11,7 @@ lang: "en"
 
 Utilize the power of Data SDK's event-based data collection to gain valuable insights into your user's behaviors. The understanding obtained from these events can aid in personalizing the user experience, refining your marketing strategies, and improving your App's overall performance. We provide three main types of event collections: Auto Events, Custom Events, and Events triggered by Background Geolocation Collection.
 
-## 1. Auto Events (Available from Data SDK v2.0.4)
-
+## 1. Auto Events 
 Automatically tracked by the Data SDK, Auto Events capture significant milestones in the user's journey within your App without requiring any additional coding. Here are the Auto Events supported by our SDK:
 
 |Event Name|Trigger Point|
@@ -30,7 +29,7 @@ These events provide a baseline of data collection, delivering a robust understa
 
 Custom Events offer flexibility, allowing you to track specific actions that are unique and significant to your App. These events might include in-App purchases, user interactions with specific features, or the completion of a level in a game. Utilize Custom Events to collect data on actions beyond what is covered by Auto Events, capturing unique insights into how your users interact with specific features in your App.
 
-## 3. Events Triggered by Background Geolocation Collection (Available from Data SDK v2.0.5)
+## 3. Events Triggered by Background Geolocation Collection 
 
 Our Data SDK supports events triggered by Background Geolocation Collection. This feature enables continuous geolocation data collection, even when your app is running in the background, providing valuable location-based user behavior insights.
 

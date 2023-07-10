@@ -12,7 +12,7 @@ lang: "en"
 
 Welcome to your comprehensive guide to integrating the Data SDK!
 
-With our streamlined process, you can equip your App with powerful features, such as [Auto Events]({% link docs/AutoEvents.md %}) and Background Geolocation Collection, in a few straightforward steps:
+With our streamlined process, you can equip your App with powerful features, such as [Events]({% link docs/Event.md %}) and [Background Geolocation Collection]({% link docs/BackgroundGeolocation.md %}), in a few straightforward steps:
 
 1. [Check the Prerequisites](#check-the-prerequisites)
 2. [Download Data SDK](#download-data-sdk)
@@ -22,7 +22,7 @@ With our streamlined process, you can equip your App with powerful features, suc
 5. [Set up Custom Events](#set-up-custom-events) (Optional)
 6. [Test in Debug Mode](#debug-mode)
 
-Upon completing steps 1 to 4, you'll have fulfilled the minimum requirements and enabled [Auto Events]({% link docs/AutoEvents.md %}) tracking in your App.
+Upon completing steps 1 to 4, you'll have fulfilled the minimum requirements and enabled Auto Events tracking in your App.
 
 Step 5 involves the optional setup of Background Geolocation Collection. This powerful feature allows continuous gathering of geolocation data from users, even when your App runs in the background, to provide more personalized experiences and services.
 
@@ -58,7 +58,7 @@ import VponDataAnalytics
 {% endtabs %}
 
 ## Initialize Data SDK
-Initialize Data SDK in your `AppDelegate.swift` or `AppDelegate.h` file, within the application `didFinishLaunchingWithOptions` method. This ensures the [Auto Events]({% link docs/AutoEvents.md %}) feature operates correctly.
+Initialize Data SDK in your `AppDelegate.swift` or `AppDelegate.h` file, within the application `didFinishLaunchingWithOptions` method. This ensures the Auto Events feature operates correctly.
 
 You'll also manage the [License Key](#license-key), [Opt-in](#opt-in), and [Debug Mode](#debug-mode) in this step.
 
@@ -94,7 +94,7 @@ config.setLicenseKey("testKey", withCustomID: "testCustomID", withOptIn: .CONSEN
 {% endtabs %}
 
 ### Debug Mode
-Debug Mode allows you to interactively test your App events, including [Auto]({% link docs/AutoEvents.md %}), [Custom](#set-up-custom-events), and Background Geolocation Collection.
+Debug Mode allows you to interactively test your App events, including Auto, Custom, and Background Geolocation Collection.
 
 We recommend enabling Debug Mode and providing the Debug Mode log to Vpon’s support team before submitting your App to various marketplaces, ensuring correct integration settings. If everything is working as expected, disable Debug Mode before publishing your App.
 
