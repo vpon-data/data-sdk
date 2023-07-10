@@ -31,8 +31,7 @@ Step 6 allows you to set up custom events according to your App's design and use
 Lastly, in step 7, use the [Debug Mode]({% link docs/DebugMode.md %} ) to verify your integration status. Debug Mode facilitates testing of all SDK configurations, including Background Geolocation Collection, Auto & Custom events, before launching your App on various platforms. We recommend enabling Debug Mode to ensure everything is functioning as expected, and then disabling it before your App's publication.
 
 This guide is designed to make the integration process intuitive and efficient, letting you focus on building and enhancing your App.
-
-## Check the Prerequisites
+## Check the Prerequisites 
 Ensure that your App supports iOS version `10.0 or later` before proceeding with the Data SDK integration.
 
 ## Download Data SDK

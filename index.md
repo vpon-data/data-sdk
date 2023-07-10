@@ -10,14 +10,14 @@ lang:           "en"
 
 # Overview
 
-Welcome to the developer's guide for Vpon Data Software Development Kit (Data SDK)! This comprehensive guide provides all the information developers need when embedding our SDK into iOS and Android mobile Apps. Here, you'll find detailed implementation guides, requirements, and sample codes to help you through the integration process.
+Welcome to the developer's guide for Vpon Data Software Development Kit (**Data SDK**)! This comprehensive guide provides all the information developers need when embedding our SDK into iOS and Android mobile Apps. Here, you'll find detailed implementation guides, requirements, and sample codes to help you through the integration process.
 
 ## Data SDK Workflow
 
 The general workflow of Data SDK includes three primary steps:
 
 ### 1. Event Triggering
-Data SDK starts collecting data based on specific events. These events could be automatic, like launching the app, or customized to suit the specific needs of your app. In addition, the SDK can continuously collect geolocation data in the background. For more information about the different types of events and when to use them, please refer to our Event-Based Data Collection page.
+Data SDK starts collecting data based on specific events. These events could be automatic, like launching the App, or customized to suit the specific needs of your App. In addition, the SDK can continuously collect geolocation data in the background. For more information about the different types of events and when to use them, please refer to our [Event]({%link docs/Event.md %}) page.
 
 ### 2. Data Collection
 When an event is triggered, the SDK collects relevant device-based data, adhering to the same schema even for background geolocation collection. More details about data collection can be found in our [Data Collection](https://datasdk.vpon.com/introduction/data-collection) section.
