@@ -54,9 +54,4 @@ The App begins collecting geolocation data when a user engages in specific activ
 The App employs a Mid Accuracy level, achieving a balance between data accuracy and battery usage.
 Leveraging this feature, the App has significantly improved itinerary planning and enhanced user engagement and personalization.
 
-<<<<<<< HEAD
 For a detailed guide on how to request and handle permissions and prepare your App for submission, refer to our [Permission]({% link docs/Permission.md %}) and [App Submission]({% link docs/AppPermission.md %}) pages.
-=======
-For a detailed guide on how to request and handle permissions and prepare your App for submission, refer to our [Permissions]({% link docs/Permission.md %}) and [App Submission]({% link docs/AppSubmission.md %}) pages.
-
->>>>>>> f5fb318ee58678a11c0fe0623beb0c708c84952e
