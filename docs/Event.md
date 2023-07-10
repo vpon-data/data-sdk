@@ -5,7 +5,7 @@ lead: ""
 description: ""
 keywords: "datasdk"
 permalink: /event
-lang: "en"w
+lang: "en"
 ---
 # Event
 
