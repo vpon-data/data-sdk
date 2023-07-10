@@ -38,6 +38,6 @@ Use events triggered by Background Geolocation Collection when understanding the
 
 ## Choosing the Right Events
 
-While Auto Events are universally applicable, the use of Custom Events and events triggered by Background Geolocation Collection should be dictated by your App's specific needs and goals. It's crucial to balance your data collection needs with user privacy considerations. Always secure explicit user consent and comply with all relevant privacy laws and platform guidelines. For more information, please refer to our [Permission]({% link docs/Permission.md %}) and [App Submission]({% link docs/AppPermission.md %}) guides.
+While Auto Events are universally applicable, the use of Custom Events and events triggered by Background Geolocation Collection should be dictated by your App's specific needs and goals. It's crucial to balance your data collection needs with user privacy considerations. Always secure explicit user consent and comply with all relevant privacy laws and platform guidelines. For more information, please refer to our [Permission]({% link docs/Permission.md %}) and [App Submission]({% link docs/AppSubmission.md %}) guides.
 
 Remember, event-based data collection is a powerful tool for understanding and engaging your App users. Use these events effectively to reap maximum benefits from your Data SDK integration.
