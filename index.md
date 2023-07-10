@@ -32,7 +32,8 @@ The whole process is designed to be efficient and secure, providing valuable dat
 
 ## Next Steps
 
-Ready to start integrating the Data SDK into your App? Head over to our[Integration Process]({% link docs/IntegrationProcess.md %}) page, which guides you step by step through the entire integration process. For any business-side queries, please visit our [official website][1] for further information.
+Ready to start integrating the Data SDK into your App? Head over to our 
+[Integration Process]({% link docs/IntegrationProcess.md %}) page, which guides you step by step through the entire integration process. For any business-side queries, please visit our [official website][1] for further information.
 
 Remember, a successful Data SDK integration can unlock valuable insights into your users' behavior, enhancing your App's performance, personalization, and overall user experience. Get started today!
 
