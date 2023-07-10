@@ -16,6 +16,8 @@ Welcome to the developer's guide for Vpon Data Software Development Kit (**Data 
 
 The general workflow of Data SDK includes three primary steps:
 
+![](/docs/images/Overview.png) 
+
 ### 1. Event Triggering
 Data SDK starts collecting data based on specific events. These events could be automatic, like launching the App, or customized to suit the specific needs of your App. In addition, the SDK can continuously collect geolocation data in the background. For more information about the different types of events and when to use them, please refer to our [Event]({%link docs/Event.md %}) page.
 
@@ -27,7 +29,7 @@ After collection, the SDK encrypts the data to ensure its security and then send
 
 The whole process is designed to be efficient and secure, providing valuable data for you to better understand your users and improve the overall user experience.
 
-![](/docs/images/Overview.png) 
+
 
 ## Next Steps
 
