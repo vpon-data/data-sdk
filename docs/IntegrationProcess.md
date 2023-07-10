@@ -21,7 +21,7 @@ The Integration Process guides you through integrating the Data SDK into your Ap
 | Application    | App publisher | a. Fill out the [Business Request Form](https://airtable.com/shr0Mts1aMzUlzEIm) with your App's information and submit.        |         1 day          |
 |      | Vpon        | b. Vpon confirms the pre-inquiry and sends the SDK license key.                                | 2 days            |
 | Installation| App publisher | a. Download and import the Data SDK for your platform ([iOS]({% link docs/iOS.md %}) or [Android]({% link docs/Android.md %}), then follow the step-by-step integration guide provided by Vpon for initializing the Data SDK. |          2 days         |
-|      | App publisher   | b. Optionally, set up [Custom Events]({% link docs/Event.md %})(#2-custom-events) based on your App's requirements, or enable the optional feature of [Background Geolocation Collection] ({%link docs/BackgroundGeolocation.md %}). | 2-5 days |
+|      | App publisher   | b. Optionally, set up [Custom Events]({% link docs/Event.md %}#2-custom-events) based on your App's requirements, or enable the optional feature of [Background Geolocation Collection] ({%link docs/BackgroundGeolocation.md %}). | 2-5 days |
 | Testing    | App publisher | a. Enable [Debug Mode]({% link docs/DebugMode.md %}) and test your App in a simulation environment. | 5-8 days          |
 |      | App publisher| b. Email the Debug Mode log to Vpon's support team for review.                               |         0.5 day          |
 |      | Vpon        | c. Vpon evaluates the integration and provides feedback. Address common issues and solutions if needed. | 2 days            |
