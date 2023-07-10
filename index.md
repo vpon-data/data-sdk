@@ -27,7 +27,6 @@ After collection, the SDK encrypts the data to ensure its security and then send
 
 The whole process is designed to be efficient and secure, providing valuable data for you to better understand your users and improve the overall user experience.
 
-
 ![](/docs/images/Overview.png) 
 
 ## Next Steps

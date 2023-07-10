@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "Events"
+title: "Event"
 lead: ""
 description: ""
 keywords: "datasdk"
-permalink: /events
-lang: "en"
+permalink: /event
+lang: "en"w
 ---
-# Events
+# Event
 
 Utilize the power of Data SDK's event-based data collection to gain valuable insights into your user's behaviors. The understanding obtained from these events can aid in personalizing the user experience, refining your marketing strategies, and improving your App's overall performance. We provide three main types of event collections: Auto Events, Custom Events, and Events triggered by Background Geolocation Collection.
 

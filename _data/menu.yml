@@ -14,7 +14,7 @@ menu:
         url: /app_submission  
       - page: Debug Mode
         url: /debug_mode
-      - page: /Event
+      - page: Event
         url: /event
       - page: Background Geolocation Collection
         url: /back_geo
