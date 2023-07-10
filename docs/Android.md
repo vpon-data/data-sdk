@@ -23,7 +23,7 @@ With our streamlined process, you can equip your App with powerful features, suc
 5. [Set up Custom Events](#set-up-custom-events) (Optional)
 6. [Test in Debug Mode](#debug-mode)
 
-Upon completing steps 1 to 5, you'll have fulfilled the minimum requirements and enabled [Auto Events]({% link docs/Event.md %}#1-auto-events)tracking in your App.
+Upon completing steps 1 to 5, you'll have fulfilled the minimum requirements and enabled [Auto Events]({% link docs/Event.md %}#1-auto-events) tracking in your App.
 
 Step 6 involves the optional setup of [Background Geolocation Collection]({% link docs/BackgroundGeolocation.md %}). This powerful feature allows continuous gathering of geolocation data from users, even when your App runs in the background, to provide more personalized experiences and services.
 
