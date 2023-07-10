@@ -27,7 +27,7 @@ Upon completing steps 1 to 5, you'll have fulfilled the minimum requirements and
 
 Step 6 involves the optional setup of [Background Geolocation Collection]({% link docs/BackgroundGeolocation.md %}). This powerful feature allows continuous gathering of geolocation data from users, even when your App runs in the background, to provide more personalized experiences and services.
 
-Step 7 allows you to set up [Custom Events]({% link docs/Event.md %}#2-custom-events)according to your App's design and user needs. While optional, we highly recommend creating suitable custom events to obtain a comprehensive view of your App users.
+Step 7 allows you to set up [Custom Events]({% link docs/Event.md %}#2-custom-events) according to your App's design and user needs. While optional, we highly recommend creating suitable custom events to obtain a comprehensive view of your App users.
 
 Lastly, in step 8, use the [Debug Mode]({% link docs/DebugMode.md %} ) to verify your integration status. Debug Mode facilitates testing of all SDK configurations, including Background Geolocation Collection, Auto & Custom events, before launching your App on various platforms. We recommend enabling Debug Mode to ensure everything is functioning as expected, and then disabling it before your App's publication.
 
