@@ -9,8 +9,7 @@ lang:           "en"
 ---
 
 # Overview
-
-Welcome to the developer's guide for Vpon Data Software Development Kit (**Data SDK**)! This comprehensive guide provides all the information developers need when embedding our SDK into iOS and Android mobile Apps. Here, you'll find detailed implementation guides, requirements, and sample codes to help you through the integration process.
+This is your comprehensive resource for integrating the Vpon Data Software Development Kit (**Data SDK**) into iOS and Android mobile Apps. It's tailored to assist developers, providing implementation guides, requirements, and sample codes that facilitate a smooth and effective embedding process.
 
 ## Data SDK Workflow
 
