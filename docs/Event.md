@@ -16,7 +16,7 @@ Automatically tracked by the Data SDK, Auto Events capture significant milestone
 
 |Event Name|Trigger Point|
 |:---|:---|
-|Launch| User launches an App| iOS, Android|
+|Launch| User launches an App|
 |First Open| User launches an App for the first time|
 |App Update| User updates an App|
 |OS Update| User updates device OS|
