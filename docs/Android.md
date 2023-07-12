@@ -17,19 +17,18 @@ Here, we break down how to supercharge your App with key features such as Auto E
 1. [Check the Prerequisites](#check-the-prerequisites)
 2. [Download Data SDK](#download-data-sdk)
 3. [Set up App Configurations](#set-up-app-configurations)
-4. [Import Data SDK](#import-data-sdk)
-5. [Initialize Data SDK](#initialize-data-sdk)
+4. [Initialize Data SDK](#initialize-data-sdk)
 5. [Set up Background Geolocation Collection](#set-up-background-geolocation-collection) (Optional)
-5. [Set up Custom Events](#set-up-custom-events) (Optional)
-6. [Test in Debug Mode](#debug-mode)
+6. [Set up Custom Events](#set-up-custom-events) (Optional)
+7. [Test in Debug Mode](#debug-mode)
 
-Upon completing steps 1 to 5, you'll have fulfilled the minimum requirements and enabled [Auto Events]({% link docs/Event.md %}#1-auto-events) tracking in your App.
+Upon completing first four steps, you'll have fulfilled the minimum requirements and enabled [Auto Events]({% link docs/Event.md %}#1-auto-events) tracking in your App.
 
-Step 6 involves the optional setup of [Background Geolocation Collection]({% link docs/BackgroundGeolocation.md %}). This powerful feature allows continuous gathering of geolocation data from users, even when your App runs in the background, to provide more personalized experiences and services.
+Step 5 involves the optional setup of [Background Geolocation Collection]({% link docs/BackgroundGeolocation.md %}). This powerful feature allows continuous gathering of geolocation data from users, even when your App runs in the background, to provide more personalized experiences and services.
 
-Step 7 allows you to set up [Custom Events]({% link docs/Event.md %}#2-custom-events) according to your App's design and user needs. While optional, we highly recommend creating suitable custom events to obtain a comprehensive view of your App users.
+Step 6 allows you to set up [Custom Events]({% link docs/Event.md %}#2-custom-events) according to your App's design and user needs. While optional, we highly recommend creating suitable custom events to obtain a comprehensive view of your App users.
 
-Lastly, in step 8, use the [Debug Mode]({% link docs/DebugMode.md %} ) to verify your integration status. Debug Mode facilitates testing of all SDK configurations, including Background Geolocation Collection, Auto & Custom events, before launching your App on various platforms. We recommend enabling Debug Mode to ensure everything is functioning as expected, and then disabling it before your App's publication.
+Lastly, in step 7, use the [Debug Mode]({% link docs/DebugMode.md %} ) to verify your integration status. Debug Mode facilitates testing of all SDK configurations, including Background Geolocation Collection, Auto & Custom events, before launching your App on various platforms. We recommend enabling Debug Mode to ensure everything is functioning as expected, and then disabling it before your App's publication.
 
 This guide is designed to make the integration process intuitive and efficient, letting you focus on building and enhancing your App.
 
@@ -94,30 +93,8 @@ If you choose to activate background geolocation data collection, add this optio
 
 For more details about these permissions, refer to the [Permission]({% link docs/Permission.md %}).
 
-
-## Import Data SDK
-Import `VpondataAnalytics` in your main Application or main Activity files. For example, MainApplication, MainActivity, or other core functions of your App. You can do this using either `Java` or `Kotlin`.
-
-{% tabs import-android %}
-
-{% tab import-android Java %}
-
-```java
-import com.vpon.sdk.VpdataAnalytics;
-```
-{% endtab %}
-
-{% tab import-android Kotlin %}
-```kotlin
-import com.vpon.sdk.VpdataAnalytics
-```
-{% endtab %}
-
-{% endtabs %}
-
-
 ## Initialize Data SDK
-Initialize Data SDK in your main Application `onCreate()` method and main Activity `onCreate()` method separately. This ensures the [Auto Events]({% link docs/Event.md %}#1-auto-events) feature operates correctly.
+Initialize Data SDK in your main Application and main Activity separately. This ensures the [Auto Events]({% link docs/Event.md %}#1-auto-events) feature operates correctly.
 
 You'll also manage the [License Key](#license-key), [Opt-in](#opt-in), and [Debug Mode](#debug-mode) in this step.
 
@@ -191,6 +168,8 @@ Here's a complete example that demonstrates how to initialize the Data SDK:
 
 {% tab all-application-android Java %}
 ```java
+import com.vpon.sdk.VpdataAnalytics;
+
 // Opt-In options: 
 // VpdataAnalytics.OptIn.DEFAULT 
 // VpdataAnalytics.OptIn.CONSENT
@@ -223,6 +202,8 @@ public class MainApplication extends Application {
 
 {% tab all-application-android Kotlin %}
 ```kotlin
+import com.vpon.sdk.VpdataAnalytics
+
 // Opt-In options: 
 // VpdataAnalytics.OptIn.DEFAULT 
 // VpdataAnalytics.OptIn.CONSENT
@@ -259,6 +240,8 @@ class MainApplication : Application() {
 
 {% tab all-activity-android Java %}
 ```java
+import com.vpon.sdk.VpdataAnalytics;
+
 public class MainActivity extends Activity {
     private VpdataAnalytics.Tracker tracker = null;
     private final int PERMISSION_REQUEST_CODE = 2001;
@@ -282,6 +265,8 @@ public class MainActivity extends Activity {
 
 {% tab all-activity-android Kotlin %}
 ```kotlin
+import com.vpon.sdk.VpdataAnalytics
+
 class MainActivity : Activity() {
     private var tracker: VpdataAnalytics.Tracker? = null
     private val PERMISSION_REQUEST_CODE = 2001

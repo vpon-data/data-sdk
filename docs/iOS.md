@@ -16,19 +16,18 @@ Here, we break down how to supercharge your App with key features such as Auto E
 
 1. [Check the Prerequisites](#check-the-prerequisites)
 2. [Download Data SDK](#download-data-sdk)
-3. [Import Data SDK](#import-data-sdk)
-4. [Initialize Data SDK](#initialize-data-sdk)
-5. [Set up Background Geolocation Collection](#set-up-background-geolocation-collection) (Optional)
+3. [Initialize Data SDK](#initialize-data-sdk)
+4. [Set up Background Geolocation Collection](#set-up-background-geolocation-collection) (Optional)
 5. [Set up Custom Events](#set-up-custom-events) (Optional)
 6. [Test in Debug Mode](#debug-mode)
 
-Upon completing steps 1 to 4, you'll have fulfilled the minimum requirements and enabled [Auto Events]({% link docs/Event.md %}#1-auto-events) tracking in your App.
+Upon completing first three steps, you'll have fulfilled the minimum requirements and enabled [Auto Events]({% link docs/Event.md %}#1-auto-events) tracking in your App.
 
-Step 5 involves the optional setup of [Background Geolocation Collection]({% link docs/BackgroundGeolocation.md %}). This powerful feature allows continuous gathering of geolocation data from users, even when your App runs in the background, to provide more personalized experiences and services.
+Step 4 involves the optional setup of [Background Geolocation Collection]({% link docs/BackgroundGeolocation.md %}). This powerful feature allows continuous gathering of geolocation data from users, even when your App runs in the background, to provide more personalized experiences and services.
 
-Step 6 allows you to set up [Custom Events]({% link docs/Event.md %}#2-custom-events) according to your App's design and user needs. While optional, we highly recommend creating suitable custom events to obtain a comprehensive view of your App users.
+Step 5 allows you to set up [Custom Events]({% link docs/Event.md %}#2-custom-events) according to your App's design and user needs. While optional, we highly recommend creating suitable custom events to obtain a comprehensive view of your App users.
 
-Lastly, in step 7, use the [Debug Mode]({% link docs/DebugMode.md %} ) to verify your integration status. Debug Mode facilitates testing of all SDK configurations, including Background Geolocation Collection, Auto & Custom events, before launching your App on various platforms. We recommend enabling Debug Mode to ensure everything is functioning as expected, and then disabling it before your App's publication.
+Lastly, in step 6, use the [Debug Mode]({% link docs/DebugMode.md %} ) to verify your integration status. Debug Mode facilitates testing of all SDK configurations, including Background Geolocation Collection, Auto & Custom events, before launching your App on various platforms. We recommend enabling Debug Mode to ensure everything is functioning as expected, and then disabling it before your App's publication.
 
 This guide is designed to make the integration process intuitive and efficient, letting you focus on building and enhancing your App.
 ## Check the Prerequisites 
@@ -37,30 +36,10 @@ Ensure that your App supports iOS version `10.0 or later` before proceeding with
 ## Download Data SDK
 Start by downloading the Data SDK [HERE][1]. Once downloaded, unzip and include the `VponDataAnalytics.xcframework` folder in your project.
 
-## Import Data SDK
-Import `VponDataAnalytics` in your App's main function. You can do this using either `Swift` or `Objective-C`.
-
-{% tabs import-ios %}
-
-{% tab import-ios Swift %}
-```swift
-import VponDataAnalytics
-```
-{% endtab %}
-
-{% tab import-ios Objective-C%}
-```objc
-#import <VponDataAnalytics/VponDataAnalytics.h>
-```
-{% endtab %}
-
-{% endtabs %}
-
 ## Initialize Data SDK
 Initialize Data SDK in your `AppDelegate.swift` or `AppDelegate.h` file, within the application `didFinishLaunchingWithOptions` method. This ensures the [Auto Events]({% link docs/Event.md %}#1-auto-events) feature operates correctly.
 
 You'll also manage the [License Key](#license-key), [Opt-in](#opt-in), and [Debug Mode](#debug-mode) in this step.
-
 
 ### License Key
 Upon approval of your application, you'll receive a unique license key. If you encounter any issues or haven't received your key, please refer to the [Integration Process]({% link docs/IntegrationProcess.md %}) for further details or email Vpon’s support team for additional support.
