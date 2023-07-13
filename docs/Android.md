@@ -94,7 +94,7 @@ If you choose to activate background geolocation data collection, add this optio
 For more details about these permissions, refer to the [Permission]({% link docs/Permission.md %}).
 
 ## Initialize Data SDK
-Initialize Data SDK in your main Application and main Activity separately. This ensures the [Auto Events]({% link docs/Event.md %}#1-auto-events) feature operates correctly.
+Initialize Data SDK in your main Application. This ensures the [Auto Events]({% link docs/Event.md %}#1-auto-events) feature operates correctly.
 
 You'll also manage the [License Key](#license-key), [Opt-in](#opt-in), and [Debug Mode](#debug-mode) in this step.
 
@@ -162,8 +162,7 @@ vpdataAnalytics!!.setDebugMode(false)
 {% endtabs %}
 
 Here's a complete example that demonstrates how to initialize the Data SDK:
-#### In your main Application
-
+### In your main Application
 {% tabs all-application-android %}
 
 {% tab all-application-android Java %}
@@ -227,61 +226,6 @@ class MainApplication : Application() {
 	
         // Set up license_key and opt-in
         vpdataAnalytics!!.initialize(this, licenseKey, customerId, VpdataAnalytics.OptIn.CONSENT)
-    }
-}
-```
-{% endtab %}
-
-{% endtabs %}
-
-#### In your main Activity
-
-{% tabs all-activity-android %}
-
-{% tab all-activity-android Java %}
-```java
-import com.vpon.sdk.VpdataAnalytics;
-
-public class MainActivity extends Activity {
-    private VpdataAnalytics.Tracker tracker = null;
-    private final int PERMISSION_REQUEST_CODE = 2001;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        // Request permissions
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            requestPermissions(new String[]{ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION,READ_PHONE_STATE}, PERMISSION_REQUEST_CODE);
-        }
-	
-        // Construct a Tracker for sending event
-        tracker = new VpdataAnalytics.Tracker();
-    }
-}
-```
-{% endtab %}
-
-{% tab all-activity-android Kotlin %}
-```kotlin
-import com.vpon.sdk.VpdataAnalytics
-
-class MainActivity : Activity() {
-    private var tracker: VpdataAnalytics.Tracker? = null
-    private val PERMISSION_REQUEST_CODE = 2001
-    
-    override fun onCreate(savedInstanceState: Bundle) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-	
-        // Request optional permission
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            requestPermissions(arrayOf(ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION, READ_PHONE_STATE), PERMISSION_REQUEST_CODE)
-        }
-
-        // Construct a Tracker for sending event
-        tracker = VpdataAnalytics.Tracker()
     }
 }
 ```
