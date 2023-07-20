@@ -413,4 +413,4 @@ See also [Sample Code](https://github.com/vpon-sdk/Vpon-Android-Analytics) for a
 |:-------:|
 |[Download][1]|
 
-[1]: https://m.vpon.com/data/sdk/android/a-vda-obf-v2.0.5-20230630-30a0423-670651.aar
+[1]:[https://m.vpon.com/data/sdk/android/a-vda-obf-v2.0.5-20230720-199d0db-226782.aar]
