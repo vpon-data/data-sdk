@@ -316,7 +316,7 @@ See also [Sample Code](https://github.com/vpon-sdk/Vpon-iOS-Analytics) for a com
 
 We offer two versions of our Data SDK to best suit your App requirements:
 
-- **Data SDK Full**: Ideal for projects that require real-time background geolocation features.
+- **Data SDK Full**: Ideal for Apps that require real-time background geolocation features.
 - **Data SDK Light**: A lighter version without background geolocation, suitable for less complex needs.
 
 |Data SDK Full| Data SDK Light|
