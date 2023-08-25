@@ -34,7 +34,7 @@ This guide is designed to make the integration process intuitive and efficient, 
 Ensure that your App supports iOS version `10.0 or later` before proceeding with the Data SDK integration.
 
 ## Download Data SDK
-Start by downloading the Data SDK [HERE][1]. Once downloaded, unzip and include the `VponDataAnalytics.xcframework` folder in your project.
+Start by downloading the Data SDK [HERE](#download). Once downloaded, unzip and include the `VponDataAnalytics.xcframework` folder in your project.
 
 ## Initialize Data SDK
 Initialize Data SDK in your `AppDelegate.swift` or `AppDelegate.h` file, within the application `didFinishLaunchingWithOptions` method. This ensures the [Auto Events]({% link docs/Event.md %}#1-auto-events) feature operates correctly.
@@ -314,8 +314,16 @@ See also [Sample Code](https://github.com/vpon-sdk/Vpon-iOS-Analytics) for a com
 
 ## Download
 
-|Data SDK 2.0.5|
-|:-------:|
-|[Download][1]|
+We offer two versions of our Data SDK to best suit your App requirements:
+
+- **Data SDK Full**: Ideal for projects that require real-time background geolocation features.
+- **Data SDK Light**: A lighter version without background geolocation, suitable for less complex needs.
+
+|Data SDK Full| Data SDK Light|
+|:-------:|:--------:|
+| ✓ Background Geolocation Collection | ✗ Background Geolocation Collection |
+|[Download][1]|[Download][2]|
+
 
 [1]: https://m.vpon.com/data/sdk/ios/i-vda-v2.0.5-20230519-00657ea-465785.tar.gz
+[2]: https://m.vpon.com/data/sdk/ios/i-vda-v2.0.4-20221020-c15aa7d-252500.tar.gz
