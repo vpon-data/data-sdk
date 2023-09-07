@@ -8,7 +8,7 @@ permalink:       /android
 lang:           "en"
 ---
 
-# Android SDK
+# Android SDK 124
 
 Dive into the world of Data SDK integration with this comprehensive guide! 
 
