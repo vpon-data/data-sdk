@@ -9,6 +9,11 @@ lang: "en"
 ---
 # iOS Change Log
 
+## 2.0.6
+
+* Release Date: 19 Sep 2023
+* Fix potential crash issue
+
 ## 2.0.5
 * Release Date: 17 May 2023
 * Add background location collection feature
