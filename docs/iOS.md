@@ -313,17 +313,8 @@ VDABuilder *builder = [VDABuilder createEventWithEventName:@"page_view" extraDat
 See also [Sample Code](https://github.com/vpon-sdk/Vpon-iOS-Analytics) for a complete integration reference.
 
 ## Download
+|Data SDK 2.0.6|
+|:-------:|
+|[Download][1]|
 
-We offer two versions of our Data SDK to best suit your App requirements:
-
-- **Data SDK Full**: Ideal for Apps that require real-time background geolocation features.
-- **Data SDK Light**: A lighter version without background geolocation, suitable for less complex needs.
-
-|Data SDK Full| Data SDK Light|
-|:-------:|:--------:|
-| ✓ Background Geolocation Collection | ✗ Background Geolocation Collection |
-|[Download][1]|[Download][2]|
-
-
-[1]: https://m.vpon.com/data/sdk/ios/i-vda-v2.0.5-20230519-00657ea-465785.tar.gz
-[2]: https://m.vpon.com/data/sdk/ios/i-vda-v2.0.4-20221020-c15aa7d-252500.tar.gz
+[1]: https://m.vpon.com/data/sdk/ios/i-vda-v2.0.6-20230919-c4d7784-091866.tar.gz
