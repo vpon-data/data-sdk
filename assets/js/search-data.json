@@ -1,0 +1,416 @@
+{"0": {
+    "doc": "SDK-Android",
+    "title": "Android SDK",
+    "content": "Dive into the world of Data SDK integration with this comprehensive guide! . Here, we break down how to supercharge your App with key features such as Auto Events, Custom Events, and Background Geolocation Collection. Follow these simple steps: . | Check the Prerequisites | Download Data SDK | Set up App Configurations | Initialize Data SDK | Set up Background Geolocation Collection (Optional) | Set up Custom Events (Optional) | Test in Debug Mode | . Upon completing first four steps, you’ll have fulfilled the minimum requirements and enabled Auto Events tracking in your App. Step 5 involves the optional setup of Background Geolocation Collection. This powerful feature allows continuous gathering of geolocation data from users, even when your App runs in the background, to provide more personalized experiences and services. Step 6 allows you to set up Custom Events according to your App’s design and user needs. While optional, we highly recommend creating suitable custom events to obtain a comprehensive view of your App users. Lastly, in step 7, use the Debug Mode to verify your integration status. Debug Mode facilitates testing of all SDK configurations, including Background Geolocation Collection, Auto &amp; Custom events, before launching your App on various platforms. We recommend enabling Debug Mode to ensure everything is functioning as expected, and then disabling it before your App’s publication. This guide is designed to make the integration process intuitive and efficient, letting you focus on building and enhancing your App. ",
+    "url": "http://vpon-data.github.io/data-sdk/android#android-sdk",
+    "relUrl": "/android#android-sdk"
+  },"1": {
+    "doc": "SDK-Android",
+    "title": "Check the Prerequisites",
+    "content": "Ensure that your App supports Android version 5.0 or later before proceeding with the Data SDK integration. ",
+    "url": "http://vpon-data.github.io/data-sdk/android#check-the-prerequisites",
+    "relUrl": "/android#check-the-prerequisites"
+  },"2": {
+    "doc": "SDK-Android",
+    "title": "Download Data SDK",
+    "content": "Start by downloading the Data SDK HERE. Once downloaded, include the aar file in your Android Studio project. ",
+    "url": "http://vpon-data.github.io/data-sdk/android#download-data-sdk",
+    "relUrl": "/android#download-data-sdk"
+  },"3": {
+    "doc": "SDK-Android",
+    "title": "Set up App Configurations",
+    "content": "Build dependencies . In your module (app-level) Gradle file (usually &lt;project&gt;/&lt;app-module&gt;/build.gradle ), modify dependencies as below. dependencies { implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar']) ... implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0' //coroutines implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9' implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9' } . If you choose to activate background geolocation data collection, also add Google Play Service Location dependency . dependencies { ... //for background gelocation collection implementation 'com.google.android.gms:play-services-location:21.0.1' } . Adjust Permissions . To ensure the maximum functionality of the Data SDK, it’s essential to modify your AndroidManifest.xml file to include specific permissions. Here’s the suggested way to do it: . Required Permissions . These permissions are necessary for the SDK to operate effectively. Make sure to include these in your AndroidManifest.xml: . &lt;uses-permission android:name=\"android.permission.INTERNET\"/&gt; &lt;uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/&gt; &lt;uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/&gt; &lt;uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/&gt; . Recommended Additional Permissions . We recommend adding these additional permissions to your AndroidManifest.xml file to enable data collection for network information and geolocation: . &lt;uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/&gt; &lt;uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/&gt; &lt;uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/&gt; . While these permissions are technically optional, adding them is strongly advised to take full advantage of the SDK’s features. Background Geolocation Permission . If you choose to activate background geolocation data collection, add this optional permission: . &lt;uses-permission android:name=\"android.permission.ACCESS_BACKGROUND_LOCATION\"/&gt; . For more details about these permissions, refer to the Permission. ",
+    "url": "http://vpon-data.github.io/data-sdk/android#set-up-app-configurations",
+    "relUrl": "/android#set-up-app-configurations"
+  },"4": {
+    "doc": "SDK-Android",
+    "title": "Initialize Data SDK",
+    "content": "Initialize Data SDK in your main Application. This ensures the Auto Events feature operates correctly. You’ll also manage the License Key, Opt-in, and Debug Mode in this step. License Key . Upon approval of your application, you’ll receive a unique license key. If you encounter any issues or haven’t received your key, please refer to the Integration Process for further details or email Vpon’s support team for additional support. Opt-In . Data SDK respects user privacy by only collecting data with the user’s explicit consent, meaning data is gathered only when a user agrees to your App’s terms of use or privacy policy. To help you manage this consent effectively, Data SDK offers three Opt-In options: DEFAULT, CONSENT, and NOCONSENT. | DEFAULT: neither granted nor declined | CONSENT: granted | NOCONSENT: declined | . We recommend determining the status of user consent in the initialization step, then updating the Opt-In option and forwarding it to Data SDK depending on the latest permission status. If Opt-In is set to either NOCONSENT or DEFAULT, warning messages will display on the developer console. Here’s a setup example of License Key and Opt-in: . | Java | Kotlin | . | vpdataAnalytics.initialize(this, licenseKey, customerId, VpdataAnalytics.OptIn.CONSENT); . | vpdataAnalytics!!.initialize(this, licenseKey, customerId, VpdataAnalytics.OptIn.CONSENT) . | . Debug Mode . Debug Mode allows you to interactively test your App events, including Auto, Custom, and Background Geolocation Collection. We recommend enabling Debug Mode and providing the Debug Mode log to Vpon Vpon’s support team before submitting your App to various marketplaces, ensuring correct integration settings. If everything is working as expected, disable Debug Mode before publishing your App. For more detailed information, you can refer to the sections on Debug Mode and Integration Process. Here’s how to toggle Debug Mode: . | Java | Kotlin | . | // Turn Debug Mode on vpdataAnalytics.setDebugMode(true); // Turn Debug Mode off vpdataAnalytics.setDebugMode(false); . | // Turn Debug Mode on vpdataAnalytics!!.setDebugMode(true) // Turn Debug Mode off vpdataAnalytics!!.setDebugMode(false) . | . Here’s a complete example that demonstrates how to initialize the Data SDK: . In your main Application . | Java | Kotlin | . | import com.vpon.sdk.VpdataAnalytics; // Opt-In options: // VpdataAnalytics.OptIn.DEFAULT // VpdataAnalytics.OptIn.CONSENT // VpdataAnalytics.OptIn.NOCONSENT // Debug Mode options: true/false public class MainApplication extends Application { // Set your license_key &amp; customer_id private String licenseKey = \"testKey\"; private String customerId = \"\"; // Configure Opt-In as VpdataAnalytics.OptIn.CONSENT when a user gives consent // Turn Debug Mode on @Override public void onCreate() { super.onCreate(); VpdataAnalytics vpdataAnalytics = VpdataAnalytics.INSTANCE; // Set up before vpdataAnalytics.initialize vpdataAnalytics.setDebugMode(true); // Set up license_key and opt-in // If a user gives their consent, configure Opt-In as CONSENT vpdataAnalytics.initialize(this, licenseKey, customerId, VpdataAnalytics.OptIn.CONSENT); } } . | import com.vpon.sdk.VpdataAnalytics // Opt-In options: // VpdataAnalytics.OptIn.DEFAULT // VpdataAnalytics.OptIn.CONSENT // VpdataAnalytics.OptIn.NOCONSENT // Debug Mode options: true/false class MainApplication : Application() { // set up your license_key &amp; customer_id private val licenseKey = \"testKey\" private val customerId = \"\" // Configure Opt-In as VpdataAnalytics.OptIn.CONSENT when a user gives consent // Turn Debug Mode on override fun onCreate() { super.onCreate() val vpdataAnalytics = VpdataAnalytics // Set up before vpdataAnalytics.initialize vpdataAnalytics!!.setDebugMode(true) // Set up license_key and opt-in vpdataAnalytics!!.initialize(this, licenseKey, customerId, VpdataAnalytics.OptIn.CONSENT) } } . | . ",
+    "url": "http://vpon-data.github.io/data-sdk/android#initialize-data-sdk",
+    "relUrl": "/android#initialize-data-sdk"
+  },"5": {
+    "doc": "SDK-Android",
+    "title": "Set up Background Geolocation Collection",
+    "content": "Background Geolocation Collection is a powerful feature that allows continuous geolocation data collection, even when your App is running in the background. However, it’s essential to respect user privacy and adhere to Google’s guidelines when implementing this feature. Before using this function, ensure that your project settings and permissions are properly set up. You can refer to the Background Geolocation Collection and Permission sections for more details on this. To integrate the Background Geolocation Collection feature into your Android App, follow these steps: . | Initialization: Make sure the Data SDK is properly initialized in your App before you start using the background geolocation collection feature. | Start/Stop Interface: Data SDK provides an interface that allows App developers to easily call and control the geolocation tracking. When calling the startBackgroundLocationUpdate method to begin collecting geolocation data, remember to set up the frequency for data collection as needed. Use the stopBackgroundLocationUpdate method to stop the data collection when it’s no longer required. | Accuracy Level Configuration: The SDK allows you to set the level of accuracy for geolocation data collection. There are three options available: high, mid, and low accuracy respectively. Note that the accuracy level and the frequency of updates may affect the App’s battery usage, so choose your settings carefully. | . Here is a sample code snippet to use these methods: . | java | kotlin | . | // to start geolocation collection with mid accuracy VpdataAnalytics.INSTANCE.startBackgroundLocationUpdate(VpdataAnalytics.Frequency.MID); // to stop geolocation collection VpdataAnalytics.INSTANCE.stopBackgroundLocationUpdate(); // three accuracy options: high/mid/low // high accuracy VpdataAnalytics.INSTANCE.startBackgroundLocationUpdate(VpdataAnalytics.Frequency.HIGH); // mid accuracy VpdataAnalytics.INSTANCE.startBackgroundLocationUpdate(VpdataAnalytics.Frequency.MID); // low accuracy VpdataAnalytics.INSTANCE.startBackgroundLocationUpdate(VpdataAnalytics.Frequency.LOW); . | // to start geolocation collection with mid accuracy VpdataAnalytics.startBackgroundLocationUpdate(VpdataAnalytics.Frequency.MID) // to stop geolocation collection VpdataAnalytics.stopBackgroundLocationUpdate() // three accuracy options: high/mid/low // high accuracy VpdataAnalytics.startBackgroundLocationUpdate(VpdataAnalytics.Frequency.HIGH) // mid accuracy VpdataAnalytics.startBackgroundLocationUpdate(VpdataAnalytics.Frequency.MID) // low accuracy VpdataAnalytics.startBackgroundLocationUpdate(VpdataAnalytics.Frequency.LOW) . | . Once you have integrated the feature, you should test it to ensure it’s working correctly. We recommend using the Debug Mode for this purpose. This mode allows you to interactively test your App events, including the geolocation collection, with messages displayed in the developer console. ",
+    "url": "http://vpon-data.github.io/data-sdk/android#set-up-background-geolocation-collection",
+    "relUrl": "/android#set-up-background-geolocation-collection"
+  },"6": {
+    "doc": "SDK-Android",
+    "title": "Set up Custom Events",
+    "content": "Custom events are a powerful tool to gain insights into user behavior, and Data SDK makes it simple to set them up. By utilizing the tracker method, you can set up events that carry unique names and contain additional data you wish to gather. The strength of this feature lies in its flexibility - there’s no cap on the number of events you can set up, making it adaptable to your App’s specific design and business goals. Below, you will find examples of how to set up these custom events, along with representations of how the collected data may appear in a JSON string format on a mobile device. It’s crucial to note that this data is encrypted for user privacy and cannot be directly accessed via the App developer console. Let’s consider an example where you’re running an e-commerce App and you want to establish a conversion funnel. In this case, tracking user interactions with various product items becomes essential. By leveraging the tracker method, you can swiftly set up an item_view event that collects details such as the product’s ID, size, color, and price. | Java | Kotlin | Collected Data in JSON | . | public void onClick(View v) { JSONObject payloadJsonObj = new JSONObject(); try { payloadJsonObj.put(\"id\", \"payloadJsonObj\"); payloadJsonObj.put(\"name\", \"Coat\"); payloadJsonObj.put(\"price\", 100); payloadJsonObj.put(\"color\", \"Blue\"); payloadJsonObj.put(\"size\", \"XL\"); payloadJsonObj.put(\"currency\", \"NTD\"); } catch (JSONException e) { e.printStackTrace(); } tracker.sendEvent(\"item_view\", payloadJsonObj); } . | val sendClickListener = View.OnClickListener { val payloadJsonObj = JSONObject(); try { payloadJsonObj.put(\"id\", \"payloadJsonObj\"); payloadJsonObj.put(\"name\", \"Coat\"); payloadJsonObj.put(\"price\", 100); payloadJsonObj.put(\"color\", \"Blue\"); payloadJsonObj.put(\"size\", \"XL\"); payloadJsonObj.put(\"currency\", \"NTD\"); } catch (e: JSONException) { e.printStackTrace(); } tracker?.sendEvent(\"item_view\", payloadJsonObj); } . | { \"event_name\": \"item_view\" \"id\": \"03356\", \"name\": \"Coat\", \"price\": 100, \"color\": \"Blue\", \"size\": \"XL\", \"currency\": \"NTD\" } . | . Similarly, if you’re operating an Online Travel Agency (OTA) App and want to optimize the user experience by understanding their browsing history, the tracker method can assist. It enables the configuration of a page_view event, tracing the user’s navigation journey through your App. | Java | Kotlin | Collected Data in JSON | . | public void onClick(View v) { JSONObject payloadJsonObj = new JSONObject(); try { payloadJsonObj.put(\"previous\", \"URL of Last Page\"); payloadJsonObj.put(\"current\", \"URL of Current Page\"); } catch (JSONException e) { e.printStackTrace(); } tracker.sendEvent(\"page_view\", payloadJsonObj); } . | val sendClickListener = View.OnClickListener { val payloadJsonObj = JSONObject() try { payloadJsonObj.put(\"pervious\", \"URL of Last Page\") payloadJsonObj.put(\"current\", \"URL of Current Page\") } catch (e: JSONException) { e.printStackTrace() } tracker?.sendEvent(\"page_view\", payloadJsonObj) } . | { \"event_name\": \"page_view\" \"previous\": \"URL of Last Page\", \"current\": \"URL of Current Page\" } . | . ",
+    "url": "http://vpon-data.github.io/data-sdk/android#set-up-custom-events",
+    "relUrl": "/android#set-up-custom-events"
+  },"7": {
+    "doc": "SDK-Android",
+    "title": "Sample Code",
+    "content": "See also Sample Code for a complete integration reference. ",
+    "url": "http://vpon-data.github.io/data-sdk/android#sample-code",
+    "relUrl": "/android#sample-code"
+  },"8": {
+    "doc": "SDK-Android",
+    "title": "Download",
+    "content": "| Data SDK 2.0.5 | . | Download | . ",
+    "url": "http://vpon-data.github.io/data-sdk/android#download",
+    "relUrl": "/android#download"
+  },"9": {
+    "doc": "SDK-Android",
+    "title": "SDK-Android",
+    "content": " ",
+    "url": "http://vpon-data.github.io/data-sdk/android",
+    "relUrl": "/android"
+  },"10": {
+    "doc": "Android SDK Change Log",
+    "title": "Android Change Log",
+    "content": " ",
+    "url": "http://vpon-data.github.io/data-sdk/android_change_log#android-change-log",
+    "relUrl": "/android_change_log#android-change-log"
+  },"11": {
+    "doc": "Android SDK Change Log",
+    "title": "2.0.5",
+    "content": ". | Release Date: 30 June 2023 | Add background location collection feature | . ",
+    "url": "http://vpon-data.github.io/data-sdk/android_change_log#205",
+    "relUrl": "/android_change_log#205"
+  },"12": {
+    "doc": "Android SDK Change Log",
+    "title": "2.0.4",
+    "content": ". | Release Date: 21 Oct. 2022 | Add new event and new data field collection | . ",
+    "url": "http://vpon-data.github.io/data-sdk/android_change_log#204",
+    "relUrl": "/android_change_log#204"
+  },"13": {
+    "doc": "Android SDK Change Log",
+    "title": "2.0.2",
+    "content": ". | Release Date: 23 Apr. 2021 | Fix UUID duplicate issue when sending multiple events in a short time | Add Opt-in function with warning messages | Modify Debug Mode messages | . ",
+    "url": "http://vpon-data.github.io/data-sdk/android_change_log#202",
+    "relUrl": "/android_change_log#202"
+  },"14": {
+    "doc": "Android SDK Change Log",
+    "title": "2.0.0",
+    "content": ". | Release Date: 29 Dec. 2020 | Add Debug Mode | Optimize SDK framework | . ",
+    "url": "http://vpon-data.github.io/data-sdk/android_change_log#200",
+    "relUrl": "/android_change_log#200"
+  },"15": {
+    "doc": "Android SDK Change Log",
+    "title": "Android SDK Change Log",
+    "content": " ",
+    "url": "http://vpon-data.github.io/data-sdk/android_change_log",
+    "relUrl": "/android_change_log"
+  },"16": {
+    "doc": "App Submission",
+    "title": "App Submission",
+    "content": " ",
+    "url": "http://vpon-data.github.io/data-sdk/app_submission",
+    "relUrl": "/app_submission"
+  },"17": {
+    "doc": "App Submission",
+    "title": "Guidelines for Integrating Data SDK",
+    "content": "To successfully integrate our Data SDK into your App and prepare for submission, here’s a comprehensive guide: . | Index | Step Name | Details | . | 1 | Explore the Data SDK | Get familiar with the wide range of features our Data SDK offers, designed to enhance your App’s performance. | . | 2 | Master Store Guidelines | Understand the rules and comply with App Store and Google Play to ensure a smooth App submission process. | . | 3 | Manage Permissions Effectively | Navigate to our Data SDK Permissions Page for setting up the required permissions in your App accurately. | . | 4 | Clear Communication | Use easy-to-understand prompts when requesting user permissions, explaining why your App needs certain data. | . | 5 | Clarify Privacy Practices | Disclose in your App’s privacy policy how data is collected, used, and the role our Data SDK plays in these processes. | . | 6 | Create Comprehensive Documentation | Develop thorough documentation outlining why your App collects specific data. | . ",
+    "url": "http://vpon-data.github.io/data-sdk/app_submission#guidelines-for-integrating-data-sdk",
+    "relUrl": "/app_submission#guidelines-for-integrating-data-sdk"
+  },"18": {
+    "doc": "App Submission",
+    "title": "Guidelines for Integrating Background Geolocation Collection",
+    "content": "If your App involves the Background Geolocation Collection feature, follow these extra steps: . | Index | Step Name | Details | . | 1 | Meet Specific Requirements | Both the App Store and Google Play have distinct guidelines for Apps using background geolocation: - App Store: Describe location usage in your App’s privacy policy and Info.plist file. Learn more - Google Play: Declare background location use in your App listing and the Permissions Declaration Form. Learn more | . | 2 | Request for Permissions | Create clear prompts to request user consent for collecting background geolocation data. | . | 3 | Update your Privacy Policy | Ensure your App’s privacy policy incorporates information about the Background Geolocation Collection feature. | . Remember, it’s crucial as an App publisher to effectively communicate the need for Data SDK’s functionalities, including background geolocation, to your users and the App platforms. For any additional assistance, feel free to refer to our complete Data SDK Integration Guide iOS, Android . ",
+    "url": "http://vpon-data.github.io/data-sdk/app_submission#guidelines-for-integrating-background-geolocation-collection",
+    "relUrl": "/app_submission#guidelines-for-integrating-background-geolocation-collection"
+  },"19": {
+    "doc": "Background Geolocation Collection",
+    "title": "Background Geolocation Collection",
+    "content": "Background Geolocation Collection extends your App’s data collection capabilities by tracking user locations even when your App is running in the background. This feature offers a deeper understanding of user behaviors, enabling you to create more personalized and strategically engaging experiences. ",
+    "url": "http://vpon-data.github.io/data-sdk/back_geo",
+    "relUrl": "/back_geo"
+  },"20": {
+    "doc": "Background Geolocation Collection",
+    "title": "Expanding Data Collection Beyond In-App",
+    "content": "While standard Data SDK events capture user actions within the App, Background Geolocation Collection goes a step further. It collects data beyond the confines of active App usage, providing a more comprehensive understanding of user behaviors. ",
+    "url": "http://vpon-data.github.io/data-sdk/back_geo#expanding-data-collection-beyond-in-app",
+    "relUrl": "/back_geo#expanding-data-collection-beyond-in-app"
+  },"21": {
+    "doc": "Background Geolocation Collection",
+    "title": "Frequency Level: Balancing Data Collection and Battery Usage",
+    "content": "The effectiveness of Background Geolocation Collection is influenced by its frequency level, which in turn affects the frequency and duration of data collection. App publishers can choose from three frequency levels: . - High Frequency . Provides detailed and frequent location data but uses more battery. Suitable for Apps requiring comprehensive location tracking, such as outdoor adventure or exploration Apps. - Mid Frequency . Strikes a balance between data collection frequency and battery usage. Ideal for Apps that benefit from, but don’t heavily rely on, granular location data, like general travel or shopping Apps. - Low Frequency . Uses the least battery power and collects data less frequently. Appropriate for Apps where a general understanding of users’ location behavior patterns is sufficient. Your choice of frequency level should consider your App’s functionality, the role of location data in enhancing user experiences, and the potential impact on battery life. To set the frequency level, refer to our SDK Integration Guide iOS, Android . ",
+    "url": "http://vpon-data.github.io/data-sdk/back_geo#frequency-level-balancing-data-collection-and-battery-usage",
+    "relUrl": "/back_geo#frequency-level-balancing-data-collection-and-battery-usage"
+  },"22": {
+    "doc": "Background Geolocation Collection",
+    "title": "Key Considerations and Best Practices",
+    "content": "- User Consent . Always secure explicit user consent before initiating data collection. - Battery Usage . Strive to find a balance between data frequency and battery life. - Store Submission Review . Adhere to the guidelines of both the App Store and Google Play Store on background geolocation data collection. For more information, refer to App Submission . - Notification and User Experience . Using the Background Geolocation Collection feature triggers system-generated location notifications that cannot be disabled. These notifications, such as “App_Name is actively using your location,” might impact the user experience due to their frequency. It is, therefore, crucial to inform users clearly in the prompt and privacy policy about the feature’s use. ",
+    "url": "http://vpon-data.github.io/data-sdk/back_geo#key-considerations-and-best-practices",
+    "relUrl": "/back_geo#key-considerations-and-best-practices"
+  },"23": {
+    "doc": "Background Geolocation Collection",
+    "title": "Case Study: Travel in Taipei App",
+    "content": "The Travel in Taipei App illustrates effective utilization of Background Geolocation Collection . Trigger Points . The App begins collecting geolocation data when a user engages in specific activities, such as selecting a tour or exploring attractions. Frequency Setting . The App employs a Mid frequency level, achieving a balance between data frequency and battery usage. Leveraging this feature, the App has significantly improved itinerary planning and enhanced user engagement and personalization. For a detailed guide on how to request and handle permissions and prepare your App for submission, refer to our Permission and App Submission pages. ",
+    "url": "http://vpon-data.github.io/data-sdk/back_geo#case-study-travel-in-taipei-app",
+    "relUrl": "/back_geo#case-study-travel-in-taipei-app"
+  },"24": {
+    "doc": "Data Privacy",
+    "title": "Data Privacy",
+    "content": ". Please refer to Privacy Policy of Vpon Official Website. https://www.vpon.com/en/privacy-policy . ",
+    "url": "http://vpon-data.github.io/data-sdk/data_privacy",
+    "relUrl": "/data_privacy"
+  },"25": {
+    "doc": "Debug Mode",
+    "title": "Debug Mode",
+    "content": "Debug mode is an essential feature of our Data SDK, designed to assist App publishers in validating their SDK integration. This guide will walk you through using debug mode to test all Data SDK features such as Auto Events, Custom Events, and Background Geolocation Collection. ",
+    "url": "http://vpon-data.github.io/data-sdk/debug_mode",
+    "relUrl": "/debug_mode"
+  },"26": {
+    "doc": "Debug Mode",
+    "title": "Prerequisites",
+    "content": "Before starting with the debug mode, ensure: . | You have completed the SDK integration with your App. | Debug mode is enabled in your App. | . For both prerequisites, please refer to our SDK Integration Guide iOS, Android . Next, this guide describes the overall Debug Mode Flow and the logs related to Background Geolocation Collection, offering examples of both successful and unsuccessful logs. At the end, it provides a comprehensive Debug Mode Example, detailing the Debug mode with the App setup and operations. ",
+    "url": "http://vpon-data.github.io/data-sdk/debug_mode#prerequisites",
+    "relUrl": "/debug_mode#prerequisites"
+  },"27": {
+    "doc": "Debug Mode",
+    "title": "Debug Mode Flow",
+    "content": "The debug mode comprises three main steps: . 1. SDK Initialization . When the App is launched, this step ensures that the SDK has been initialized successfully with accurate parameters. It verifies the SDK version, license key, custom ID, device model name, device operating system, and the status of limited ad tracking. A successful initialization log will look like this: . [VponData] Start SDK integration tests... [VponData] Checking SDK and device status... [VponData] --SDK Version: iOS V2.0.5 [VponData] --License key: your_license_key [VponData] --CustomID: your_custom_id [VponData] --Device Model Name: iPhone 12,3 [VponData] --Device OS: iOS 15.1 [VponData] --Device Limited_Ad_Tracking: True [VponData] Succeed in initializing SDK. Error Message Example: . [VponData] Start SDK integration tests... [VponData] Checking SDK and device status... [VponData] License key is invalid. [VponData] Fail to initialize SDK. Please check the required settings in Vpon Data SDK: https://datasdk.vpon.com/ . This error message indicates that the License key is invalid, which reminds App publishers to check the License key setting when calling SDK functions. 2. SDK Info Collection . This step checks that the SDK is correctly collecting events data. It checks each triggered event, its collect time, and event type. The SDK logs information based on the events that occur within the application. These events include Auto Events (occur automatically), Custom Events (defined by App publishers), and the continuous_geo event (part of the Background Geolocation Collection feature). A successful collection of event data can be verified by the following log: . [VponData][event_id] Checking triggered event data... [VponData][event_id] --Collect Time: 2023-06-10 17:21:08 UTC+0 [VponData][event_id] --Event Type: auto . 3. Endpoint Connection . This step confirms that the collected data is successfully sent to the Vpon endpoint and receives a positive response. [VponData][event_id] Checking Vpon endpoint status... [VponData][event_id] Succeed in sending data to Vpon endpoint. Endpoint response code : 200. Error Message Example: . [VponData][event_id] Fail to receive Vpon endpoint’s feedback. Endpoint response code: 0(-1009, The Internet connection appears to be offline.). Please make sure your network connection is stable and check Vpon’s endpoint connection again. This error message indicates that the device is not connected to the network or the network connection is unstable. ",
+    "url": "http://vpon-data.github.io/data-sdk/debug_mode#debug-mode-flow",
+    "relUrl": "/debug_mode#debug-mode-flow"
+  },"28": {
+    "doc": "Debug Mode",
+    "title": "Background Geolocation Collection",
+    "content": "Background Geolocation Collection allows the SDK to collect geolocation data while the App is running in the background. The logs related to this feature can be divided into three parts: . 1. Initialization . Upon enabling the Background Geolocation Collection, the SDK checks its status, including whether it’s enabled and the collection frequency setting. [VponData] Checking background geolocation collection status... [VponData] Background geolocation collection is currently enabled. [VponData] The collection frequency setting for background geolocation is set to high. [VponData] Background geolocation collection status check completed. 2. Periodic Collection . When the feature is active, it periodically logs continuous_geo events. These events are timestamped, collected, and sent to the Vpon endpoint. [VponData][event_id] Checking triggered event data... [VponData][event_id] --Collect Time: 2023-06-10 17:21:08 UTC+0 [VponData][event_id] --Event Type: continuous_geo [VponData][event_id] Checking Vpon endpoint status... [VponData][event_id] Succeed in sending data to Vpon endpoint. Endpoint response code : 200. 3. Disabling Collection . Upon disabling the Background Geolocation Collection, the SDK checks and confirms the feature has been correctly disabled. [VponData] Checking background geolocation collection status... [VponData] Background geolocation collection is currently disabled. [VponData] Background geolocation collection status check completed. ",
+    "url": "http://vpon-data.github.io/data-sdk/debug_mode#background-geolocation-collection",
+    "relUrl": "/debug_mode#background-geolocation-collection"
+  },"29": {
+    "doc": "Debug Mode",
+    "title": "Debug Mode Example",
+    "content": "Let’s consider an example. Assume that we have an App named Travel in Taipei which integrates Data SDK. Actions set up by App Publisher using Data SDK . | Set up 1 custom event named change_language. | Integrated the background geolocation collection feature, which: . | Triggers the feature when users click Start Tracking. | Disables the feature when users click Stop Tracking | . | . Actions taken by App Tester . | Launches the App Travel in Taipei | Changes the language from English (EN) to Japanese (JP) | Clicks Start Tracking | Opens another App (which sends Travel in Taipei to the background) | Returns to the Travel in Taipei App (which bring it to the foreground) after a while | Clicks Stop Tracking | . Given the tester’s actions, the debug mode logs may appear as follows: . // SDK Initializes [VponData] Start SDK integration tests... [VponData] Checking SDK and device status... [VponData] --SDK Version: iOS V2.0.5 [VponData] --License key: your_license_key [VponData] --CustomID: your_custom_id [VponData] --Device Model Name: iPhone 12,3 [VponData] --Device OS: iOS 15.1 [VponData] --Device Limited_Ad_Tracking: True [VponData] Succeed in initializing SDK. // App Launches [VponData][9B2A6CD1] Checking triggered event data... [VponData][9B2A6CD1] --Collect Time: 2023-06-10 17:20:00 UTC+0 [VponData][9B2A6CD1] --Event Type: auto [VponData][9B2A6CD1] Checking Vpon endpoint status... [VponData][9B2A6CD1] Succeed in sending data to Vpon endpoint. Endpoint response code: 200. // Change language from EN to JP [VponData][8F3DA2E6] Checking triggered event data... [VponData][8F3DA2E6] --Collect Time: 2023-06-10 17:20:10 UTC+0 [VponData][8F3DA2E6] --Event Type: change_language [VponData][8F3DA2E6] Checking Vpon endpoint status... [VponData][8F3DA2E6] Succeed in sending data to Vpon endpoint. Endpoint response code: 200. // Start Tracking [VponData] Checking background geolocation collection status... [VponData] Background geolocation collection is currently enabled. [VponData] The collection frequency setting for background geolocation is set to high. [VponData] Background geolocation collection status check completed. // 1st continuous_geo [VponData][C1E5D7F4] Checking triggered event data... [VponData][C1E5D7F4] --Collect Time: 2023-06-10 17:25:10 UTC+0 [VponData][C1E5D7F4] --Event Type: continuous_geo [VponData][C1E5D7F4] Checking Vpon endpoint status... [VponData][C1E5D7F4] Succeed in sending data to Vpon endpoint. Endpoint response code: 200. // 2nd continuous_geo [VponData][F3D2E6A7] Checking triggered event data... [VponData][F3D2E6A7] --Collect Time: 2023-06-10 17:30:10 UTC+0 [VponData][F3D2E6A7] --Event Type: continuous_geo [VponData][F3D2E6A7] Checking Vpon endpoint status... [VponData][F3D2E6A7] Succeed in sending data to Vpon endpoint. Endpoint response code: 200. // App goes to the background [VponData][B6C5D7F1] Checking triggered event data... [VponData][B6C5D7F1] --Collect Time: 2023-06-10 17:32:00 UTC+0 [VponData][B6C5D7F1] --Event Type: auto [VponData][B6C5D7F1] Checking Vpon endpoint status... [VponData][B6C5D7F1] Succeed in sending data to Vpon endpoint. Endpoint response code: 200. // App returns to foreground [VponData][E6A7F8D9] Checking triggered event data... [VponData][E6A7F8D9] --Collect Time: 2023-06-10 17:35:30 UTC+0 [VponData][E6A7F8D9] --Event Type: auto [VponData][E6A7F8D9] Checking Vpon endpoint status... [VponData][E6A7F8D9] Succeed in sending data to Vpon endpoint. Endpoint response code: 200. // Stop Tracking [VponData] Checking background geolocation collection status... [VponData] Background geolocation collection is currently disabled. [VponData] Background geolocation collection status check completed. Before submitting your App, you’re required to collect all messages beginning with [VponData] from your developer console. These debug mode logs should then be sent to Vpon’s support team, which is a crucial step for us to validate your SDK integration, provide necessary assistance, and ensure seamless data collection and transmission in your App. The support team’s email can be found in the footer of our website. If you encounter any issues or persistent errors during the testing process, please make sure to include these in the logs you send us. Our team is always here to provide support and help troubleshoot any issues. ",
+    "url": "http://vpon-data.github.io/data-sdk/debug_mode#debug-mode-example",
+    "relUrl": "/debug_mode#debug-mode-example"
+  },"30": {
+    "doc": "Event",
+    "title": "Event",
+    "content": "Utilize the power of Data SDK’s event-based data collection to gain valuable insights into your user’s behaviors. The understanding obtained from these events can aid in personalizing the user experience, refining your marketing strategies, and improving your App’s overall performance. We provide three main types of event collections: Auto Events, Custom Events, and Events triggered by Background Geolocation Collection. ",
+    "url": "http://vpon-data.github.io/data-sdk/event",
+    "relUrl": "/event"
+  },"31": {
+    "doc": "Event",
+    "title": "1. Auto Events",
+    "content": "Automatically tracked by the Data SDK, Auto Events capture significant milestones in the user’s journey within your App without requiring any additional coding. Here are the Auto Events supported by our SDK: . | Event Name | Trigger Point | . | Launch | User launches an App | . | First Open | User launches an App for the first time | . | App Update | User updates an App | . | OS Update | User updates device OS | . | Foreground | User switches an App to the foreground | . | Background | User changes an App to the background | . These events provide a baseline of data collection, delivering a robust understanding of your app’s usage patterns. ",
+    "url": "http://vpon-data.github.io/data-sdk/event#1-auto-events",
+    "relUrl": "/event#1-auto-events"
+  },"32": {
+    "doc": "Event",
+    "title": "2. Custom Events",
+    "content": "Custom Events offer flexibility, allowing you to track specific actions that are unique and significant to your App. These events might include in-App purchases, user interactions with specific features, or the completion of a level in a game. Utilize Custom Events to collect data on actions beyond what is covered by Auto Events, capturing unique insights into how your users interact with specific features in your App. ",
+    "url": "http://vpon-data.github.io/data-sdk/event#2-custom-events",
+    "relUrl": "/event#2-custom-events"
+  },"33": {
+    "doc": "Event",
+    "title": "3. Events Triggered by Background Geolocation Collection",
+    "content": "Our Data SDK supports events triggered by Background Geolocation Collection. This feature enables continuous geolocation data collection, even when your app is running in the background, providing valuable location-based user behavior insights. Use events triggered by Background Geolocation Collection when understanding the user’s location behavior outside of App usage is valuable for your App. For example, a travel guide App could leverage this feature to understand what locations the user visits, thus creating more personalized guides. For more information, please refer to our Backgroung Geolocation Collection guide. ",
+    "url": "http://vpon-data.github.io/data-sdk/event#3-events-triggered-by-background-geolocation-collection",
+    "relUrl": "/event#3-events-triggered-by-background-geolocation-collection"
+  },"34": {
+    "doc": "Event",
+    "title": "Choosing the Right Events",
+    "content": "While Auto Events are universally applicable, the use of Custom Events and events triggered by Background Geolocation Collection should be dictated by your App’s specific needs and goals. It’s crucial to balance your data collection needs with user privacy considerations. Always secure explicit user consent and comply with all relevant privacy laws and platform guidelines. For more information, please refer to our Permission and App Submission guides. Remember, event-based data collection is a powerful tool for understanding and engaging your App users. Use these events effectively to reap maximum benefits from your Data SDK integration. ",
+    "url": "http://vpon-data.github.io/data-sdk/event#choosing-the-right-events",
+    "relUrl": "/event#choosing-the-right-events"
+  },"35": {
+    "doc": "Integration Process",
+    "title": "Integration Process",
+    "content": "The Integration Process guides you through integrating the Data SDK into your App, offering detailed instructions tailored for both iOS and Android platforms. It covers a range of essential steps, from initial setup to release, ensuring you have the tools you need for a successful integration. | Step | Role | Task | Duration | . | Application | App publisher | a. Fill out the Business Request Form with your App’s information and submit. | 1 day | . |   | Vpon | b. Vpon confirms the pre-inquiry and sends the SDK license key. | 2 days | . | Installation | App publisher | a. Download and import the Data SDK for your platform iOS or Android, then follow the step-by-step integration guide provided by Vpon for initializing the Data SDK. | 2 days | . |   | App publisher | b. Optionally, set up Custom Events based on your App’s requirements, or enable the optional feature of Background Geolocation Collection. | 2-5 days | . | Testing | App publisher | a. Enable Debug Mode and test your App in a simulation environment. | 5-8 days | . |   | App publisher | b. Email the Debug Mode log to Vpon’s support team for review. | 0.5 day | . |   | Vpon | c. Vpon evaluates the integration and provides feedback. Address common issues and solutions if needed. | 2 days | . | Release | App publisher | a. After successful testing, disable Debug Mode, and submit your App to the relevant App marketplaces. Review the App Submission guidelines before submitting. | 0.5 day | . |   | App publisher | b. Monitor your App’s status during the platform review process (iOS: 1-7 days, Android: 1-3 days). | Varies by platform | . Note: The duration estimates provided are for reference only and may vary based on individual circumstances. If you encounter any issues or have questions during the process, please do not hesitate to contact us via email for assistance. Our support team is here to help and will gladly assist you with any concerns you may have. The contact email can be found in the footer of our website. ",
+    "url": "http://vpon-data.github.io/data-sdk/integration_process",
+    "relUrl": "/integration_process"
+  },"36": {
+    "doc": "Integration Process",
+    "title": "More Guides",
+    "content": "The Integration Process is comprised of various related pages, each addressing a crucial aspect of integration: . | Documentation | Description | . | iOS SDK | Provides detailed steps for embedding Data SDK in your iOS App, along with code settings for optimal functionality. | . | Android SDK | Offers specific instructions for integrating Data SDK into your Android App, with code settings for ideal performance. | . | Permission | Guidelines for setting App permissions effectively, ensuring user privacy and trust. | . | App Submission | Explains the submission process and requirements for iOS and Android platforms, assisting in a smooth app review process. | . | Debug Mode | Details how to use the real-time event log for debugging in the developer console. | . | Event | Comprehensive information on the three main types of event collections (Auto Events, Custom Events, and Background Geolocation Collection) and guidelines on when to use optional features. | . | Background Geolocation Collection | Specifics of this optional feature, its benefits, and the process of its integration. | . ",
+    "url": "http://vpon-data.github.io/data-sdk/integration_process#more-guides",
+    "relUrl": "/integration_process#more-guides"
+  },"37": {
+    "doc": "opt-out",
+    "title": "Opt-out instructions",
+    "content": ". iOS and Android both provide on-device mechanisms that allow users to opt out the use of their information. Please refer to iOS and Android opt-out instructions for more information. ",
+    "url": "http://vpon-data.github.io/data-sdk/opt-out#opt-out-instructions",
+    "relUrl": "/opt-out#opt-out-instructions"
+  },"38": {
+    "doc": "opt-out",
+    "title": "opt-out",
+    "content": " ",
+    "url": "http://vpon-data.github.io/data-sdk/opt-out",
+    "relUrl": "/opt-out"
+  },"39": {
+    "doc": "opt-out-android",
+    "title": "Android ADID opt-out setting instructions",
+    "content": ". Generally, Android phones offer two functions related privacy protection. The first is to reset the advertising ID, Android Advertising ID (ADID), while the second is to opt out of personalized ads. Please follow below steps to access Reset advertising ID and Opt out of Ads Go to Setting→Google→Ads: Reset advertising ID and Opt out of Ads Personalization are shown. Besides, you can find your own ADID in the “Ads” page . Reset advertising ID . Click Reset advertising ID to reset your ADID. You can see the updated ADID immediately at the bottom of the “Ads” page. Opt out of Ads Personalization . If you turn off Opt out of Ads Personalization, you agree that Apps track your ADID and/or provide personalized Ads to you. On the other hand, if you turn on Opt out of Ads Personalization, you disagree that Apps track your ADID and/or provide personalized Ads to you. ",
+    "url": "http://vpon-data.github.io/data-sdk/opt-out-android#android-adid-opt-out-setting-instructions",
+    "relUrl": "/opt-out-android#android-adid-opt-out-setting-instructions"
+  },"40": {
+    "doc": "opt-out-android",
+    "title": "opt-out-android",
+    "content": " ",
+    "url": "http://vpon-data.github.io/data-sdk/opt-out-android",
+    "relUrl": "/opt-out-android"
+  },"41": {
+    "doc": "opt-out-ios",
+    "title": "iOS IDFA opt-out setting instructions",
+    "content": ". ",
+    "url": "http://vpon-data.github.io/data-sdk/opt-out-ios#ios-idfa-opt-out-setting-instructions",
+    "relUrl": "/opt-out-ios#ios-idfa-opt-out-setting-instructions"
+  },"42": {
+    "doc": "opt-out-ios",
+    "title": "iOS 10~13",
+    "content": "From iOS 10 to iOS 13, iOS devices offer two functions related to privacy protection. The first is to Limit Ad Tracking (LAT), while the second is to Reset Advertising Identifier (IDFA). Please follow the below steps to access Limit Ad Tracking and Reset Advertising Identifier : Go to Setting→Privacy→Advertising: Limit Ad Tracking and Reset Advertising Identifier are shown . Limit Ad Tracking (LAT) . If you turn off Limit Ad Tracking, you agree that Apps track your IDFA and/or provide personalized Ads to you. On the other hand, if you turn on Limit Ad Tracking, you disagree that Apps track your IDFA and/or provide personalized Ads to you. Reset Advertising Identifier . Click Reset Advertising Identifier to reset your IDFA. ",
+    "url": "http://vpon-data.github.io/data-sdk/opt-out-ios#ios-1013",
+    "relUrl": "/opt-out-ios#ios-1013"
+  },"43": {
+    "doc": "opt-out-ios",
+    "title": "iOS 14.5~14.6",
+    "content": "Starting from iOS 14, instead of Limit Ad Tracking (LAT), Apple provides App Tracking Transparency (ATT) framework to manage App’s permission to track your IDFA. App Tracking Transparency (ATT) . When you first launch an App that implemented ATT framework, a pop-out window will ask your permission for tracking your activity across Apps and webs. If you click “Ask App Not to Track,” the App can’t track your IDFA and/or provide personalized Ads to you. On the other hand, if you click “Allow,” the App can track your IDFA and/or provide personalized Ads to you. In the Setting→Privacy→Advertising page, you can also manage App tracking permissions in Allow Apps to Request to Track. If you turn off Allow Apps to Request to Track, all Apps are not allowed to track your device, and no more ATT pop-out window will be displayed once you chose to turn off . On the other hand, if you turn on Allow Apps to Request to Track, you can decide to give tracking permission to different Apps. Reset Advertising Identifier . Turn off Allow Apps to Request to Track, and turn it on will reset IDFA. ",
+    "url": "http://vpon-data.github.io/data-sdk/opt-out-ios#ios-145146",
+    "relUrl": "/opt-out-ios#ios-145146"
+  },"44": {
+    "doc": "opt-out-ios",
+    "title": "opt-out-ios",
+    "content": " ",
+    "url": "http://vpon-data.github.io/data-sdk/opt-out-ios",
+    "relUrl": "/opt-out-ios"
+  },"45": {
+    "doc": "Permission",
+    "title": "Permission",
+    "content": "Simplify App permissions with the Vpon Data SDK to maximize potential and protect user privacy. This guide walks you through setting up Network and Geolocation Data permissions, including Background Geolocation, for your iOS and Android Apps. As responsible publishers, it’s crucial to craft user-friendly location permission prompts. By ensuring the right permissions, you provide a seamless experience while adhering to iOS and Android guidelines. Adapt permissions to your App’s needs and respect user privacy. Let’s effortlessly navigate App permissions to unlock your App’s full potential and build trust with users. ",
+    "url": "http://vpon-data.github.io/data-sdk/permission",
+    "relUrl": "/permission"
+  },"46": {
+    "doc": "Permission",
+    "title": "iOS",
+    "content": "Setting up your iOS App involves adjusting permissions in your info.plist and project settings. | Type of Permission | Required Adjustments | . | Network Permissions | 1. Insert these keys in your App’s info.plistwith corresponding descriptions: - NSLocationAlwaysAndWhenInUseUsageDescription - NSLocationUsageDescription - NSLocationWhenInUseUsageDescription 2. Enable the “Access WiFi Information” capability in your project settings for iOS 12 and later versions. | . | Geolocation Permissions | 1. Verify that your App has the necessary Location Authority. 2. Insert these keys in your App’s info.plist with corresponding descriptions: - NSLocationAlwaysAndWhenInUseUsageDescription - NSLocationUsageDescription - NSLocationWhenInUseUsageDescription | . | Background Geolocation | 1. Enable the “Background Modes - Location updates” capability in your project settings. 2. In your App source code, set allowsBackgroundLocationUpdates to true. | . | Advertising Identifier (IDFA) | Follow instructions in our IDFA guide | . Note to iOS Developers: . Proper setup of the info.plist descriptions is crucial. If not done correctly, your Apps may encounter crashes or face App Store submission rejections. Make sure to double-check your descriptions to prevent any issues. For more detailed integration steps, please refer to the iOS page. ",
+    "url": "http://vpon-data.github.io/data-sdk/permission#ios",
+    "relUrl": "/permission#ios"
+  },"47": {
+    "doc": "Permission",
+    "title": "Android",
+    "content": "For your Android App, specific permissions need to be added to your AndroidManifest.xml file. | Type of Permission | Required Adjustments | . | Network Permissions | 1. Include these permissions: - INTERNET - ACCESS_NETWORK_STATE - ACCESS_WIFI_STATE - CHANGE_WIFI_STATE 2. Depending on your target Android API level, include either: - READ_PHONE_STATE for API-1 - READ_BASIC_PHONE_STATE for API-33 and up (Android-13 and beyond) | . | Geolocation Permissions | Add either of these permissions: - ACCESS_COARSE_LOCATION - ACCESS_FINE_LOCATION | . | Background Geolocation | 1. Include the - ACCESS_BACKGROUND_LOCATION permission. 2. Request permission from App users - For Android 10 devices: When your App requests runtime-permissions, a dialog will be presented with the option to “Allow all the time”. - For Android 11 and beyond: Users must be guided to the App’s settings to allow background location permissions. The dialog will not present the “Allow all the time” option, so users need to manually select “Always allow” (or a similar option, depending on language settings) in the App settings. | . For more detailed integration steps, please refer to the Android page. ",
+    "url": "http://vpon-data.github.io/data-sdk/permission#android",
+    "relUrl": "/permission#android"
+  },"48": {
+    "doc": "SDK-iOS",
+    "title": "iOS SDK",
+    "content": "Dive into the world of Data SDK integration with this comprehensive guide! . Here, we break down how to supercharge your App with key features such as Auto Events, Custom Events, and Background Geolocation Collection. Follow these simple steps: . | Check the Prerequisites | Download Data SDK | Initialize Data SDK | Set up Background Geolocation Collection (Optional) | Set up Custom Events (Optional) | Test in Debug Mode | . Upon completing first three steps, you’ll have fulfilled the minimum requirements and enabled Auto Events tracking in your App. Step 4 involves the optional setup of Background Geolocation Collection. This powerful feature allows continuous gathering of geolocation data from users, even when your App runs in the background, to provide more personalized experiences and services. Step 5 allows you to set up Custom Events according to your App’s design and user needs. While optional, we highly recommend creating suitable custom events to obtain a comprehensive view of your App users. Lastly, in step 6, use the Debug Mode to verify your integration status. Debug Mode facilitates testing of all SDK configurations, including Background Geolocation Collection, Auto &amp; Custom events, before launching your App on various platforms. We recommend enabling Debug Mode to ensure everything is functioning as expected, and then disabling it before your App’s publication. This guide is designed to make the integration process intuitive and efficient, letting you focus on building and enhancing your App. ",
+    "url": "http://vpon-data.github.io/data-sdk/ios#ios-sdk",
+    "relUrl": "/ios#ios-sdk"
+  },"49": {
+    "doc": "SDK-iOS",
+    "title": "Check the Prerequisites",
+    "content": "Ensure that your App supports iOS version 10.0 or later before proceeding with the Data SDK integration. ",
+    "url": "http://vpon-data.github.io/data-sdk/ios#check-the-prerequisites",
+    "relUrl": "/ios#check-the-prerequisites"
+  },"50": {
+    "doc": "SDK-iOS",
+    "title": "Download Data SDK",
+    "content": "Start by downloading the Data SDK HERE. Once downloaded, unzip and include the VponDataAnalytics.xcframework folder in your project. ",
+    "url": "http://vpon-data.github.io/data-sdk/ios#download-data-sdk",
+    "relUrl": "/ios#download-data-sdk"
+  },"51": {
+    "doc": "SDK-iOS",
+    "title": "Initialize Data SDK",
+    "content": "Initialize Data SDK in your AppDelegate.swift or AppDelegate.h file, within the application didFinishLaunchingWithOptions method. This ensures the Auto Events feature operates correctly. You’ll also manage the License Key, Opt-in, and Debug Mode in this step. License Key . Upon approval of your application, you’ll receive a unique license key. If you encounter any issues or haven’t received your key, please refer to the Integration Process for further details or email Vpon’s support team for additional support. Opt-in . Data SDK respects user privacy by only collecting data with the user’s explicit consent, meaning data is gathered only when a user agrees to your App’s terms of use or privacy policy. To help you manage this consent effectively, Data SDK offers three Opt-In options: DEFAULT, CONSENT, and NOCONSENT. | DEFAULT: neither granted nor declined | CONSENT: granted | NOCONSENT: declined | . We recommend setting the user consent status in the application didFinishLaunchingWithOptions method, then updating the Opt-In option and forwarding it to Data SDK depending on the latest permission status. If Opt-In is set to either NOCONSENT or DEFAULT, warning messages will display on the developer console. Here’s a setup example of License Key and Opt-in: . | Swift | Objective-C | . | config.setLicenseKey(\"testKey\", withCustomID: \"testCustomID\", withOptIn: .CONSENT) . | [config setLicenseKey:@\"testKey\" withCustomID:@\"testCustomID\" withOptIn:VDAOptInCONSENT]; . | . Debug Mode . Debug Mode allows you to interactively test your App events, including Auto, Custom, and Background Geolocation Collection. We recommend enabling Debug Mode and providing the Debug Mode log to Vpon’s support team before submitting your App to various marketplaces, ensuring correct integration settings. If everything is working as expected, disable Debug Mode before publishing your App. For more detailed information, you can refer to the sections on Debug Mode and Integration Process. Here’s how to toggle Debug Mode: . | Swift | Objective-C | . | // Turn Debug Mode on config.setDebugMode(true) // Turn Debug Mode off config.setDebugMode(false) . | // Turn Debug Mode on [config setDebugMode:YES]; // Turn Debug Mode off [config setDebugMode:NO]; . | . Here’s a complete example that demonstrates how to initialize the Data SDK: . | Swift | Objective-C | . | import VponDataAnalytics // Opt-In options: // .DEFAULT // .CONSENT // .NOCONSENT // Debug Mode options: true/false // Configure Opt-In as .CONSENT when a user gives consent // Turn Debug Mode on func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -&gt; Bool { let config = VDAConfiguration.sharedInstance config.setLicenseKey(\"testKey\", withCustomID: \"testCustomID\", withOptIn: .CONSENT) config.setDebugMode(true) config.initialize() } // Configure Opt-In as .NOCONSENT when a user refuses to give consent // Turn Debug Mode off func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -&gt; Bool { let config = VDAConfiguration.sharedInstance config.setLicenseKey(\"testKey\", withCustomID: \"testCustomID\", withOptIn: .NOCONSENT) config.setDebugMode(false) config.initialize() } . | #import &lt;VponDataAnalytics/VponDataAnalytics.h&gt; // Opt-In options: // VDAOptInDEFAULT // VDAOptInCONSENT // VDAOptInNOCONSENT // Debug Mode options: YES/NO // Configure Opt-In as VDAOptInCONSENT when a user gives consent // Turn Debug Mode on - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions { VDAConfiguration *config = [VDAConfiguration sharedInstance]; [config setLicenseKey:@\"testKey\" withCustomID:@\"testCustomID\" withOptIn:VDAOptInCONSENT]; [config setDebugMode:YES]; [config initialize]; } // Configure Opt-In as VDAOptInNOCONSENT when a user refuses to give consent // Turn Debug Mode off - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions { VDAConfiguration *config = [VDAConfiguration sharedInstance]; [config setLicenseKey:@\"testKey\" withCustomID:@\"testCustomID\" withOptIn:VDAOptInNOCONSENT ]; [config setDebugMode:NO]; [config initialize]; } . | . ",
+    "url": "http://vpon-data.github.io/data-sdk/ios#initialize-data-sdk",
+    "relUrl": "/ios#initialize-data-sdk"
+  },"52": {
+    "doc": "SDK-iOS",
+    "title": "Set up Background Geolocation Collection",
+    "content": "Background Geolocation Collection is a powerful feature that allows continuous geolocation data collection, even when your App is running in the background. However, it’s essential to respect user privacy and adhere to Apple’s guidelines when implementing this feature. Before using this function, ensure that your project settings and permissions are properly set up. You can refer to the Background Geolocation Collection and Permission sections for more details on this. To integrate the Background Geolocation Collection feature into your iOS App, follow these steps: . | Initialization: Make sure the Data SDK is properly initialized in your App before you start using the background geolocation collection feature. | Start/Stop Interface: Data SDK provides an interface that allows App developers to easily call and control the geolocation tracking. When calling the startBackgroundLocationUpdate method to begin collecting geolocation data, remember to set up the frequency for data collection as needed. Use the stopBackgroundLocationUpdate method to stop the data collection when it’s no longer required. | Accuracy Level Configuration: The SDK allows you to set the level of accuracy for geolocation data collection. There are three options available: high, mid, and low accuracy respectively. Note that the accuracy level and the frequency of updates may affect the App’s battery usage, so choose your settings carefully. | . Here is a sample code snippet to use these methods: . | Swift | Objective-C | . | // to start or stop geolocation collection with mid accuracy let config = VDAConfiguration.sharedInstance config.startBackgroundLocationUpdate(frequency: .mid) // to stop geolocation collection config.stopBackgroundLocationUpdate() // three accuracy options: high/mid/low // high accuracy config.startBackgroundLocationUpdate(frequency: .high) // mid accuracy config.startBackgroundLocationUpdate(frequency: .mid) // low accuracy config.startBackgroundLocationUpdate(frequency: .low) . | // to start geolocation collection with mid accuracy VDAConfiguration *config = [VDAConfiguration sharedInstance]; [config startBackgroundLocationUpdateWithFrequency:VDAFrequencyMid]; // to stop geolocation collection [config stopBackgroundLocationUpdate]; // three accuracy options: high/mid/low // high accuracy [config startBackgroundLocationUpdateWithFrequency:VDAFrequencyHigh]; // mid accuracy [config startBackgroundLocationUpdateWithFrequency:VDAFrequencyMid]; // low accuracy [config startBackgroundLocationUpdateWithFrequency:VDAFrequencyLow]; . | . Once you have integrated the feature, you should test it to ensure it’s working correctly. We recommend using the Debug Mode for this purpose. This mode allows you to interactively test your App events, including the geolocation collection, with messages displayed in the developer console. ",
+    "url": "http://vpon-data.github.io/data-sdk/ios#set-up-background-geolocation-collection",
+    "relUrl": "/ios#set-up-background-geolocation-collection"
+  },"53": {
+    "doc": "SDK-iOS",
+    "title": "Set up Custom Events",
+    "content": "Custom events are a powerful tool to gain insights into user behavior, and Data SDK makes it simple to set them up. By utilizing the tracker method, you can set up events that carry unique names and contain additional data you wish to gather. The strength of this feature lies in its flexibility - there’s no cap on the number of events you can set up, making it adaptable to your App’s specific design and business goals. Below, you will find examples of how to set up these custom events, along with representations of how the collected data may appear in a JSON string format on a mobile device. It’s crucial to note that this data is encrypted for user privacy and cannot be directly accessed via the App developer console. Let’s consider an example where you’re running an e-commerce App and you want to establish a conversion funnel. In this case, tracking user interactions with various product items becomes essential. By leveraging the tracker method, you can swiftly set up an item_view event that collects details such as the product’s ID, size, color, and price. | Swift | Objective-C | Collected Data in JSON | . | let tracker = VDATracker() let builder = VDABuilder.createEventWithEventName(\"item_view\", extraData: [\"id\": \"payload\", \"name\": \"Coat\", \"price\": 100, \"color\": \"Blue\", \"size\": \"XL\", \"currency\": \"NTD\"]) tracker.send(builder) . | VDATracker *tracker = [[VDATracker alloc] init]; VDABuilder *builder = [VDABuilder createEventWithEventName:@\"item_view\" extraData:@{@\"id\": @\"payload\", @\"name\": @\"Coat\", @\"price\": @(100), @\"color\": @\"Blue\", @\"size\": @\"XL\", @\"currency\": @\"NTD\"}]; [tracker send:builder]; . | { \"event_name\": \"item_view\", \"id\": \"03356\", \"name\": \"Coat\", \"price\": 100, \"color\": \"Blue\", \"size\": \"XL\", \"currency\": \"NTD\" } . | . Similarly, if you’re operating an Online Travel Agency (OTA) App and want to optimize the user experience by understanding their browsing history, the tracker method can assist. It enables the configuration of a page_view event, tracing the user’s navigation journey through your App. | Swift | Objective-C | Collected Data in Json | . | let tracker = VDATracker() let builder = VDABuilder.createEventWithEventName(\"page_view\", extraData: [\"pervious\": \"URL of Last Page\", \"current\": \"URL of Current Page\"]) tracker.send(builder) . | VDATracker *tracker = [[VDATracker alloc] init]; VDABuilder *builder = [VDABuilder createEventWithEventName:@\"page_view\" extraData:@{@\"pervious\": @\"URL of Last Page\", @\"current\": @\"URL of Current Page\"}]; [tracker send:builder]; . | { \"event_name\": \"page_view\", \"previous\": \"URL of Last Page\", \"current\": \"URL of Current Page\" } . | . ",
+    "url": "http://vpon-data.github.io/data-sdk/ios#set-up-custom-events",
+    "relUrl": "/ios#set-up-custom-events"
+  },"54": {
+    "doc": "SDK-iOS",
+    "title": "Sample Code",
+    "content": "See also Sample Code for a complete integration reference. ",
+    "url": "http://vpon-data.github.io/data-sdk/ios#sample-code",
+    "relUrl": "/ios#sample-code"
+  },"55": {
+    "doc": "SDK-iOS",
+    "title": "Download",
+    "content": "| Data SDK 2.0.6 | . | Download | . ",
+    "url": "http://vpon-data.github.io/data-sdk/ios#download",
+    "relUrl": "/ios#download"
+  },"56": {
+    "doc": "SDK-iOS",
+    "title": "SDK-iOS",
+    "content": " ",
+    "url": "http://vpon-data.github.io/data-sdk/ios",
+    "relUrl": "/ios"
+  },"57": {
+    "doc": "iOS SDK Change Log",
+    "title": "iOS Change Log",
+    "content": " ",
+    "url": "http://vpon-data.github.io/data-sdk/ios_change_log#ios-change-log",
+    "relUrl": "/ios_change_log#ios-change-log"
+  },"58": {
+    "doc": "iOS SDK Change Log",
+    "title": "2.0.6",
+    "content": ". | Release Date: 19 Sep 2023 | Fix potential crash issue | . ",
+    "url": "http://vpon-data.github.io/data-sdk/ios_change_log#206",
+    "relUrl": "/ios_change_log#206"
+  },"59": {
+    "doc": "iOS SDK Change Log",
+    "title": "2.0.5",
+    "content": ". | Release Date: 17 May 2023 | Add background location collection feature | . ",
+    "url": "http://vpon-data.github.io/data-sdk/ios_change_log#205",
+    "relUrl": "/ios_change_log#205"
+  },"60": {
+    "doc": "iOS SDK Change Log",
+    "title": "2.0.4",
+    "content": ". | Release Date: 21 Oct. 2022 | Add new event and new data field collection | . ",
+    "url": "http://vpon-data.github.io/data-sdk/ios_change_log#204",
+    "relUrl": "/ios_change_log#204"
+  },"61": {
+    "doc": "iOS SDK Change Log",
+    "title": "2.0.3",
+    "content": ". | Release Date: : 10 Jan. 2022 | Support xcFramework to be compatible with Xcode 13 | . ",
+    "url": "http://vpon-data.github.io/data-sdk/ios_change_log#203",
+    "relUrl": "/ios_change_log#203"
+  },"62": {
+    "doc": "iOS SDK Change Log",
+    "title": "2.0.2",
+    "content": ". | Release Date: : 23 Apr. 2021 | Add Opt-in function with warning notices | Modify Debug Mode messages | . ",
+    "url": "http://vpon-data.github.io/data-sdk/ios_change_log#202",
+    "relUrl": "/ios_change_log#202"
+  },"63": {
+    "doc": "iOS SDK Change Log",
+    "title": "2.0.0",
+    "content": ". | Release Date: 29 Dec. 2020 | Modify SDK initialization | Add Debug Mode | Optimize SDK framework | . ",
+    "url": "http://vpon-data.github.io/data-sdk/ios_change_log#200",
+    "relUrl": "/ios_change_log#200"
+  },"64": {
+    "doc": "iOS SDK Change Log",
+    "title": "iOS SDK Change Log",
+    "content": " ",
+    "url": "http://vpon-data.github.io/data-sdk/ios_change_log",
+    "relUrl": "/ios_change_log"
+  },"65": {
+    "doc": "Data SDK",
+    "title": "Overview",
+    "content": "This is your comprehensive resource for integrating the Vpon Data Software Development Kit (Data SDK) into iOS and Android mobile Apps. It’s tailored to assist developers, providing implementation guides, requirements, and sample codes that facilitate a smooth and effective embedding process. ",
+    "url": "http://vpon-data.github.io/data-sdk/#overview",
+    "relUrl": "/#overview"
+  },"66": {
+    "doc": "Data SDK",
+    "title": "Data SDK Workflow",
+    "content": "The general workflow of Data SDK includes three primary steps: . 1. Event Triggering . Data SDK starts collecting data based on specific events. These events could be automatic, like launching the App, or customized to suit the specific needs of your App. In addition, the SDK can continuously collect geolocation data in the background. For more information about the different types of events and when to use them, please refer to our Event page. 2. Data Collection . When an event is triggered, the SDK collects relevant device-based data, adhering to the same schema even for background geolocation collection. More details about data collection can be found in our Data Collection section. 3. Data Encryption and Transmission . After collection, the SDK encrypts the data to ensure its security and then sends it to the server for further analysis and application. The whole process is designed to be efficient and secure, providing valuable data for you to better understand your users and improve the overall user experience. ",
+    "url": "http://vpon-data.github.io/data-sdk/#data-sdk-workflow",
+    "relUrl": "/#data-sdk-workflow"
+  },"67": {
+    "doc": "Data SDK",
+    "title": "Next Steps",
+    "content": "Ready to start integrating the Data SDK into your App? Head over to our Integration Process page, which guides you step by step through the entire integration process. For any business-side queries, please visit our official website for further information. Remember, a successful Data SDK integration can unlock valuable insights into your users’ behavior, enhancing your App’s performance, personalization, and overall user experience. Get started today! . ",
+    "url": "http://vpon-data.github.io/data-sdk/#next-steps",
+    "relUrl": "/#next-steps"
+  },"68": {
+    "doc": "Data SDK",
+    "title": "Data SDK",
+    "content": " ",
+    "url": "http://vpon-data.github.io/data-sdk/",
+    "relUrl": "/"
+  }
+}
